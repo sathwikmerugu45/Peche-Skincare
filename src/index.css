@@ -199,11 +199,11 @@ Warm terracotta palette with sophisticated neutrals
   }
   
   .hover-glow {
-    @apply transition-all duration-400 hover:shadow-float;
+    @apply transition-all duration-500 hover:shadow-float;
   }
   
   .hover-tilt {
-    @apply transition-transform duration-400;
+    @apply transition-transform duration-500;
     transform-style: preserve-3d;
   }
   
