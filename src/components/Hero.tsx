@@ -5,10 +5,11 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-primary-light/10 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl float-3d"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-2xl float-3d" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-primary-light/20 rounded-full blur-lg float-3d" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-36 h-36 bg-primary/10 rounded-full blur-2xl float-3d" style={{ animationDelay: '3s' }}></div>
       </div>
 
       <div className="container-wide relative z-10">
@@ -55,27 +56,27 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div data-scroll className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-bold">
+          <div data-scroll className="relative perspective-2000">
+            <div className="relative rounded-3xl overflow-hidden shadow-float hover-tilt depth-card">
               <img 
                 src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200&q=80" 
                 alt="Luxury skincare products with natural ingredients"
-                className="w-full h-[500px] md:h-[600px] object-cover hover-lift"
+                className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
             </div>
 
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 bg-card rounded-2xl p-4 shadow-medium animate-float">
+            {/* Floating Elements with 3D effect */}
+            <div className="absolute -top-4 -right-4 glass-card rounded-2xl p-4 shadow-glow float-3d">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse shadow-glow"></div>
                 <span className="text-sm font-medium text-foreground">100% Natural</span>
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-medium animate-float" style={{ animationDelay: '1.5s' }}>
+            <div className="absolute -bottom-4 -left-4 glass-card rounded-2xl p-4 shadow-glow float-3d" style={{ animationDelay: '1.5s' }}>
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse shadow-glow"></div>
                 <span className="text-sm font-medium text-foreground">Dermatologist Tested</span>
               </div>
             </div>

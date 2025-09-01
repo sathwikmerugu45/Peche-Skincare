@@ -54,7 +54,7 @@ const Products = () => {
             <div 
               key={product.id}
               data-scroll
-              className="group bg-card rounded-3xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 hover-lift"
+              className="group glass-card rounded-3xl overflow-hidden shadow-float hover:shadow-glow transition-all duration-500 hover-lift depth-card perspective-1000"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Product Image */}
@@ -62,21 +62,21 @@ const Products = () => {
                 <img 
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700 shimmer"
                 />
                 
                 {/* Badge */}
                 {product.badge && (
                   <div className="absolute top-4 left-4">
-                    <Badge className={`${product.badge === 'Best Seller' ? 'bg-primary' : 'bg-accent'} text-white font-medium`}>
+                    <Badge className={`${product.badge === 'Best Seller' ? 'bg-primary shadow-glow' : 'bg-accent shadow-glow'} text-white font-medium backdrop-blur-md`}>
                       {product.badge}
                     </Badge>
                   </div>
                 )}
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button className="bg-white text-foreground hover:bg-accent transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                {/* Enhanced Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                  <Button className="glass-card text-foreground hover:bg-primary hover:text-primary-foreground transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-glow hover-tilt">
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Quick Add
                   </Button>

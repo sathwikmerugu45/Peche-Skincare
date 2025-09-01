@@ -50,12 +50,12 @@ const Philosophy = () => {
             </div>
           </div>
 
-          <div data-scroll className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-bold">
+          <div data-scroll className="relative perspective-1000">
+            <div className="rounded-3xl overflow-hidden shadow-float hover-tilt depth-card">
               <img 
                 src="https://images.unsplash.com/photo-1570554886111-e80fcfa6a029?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
                 alt="Natural skincare ingredients"
-                className="w-full h-[400px] object-cover hover-lift"
+                className="w-full h-[400px] object-cover transition-transform duration-700 hover:scale-110 shimmer"
               />
             </div>
           </div>
@@ -67,14 +67,14 @@ const Philosophy = () => {
             <div 
               key={feature.title}
               data-scroll
-              className="text-center group"
+              className="text-center group perspective-1000"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                <feature.icon className="h-8 w-8 text-primary" />
+              <div className="glass-card w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-500 hover-tilt">
+                <feature.icon className="h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h4 className="heading-sm text-foreground mb-2">{feature.title}</h4>
-              <p className="body-base text-foreground/70 leading-relaxed">{feature.description}</p>
+              <h4 className="heading-sm text-foreground mb-2 transition-all duration-300 group-hover:text-primary">{feature.title}</h4>
+              <p className="body-base text-foreground/70 leading-relaxed transition-opacity duration-300 group-hover:text-foreground/90">{feature.description}</p>
             </div>
           ))}
         </div>

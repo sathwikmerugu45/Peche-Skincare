@@ -18,15 +18,17 @@ const Navigation = () => {
   const navItems = ['Home', 'About', 'Products', 'Contact'];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-soft' : 'bg-transparent'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      isScrolled ? 'glass-card shadow-glow' : 'bg-transparent'
     }`}>
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
-            <span className="heading-sm font-medium text-foreground">Luxe</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow float-3d">
+              <Sparkles className="h-5 w-5 text-primary-foreground" />
+            </div>
+            <span className="text-xl font-light text-foreground">Luxe Skincare</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -35,16 +37,17 @@ const Navigation = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium"
+                className="text-foreground/80 hover:text-primary transition-all duration-300 font-medium relative group hover-tilt"
               >
                 {item}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full shadow-glow"></span>
               </a>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-6">
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-6 shadow-glow hover:shadow-float transition-all duration-300 hover-tilt">
               Shop Now
             </Button>
           </div>
@@ -60,19 +63,20 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm border-t border-border animate-fade-in-up">
+          <div className="md:hidden absolute top-full left-0 w-full glass-card border-t border-primary/20 animate-fade-in-up shadow-glow">
             <div className="container-wide py-6 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="block text-foreground/80 hover:text-primary transition-colors duration-300 font-medium py-2"
+                  className="block text-foreground/80 hover:text-primary transition-all duration-300 font-medium py-2 hover-tilt relative group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground font-medium mt-4">
+              <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground font-medium mt-4 shadow-glow hover:shadow-float transition-all duration-300">
                 Shop Now
               </Button>
             </div>
