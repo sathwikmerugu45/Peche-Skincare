@@ -189,9 +189,9 @@ const ProductDetail = () => {
         </section>
 
         {/* --- Product Hero Section --- */}
-        <section className="py-12">
+        <section className="py-8">
           <div className="container-wide">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               
               {/* --- Product Images Gallery --- 
                   Could be a separate component e.g., <ProductImageGallery />
@@ -311,7 +311,7 @@ const ProductDetail = () => {
         </section>
         
         {/* --- Product Details Tabs Section --- */}
-        <section className="py-16">
+        <section className="py-12">
           <div className="container-wide">
             <Tabs value={selectedTab} onValueChange={setSelectedTab} className="space-y-8">
               <TabsList className="grid w-full grid-cols-4"><TabsTrigger value="overview">Overview</TabsTrigger><TabsTrigger value="modules">What's Inside</TabsTrigger><TabsTrigger value="reviews">Reviews</TabsTrigger><TabsTrigger value="faq">FAQ</TabsTrigger></TabsList>
@@ -351,7 +351,7 @@ const ProductDetail = () => {
             A dedicated section to highlight free bonuses.
             Could be a separate component e.g., <BonusesSection />
         */}
-        <section className="py-16 bg-gradient-subtle">
+        <section className="py-12 bg-gradient-subtle">
           <div className="container-wide text-center">
             <Badge className="bg-primary/10 text-primary font-semibold mb-4">AND THERE'S MORE...</Badge>
             <h2 className="heading-lg mb-4">Get 5 FREE Bonuses Today (Value: ${totalBonusesValue})</h2>
@@ -376,7 +376,7 @@ const ProductDetail = () => {
         </section>
 
         {/* --- Final CTA Section --- */}
-        <section className="py-20 bg-gradient-warm">
+        <section className="py-12 bg-gradient-warm">
           <div className="container-narrow text-center">
             <h2 className="heading-lg text-gradient mb-6">Ready to Transform Your Skin?</h2>
             <p className="body-lg text-foreground/90 mb-8">Join 10,000+ women who've already started their glow journey. Get instant access for just ${product.price} (normally ${product.originalPrice}).</p>

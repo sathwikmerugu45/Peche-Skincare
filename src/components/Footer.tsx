@@ -24,7 +24,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="container-wide py-16 relative z-10">
+      <div className="container-wide py-12 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
@@ -75,7 +75,7 @@ const Footer = () => {
 
       {/* Newsletter Section */}
       <div className="border-t border-border relative z-10">
-        <div className="container-wide py-8">
+        <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div data-scroll>
               <h4 className="font-semibold text-secondary-foreground mb-1">Stay in the glow</h4>
@@ -97,7 +97,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-border relative z-10">
-        <div className="container-wide py-6">
+        <div className="container-wide py-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-secondary-foreground/60 text-sm">
               © 2024 Luxe Skincare. All rights reserved.

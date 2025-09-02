@@ -45,7 +45,7 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="section-padding bg-background relative overflow-hidden">
+    <section id="products" className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl float-3d"></div>
@@ -55,7 +55,7 @@ const Products = () => {
 
       <div className="container-wide relative z-10">
         {/* Enhanced Section Header */}
-        <div className="text-center mb-16" data-scroll>
+        <div className="text-center mb-12" data-scroll>
           <div className="inline-flex items-center space-x-2 mb-4 glass-card px-4 py-2 rounded-full">
             <Sparkles className="h-4 w-4 text-primary animate-spin" style={{ animationDuration: '3s' }} />
             <span className="text-sm font-medium text-primary">Premium Collection</span>
@@ -211,7 +211,7 @@ const Products = () => {
         </div>
 
         {/* Enhanced View All Button */}
-        <div className="text-center mt-16" data-scroll>
+        <div className="text-center mt-12" data-scroll>
           <Button 
             size="lg" 
             variant="outline"

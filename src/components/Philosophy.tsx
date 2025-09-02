@@ -25,7 +25,7 @@ const Philosophy = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-subtle relative overflow-hidden">
+    <section id="about" className="py-16 md:py-20 bg-gradient-subtle relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 right-10 w-24 h-24 bg-primary/10 rounded-full blur-xl float-gentle"></div>
@@ -34,7 +34,7 @@ const Philosophy = () => {
 
       <div className="container-wide relative z-10">
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div data-scroll className="space-y-6">
             <h2 className="heading-lg text-foreground mb-6 text-gradient">Our Philosophy</h2>
             <p className="body-lg text-foreground/80 mb-6">

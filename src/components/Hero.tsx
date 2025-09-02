@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-16 pb-8"
     >
       {/* Enhanced Background Elements with more dynamic animations */}
       <div className="absolute inset-0 opacity-30">
@@ -32,7 +32,7 @@ const Hero = () => {
       {/* Animated particles */}
       <div className="absolute inset-0 particles opacity-20"></div>
 
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 py-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Enhanced Content with staggered animations */}
           <div data-scroll className="space-y-8">

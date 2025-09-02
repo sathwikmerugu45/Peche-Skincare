@@ -32,7 +32,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-subtle relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-subtle relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/30 rounded-full blur-3xl float-3d"></div>
@@ -42,7 +42,7 @@ const Testimonials = () => {
 
       <div className="container-wide relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-scroll>
+        <div className="text-center mb-12" data-scroll>
           <div className="inline-flex items-center space-x-2 mb-4 glass-card px-4 py-2 rounded-full">
             <Quote className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Real Transformations</span>
@@ -128,7 +128,7 @@ const Testimonials = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-16 text-center" data-scroll>
+        <div className="mt-12 text-center" data-scroll>
           <div className="inline-flex items-center space-x-6 glass-card px-8 py-4 rounded-full">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
