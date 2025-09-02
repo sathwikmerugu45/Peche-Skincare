@@ -2,9 +2,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingCart, Star, Heart, Eye, Sparkles } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   const products = [
     {
@@ -71,10 +73,11 @@ const Products = () => {
             <div 
               key={product.id}
               data-scroll
-              className="group glass-card rounded-3xl overflow-hidden shadow-float hover:shadow-xl transition-all duration-700 hover-lift depth-card perspective-1000 magnetic"
+              className="group glass-card rounded-3xl overflow-hidden shadow-float hover:shadow-xl transition-all duration-700 hover-lift depth-card perspective-1000 magnetic cursor-pointer"
               style={{ animationDelay: `${index * 0.15}s` }}
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
+              onClick={() => navigate(`/product/${product.id}`)}
             >
               {/* Enhanced Product Image Container */}
               <div className="relative overflow-hidden">
@@ -114,6 +117,10 @@ const Products = () => {
                       size="sm"
                       className="glass-card text-foreground hover:bg-primary hover:text-primary-foreground transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-glow hover-tilt btn-3d"
                       style={{ transitionDelay: '0.1s' }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/product/${product.id}`);
+                      }}
                     >
                       <Eye className="h-4 w-4" />
                     </Button>

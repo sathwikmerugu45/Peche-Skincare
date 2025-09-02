@@ -89,7 +89,7 @@ const Hero = () => {
           <div data-scroll className="relative">
             <div 
               ref={imageRef}
-              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105"
+              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105 tilt-3d perspective-2000"
             >
               <img 
                 src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200&q=80" 
@@ -146,7 +146,7 @@ const Hero = () => {
       {/* Background texture overlay */}
       <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-primary via-transparent to-accent mix-blend-overlay"></div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes shimmerEffect {
           0% { background-position: -200% 0; }
           100% { background-position: 200% 0; }
@@ -161,6 +161,26 @@ const Hero = () => {
           );
           background-size: 200% 100%;
           animation: shimmerEffect 3s infinite;
+        }
+        
+        @keyframes tilt3d {
+          0%, 100% {
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0);
+          }
+          25% {
+            transform: perspective(1200px) rotateX(3deg) rotateY(-2deg) translateZ(20px);
+          }
+          50% {
+            transform: perspective(1200px) rotateX(-2deg) rotateY(3deg) translateZ(15px);
+          }
+          75% {
+            transform: perspective(1200px) rotateX(2deg) rotateY(-3deg) translateZ(10px);
+          }
+        }
+        
+        .tilt-3d {
+          animation: tilt3d 8s ease-in-out infinite;
+          transform-style: preserve-3d;
         }
       `}</style>
     </section>
