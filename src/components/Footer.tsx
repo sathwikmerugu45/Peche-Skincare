@@ -16,7 +16,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+<footer className="bg-secondary text-secondary-foreground relative overflow-hidden border-t border-border shadow-[0_-6px_16px_rgba(255,115,92,0.15)]">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute bottom-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl float-gentle"></div>

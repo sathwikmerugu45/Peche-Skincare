@@ -45,7 +45,7 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="py-16 md:py-20 bg-background relative overflow-hidden">
+<section id="products" className="pt-16 pb-2 md:pt-12 md:pb-4 bg-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl float-3d"></div>

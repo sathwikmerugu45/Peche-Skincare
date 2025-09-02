@@ -58,11 +58,11 @@ const Philosophy = () => {
 
           <div data-scroll className="relative perspective-2000">
             <div 
-              className="rounded-3xl overflow-hidden shadow-float hover-tilt depth-card transition-all duration-700"
-              style={{ transformStyle: 'preserve-3d' }}
+              className="rounded-3xl overflow-hidden shadow-float  transition-all duration-700"
+              // style={{ transformStyle: 'preserve-3d' }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1570554886111-e80fcfa6a029?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+                src="https://thumbs.dreamstime.com/b/woman-face-beauty-skin-care-beautiful-girl-healthy-make-up-touching-makeup-hands-natural-skincare-treatment-woman-face-168156522.jpg" 
                 alt="Natural skincare ingredients"
                 className="w-full h-[400px] object-cover transition-transform duration-700 hover:scale-110 shimmer"
               />
