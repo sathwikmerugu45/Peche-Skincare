@@ -42,25 +42,25 @@ const Hero = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className="h-4 w-4 fill-current transition-all duration-300 hover:scale-125 hover:rotate-12" 
+                    className="h-4 w-4 fill-current transition-all duration-500 hover:scale-125 hover:rotate-12" 
                     style={{ animationDelay: `${i * 0.1}s` }}
                   />
                 ))}
               </div>
-              <span className="text-sm font-medium text-foreground/70 animate-pulse">
+              <span className="text-sm font-medium text-foreground/70 animate-pulse transition-all duration-500 hover:text-primary">
                 Trusted by 10,000+ customers
               </span>
             </div>
 
             {/* Enhanced Main Headline with gradient text */}
-            <h1 className="heading-xl text-gradient">
+            <h1 className="heading-xl text-gradient transition-all duration-700 hover:scale-105">
               Radiant Skin
               <br />
-              <span className="text-primary">Naturally Yours</span>
+              <span className="text-primary transition-all duration-700 hover:tracking-wider">Naturally Yours</span>
             </h1>
 
             {/* Enhanced Subtitle with typewriter effect */}
-            <p className="body-lg text-foreground/80 max-w-lg" data-scroll>
+            <p className="body-lg text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
               Discover the power of nature with our premium skincare collection. 
               Crafted with love, designed for your skin's unique needs.
             </p>
@@ -69,7 +69,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4" data-scroll>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow"
+                className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
               >
                 Shop Collection
                 <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
@@ -77,7 +77,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium glass-card hover-tilt magnetic"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium glass-card hover-tilt magnetic transition-all duration-500"
               >
                 Learn More
                 <Sparkles className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-180" />
@@ -89,12 +89,17 @@ const Hero = () => {
           <div data-scroll className="relative">
             <div 
               ref={imageRef}
-              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105 tilt-3d perspective-2000"
+              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105 perspective-2000"
+              style={{ 
+                transform: 'perspective(1200px) rotateY(-5deg) rotateX(3deg)',
+                transition: 'transform 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67), box-shadow 0.8s ease'
+              }}
             >
               <img 
                 src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200&q=80" 
                 alt="Luxury skincare products with natural ingredients"
                 className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-1000 shimmer"
+                style={{ transform: 'scale(1.05)' }}
               />
               
               {/* Enhanced gradient overlay */}
@@ -105,48 +110,47 @@ const Hero = () => {
             </div>
 
             {/* Enhanced Floating Elements with elegant animations */}
-            <div className="absolute -top-4 -right-4 glass-card rounded-2xl p-4 shadow-glow float-gentle hover-lift magnetic">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-foreground">100% Natural</span>
-              </div>
-              {/* Sparkle effect */}
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping"></div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 glass-card rounded-2xl p-4 shadow-glow float-bounce hover-lift magnetic" style={{ animationDelay: '1.5s' }}>
+            {/* <div className="absolute -top-4 -right-4 glass-card rounded-2xl p-4 shadow-glow float-gentle hover-lift magnetic transition-all duration-500"> */}
               {/* <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-foreground">Dermatologist Tested</span>
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse transition-all duration-500 hover:scale-125"></div>
+                <span className="text-sm font-medium text-foreground transition-all duration-500 hover:tracking-wider">100% Natural</span>
               </div> */}
               {/* Sparkle effect */}
+              {/* <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping"></div> */}
+            {/* </div> */}
+
+            {/* <div className="absolute -bottom-4 -left-4 glass-card rounded-2xl p-4 shadow-glow float-bounce hover-lift magnetic transition-all duration-500" style={{ animationDelay: '1.5s' }}>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse transition-all duration-500 hover:scale-125"></div>
+                <span className="text-sm font-medium text-foreground transition-all duration-500 hover:tracking-wider">Dermatologist Tested</span>
+              </div>
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-accent rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-            </div>
+            </div> */}
 
             {/* Additional floating badge */}
-            <div className="absolute top-1/2 -left-8 glass-card rounded-full p-3 shadow-deep float-gentle hover-lift magnetic" style={{ animationDelay: '2.5s' }}>
-              <Sparkles className="h-5 w-5 text-primary" />
-            </div>
+            {/* <div className="absolute top-1/2 -left-8 glass-card rounded-full p-3 shadow-deep float-gentle hover-lift magnetic transition-all duration-500" style={{ animationDelay: '2.5s' }}>
+              <Sparkles className="h-5 w-5 text-primary transition-all duration-500 hover:rotate-180" />
+            </div> */}
 
             {/* Animated light rays */}
-            <div className="absolute top-0 left-1/2 w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent transform -translate-x-1/2 animate-pulse"></div>
-            <div className="absolute bottom-0 right-1/4 w-1 h-16 bg-gradient-to-t from-accent/30 to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-0 left-1/2 w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent transform -translate-x-1/2 animate-pulse transition-all duration-500 hover:h-24"></div>
+            <div className="absolute bottom-0 right-1/4 w-1 h-16 bg-gradient-to-t from-accent/30 to-transparent animate-pulse transition-all duration-500 hover:h-20" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>
 
       {/* Enhanced Scroll Indicator with more dynamic animation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover-lift cursor-pointer">
+      {/* <div className="absolute bottom-8 left-1/2 tran5sform -translate-x-1/2 animate-bounce hover-lift cursor-pointer transition-all duration-500">
         <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center glass-card hover:shadow-glow transition-all duration-300">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse transition-all duration-500 hover:scale-125"></div>
         </div>
-        <div className="text-xs text-primary/70 mt-2 text-center animate-pulse">Scroll</div>
-      </div>
+        <div className="text-xs text-primary/70 mt-2 text-center animate-pulse transition-all duration-500 hover:text-primary">Scroll</div>
+      </div> */}
 
       {/* Background texture overlay */}
-      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-primary via-transparent to-accent mix-blend-overlay"></div>
+      <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-primary via-transparent to-accent mix-blend-overlay transition-all duration-1000 hover:opacity-10"></div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes shimmerEffect {
           0% { background-position: -200% 0; }
           100% { background-position: 200% 0; }
@@ -163,24 +167,14 @@ const Hero = () => {
           animation: shimmerEffect 3s infinite;
         }
         
-        @keyframes tilt3d {
-          0%, 100% {
-            transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0);
-          }
-          25% {
-            transform: perspective(1200px) rotateX(3deg) rotateY(-2deg) translateZ(20px);
-          }
-          50% {
-            transform: perspective(1200px) rotateX(-2deg) rotateY(3deg) translateZ(15px);
-          }
-          75% {
-            transform: perspective(1200px) rotateX(2deg) rotateY(-3deg) translateZ(10px);
-          }
+        /* Enhanced tilt animation */
+        .perspective-2000 {
+          perspective: 2000px;
         }
         
-        .tilt-3d {
-          animation: tilt3d 8s ease-in-out infinite;
-          transform-style: preserve-3d;
+        .depth-card:hover {
+          transform: perspective(1200px) rotateY(-8deg) rotateX(5deg) translateZ(20px) !important;
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 15px 35px rgba(0, 0, 0, 0.1) !important;
         }
       `}</style>
     </section>
