@@ -16,9 +16,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute bottom-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl float-gentle"></div>
+        <div className="absolute top-10 left-10 w-16 h-16 bg-accent/10 rounded-full blur-lg float-bounce" style={{ animationDelay: '1.5s' }}></div>
+      </div>
+
       {/* Main Footer */}
-      <div className="container-wide py-16">
+      <div className="container-wide py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
@@ -37,7 +43,7 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                  className="w-10 h-10 glass-card rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 hover-lift"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
@@ -48,14 +54,14 @@ const Footer = () => {
 
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <div key={category} data-scroll>
               <h4 className="font-semibold text-secondary-foreground mb-4">{category}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
                     <a 
                       href="#" 
-                      className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300"
+                      className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
                     >
                       {link}
                     </a>
@@ -68,20 +74,20 @@ const Footer = () => {
       </div>
 
       {/* Newsletter Section */}
-      <div className="border-t border-border">
+      <div className="border-t border-border relative z-10">
         <div className="container-wide py-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div>
+            <div data-scroll>
               <h4 className="font-semibold text-secondary-foreground mb-1">Stay in the glow</h4>
               <p className="text-secondary-foreground/70">Subscribe for skincare tips and exclusive offers.</p>
             </div>
-            <div className="flex w-full max-w-sm">
+            <div data-scroll className="flex w-full max-w-sm">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-background border border-border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-4 py-2 glass-card border border-border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <button className="px-6 py-2 bg-primary hover:bg-primary-dark text-primary-foreground rounded-r-lg transition-colors duration-300">
+              <button className="px-6 py-2 bg-primary hover:bg-primary-dark text-primary-foreground rounded-r-lg transition-colors duration-300 hover-lift">
                 Subscribe
               </button>
             </div>
@@ -90,7 +96,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-border">
+      <div className="border-t border-border relative z-10">
         <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-secondary-foreground/60 text-sm">

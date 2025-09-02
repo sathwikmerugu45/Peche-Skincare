@@ -1,4 +1,4 @@
-import { Leaf, Heart, Award, Shield } from 'lucide-react';
+import { Leaf, Heart, Award, Shield, Sparkles, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 
 const Philosophy = () => {
   const features = [
@@ -25,12 +25,18 @@ const Philosophy = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-subtle">
-      <div className="container-wide">
+    <section id="about" className="section-padding bg-gradient-subtle relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 right-10 w-24 h-24 bg-primary/10 rounded-full blur-xl float-gentle"></div>
+        <div className="absolute bottom-10 left-20 w-32 h-32 bg-accent/10 rounded-full blur-2xl float-bounce" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="container-wide relative z-10">
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <div data-scroll>
-            <h2 className="heading-lg text-foreground mb-6">Our Philosophy</h2>
+          <div data-scroll className="space-y-6">
+            <h2 className="heading-lg text-foreground mb-6 text-gradient">Our Philosophy</h2>
             <p className="body-lg text-foreground/80 mb-6">
               At Luxe Skincare, we believe that true beauty comes from within and radiates outward. 
               Our mission is to enhance your natural glow with products that nourish, protect, and celebrate your unique skin.
@@ -50,13 +56,27 @@ const Philosophy = () => {
             </div>
           </div>
 
-          <div data-scroll className="relative perspective-1000">
-            <div className="rounded-3xl overflow-hidden shadow-float hover-tilt depth-card">
+          <div data-scroll className="relative perspective-2000">
+            <div 
+              className="rounded-3xl overflow-hidden shadow-float hover-tilt depth-card transition-all duration-700"
+              style={{ transformStyle: 'preserve-3d' }}
+            >
               <img 
                 src="https://images.unsplash.com/photo-1570554886111-e80fcfa6a029?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
                 alt="Natural skincare ingredients"
                 className="w-full h-[400px] object-cover transition-transform duration-700 hover:scale-110 shimmer"
               />
+              
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10"></div>
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute -top-4 -right-4 glass-card rounded-2xl p-4 shadow-glow float-3d hover-lift magnetic">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-foreground">Eco-Friendly</span>
+              </div>
             </div>
           </div>
         </div>
@@ -67,7 +87,7 @@ const Philosophy = () => {
             <div 
               key={feature.title}
               data-scroll
-              className="text-center group perspective-1000"
+              className="text-center group perspective-1000 glass-card p-6 rounded-3xl hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="glass-card w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-500 hover-tilt">
@@ -82,5 +102,6 @@ const Philosophy = () => {
     </section>
   );
 };
+
 
 export default Philosophy;
