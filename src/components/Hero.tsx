@@ -48,21 +48,21 @@ const Hero = () => {
                 ))}
               </div>
               <span className="text-sm font-medium text-foreground/70 animate-pulse transition-all duration-500 hover:text-primary">
-                Trusted by 10,000+ customers
+                🏆 Trusted by 10,000+ Women Worldwide
               </span>
             </div>
 
             {/* Enhanced Main Headline with gradient text */}
             <h1 className="heading-xl text-gradient transition-all duration-700 hover:scale-105">
-              Radiant Skin
+              ✨ You've tried all the expensive skincare —
               <br />
-              <span className="text-primary transition-all duration-700 hover:tracking-wider">Naturally Yours</span>
+              <span className="text-primary transition-all duration-700 hover:tracking-wider">but your glow still isn't glowing?</span>
             </h1>
 
             {/* Enhanced Subtitle with typewriter effect */}
             <p className="body-lg text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
-              Discover the power of nature with our premium skincare collection. 
-              Crafted with love, designed for your skin's unique needs.
+              This $9 digital guide shows you what actually works — from the inside out — for melanin-rich skin.
+              Perfect for women who are tired of wasting money on routines that weren't made for our skin.
             </p>
 
             {/* Enhanced CTA Buttons with 3D effects */}
@@ -70,8 +70,9 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
+                onClick={() => window.open('https://payhip.com/b/1F28Z', '_blank')}
               >
-                Shop Collection
+                BUY PDF
                 <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
               </Button>
               <Button 
@@ -96,10 +97,10 @@ const Hero = () => {
               }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200&q=80" 
-                alt="Luxury skincare products with natural ingredients"
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 shimmer"
-                style={{ transform: 'scale(1.05)' }}
+                src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1400&q=80" 
+                alt="Melanin-rich skin transformation guide"
+                className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover object-center transition-transform duration-1000 shimmer"
+                style={{ transform: 'scale(1.02)', objectPosition: 'center top' }}
               />
               
               {/* Enhanced gradient overlay */}

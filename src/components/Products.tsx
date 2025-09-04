@@ -11,36 +11,38 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: 'Radiance Renewal Serum',
-      price: '$89',
-      originalPrice: '$120',
+      name: '🖤 Module 1: The Truth About Melanin-Rich Skin',
+      price: '$9',
+      originalPrice: '$49',
       rating: 4.9,
       reviews: 342,
       badge: 'Best Seller',
-      description: 'Transform your skin with our signature vitamin C serum, formulated with organic botanicals.',
+      description: 'Why most skincare routines don\'t work for us. Ingredients that secretly harm melanin. Decode skincare labels like a pro.',
       image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Vitamin C', 'Anti-aging', 'Brightening'],
+      features: ['Melanin-safe', 'Label decoding', 'Expert insights'],
     },
     {
       id: 2,
-      name: 'Gentle Cleansing Balm',
-      price: '$65',
+      name: '🧬 Module 2: Hormonal Balance & Skin Health',
+      price: '$9',
+      originalPrice: '$55',
       rating: 4.8,
       reviews: 189,
-      badge: 'New',
-      description: 'Melt away impurities with our nourishing cleansing balm enriched with natural oils.',
+      badge: 'Popular',
+      description: 'Gut-skin connection, stress, sleep. Rituals that reset you from within for lasting glow.',
       image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Natural oils', 'Deep cleanse', 'Moisturizing'],
+      features: ['Gut health', 'Stress management', 'Hormonal balance'],
     },
     {
       id: 3,
-      name: 'Hydrating Night Cream',
-      price: '$78',
+      name: '💗 Module 3: Emotional Healing for Skin Confidence',
+      price: '$9',
+      originalPrice: '$47',
       rating: 4.9,
       reviews: 267,
-      description: 'Restore and replenish your skin overnight with our intensive moisture complex.',
+      description: 'Release skin shame & mirror trauma. Journal + inner child prompts for true healing.',
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Night repair', 'Hydrating', 'Anti-aging'],
+      features: ['Emotional healing', 'Self-confidence', 'Inner work'],
     },
   ];
 
@@ -60,10 +62,10 @@ const Products = () => {
             <Sparkles className="h-4 w-4 text-primary animate-spin" style={{ animationDuration: '3s' }} />
             <span className="text-sm font-medium text-primary">Premium Collection</span>
           </div>
-          <h2 className="heading-lg text-gradient mb-6">Our Premium Collection</h2>
+          <h2 className="heading-lg text-gradient mb-6">🧠 What Makes This Different?</h2>
           <p className="body-lg text-foreground/80 max-w-2xl mx-auto">
-            Discover our carefully curated selection of skincare essentials, each formulated 
-            to deliver visible results and lasting beauty.
+            This isn't a list of products. It's a blueprint to heal your skin from the inside out — 
+            by understanding your triggers, patterns, and emotions that affect your glow.
           </p>
         </div>
 

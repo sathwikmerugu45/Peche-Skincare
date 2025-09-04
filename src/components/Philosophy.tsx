@@ -4,23 +4,23 @@ const Philosophy = () => {
   const features = [
     {
       icon: Leaf,
-      title: 'Natural Ingredients',
-      description: 'Sourced from organic farms worldwide, our ingredients are pure and sustainable.',
+      title: 'Melanin-Safe Ingredients',
+      description: 'Carefully selected ingredients that work specifically for melanin-rich skin types.',
     },
     {
       icon: Heart,
-      title: 'Made with Love',
-      description: 'Every product is crafted with care and attention to detail in small batches.',
+      title: 'Inside-Out Healing',
+      description: 'Heal your skin barrier naturally by understanding your unique triggers and patterns.',
     },
     {
       icon: Award,
-      title: 'Award Winning',
-      description: 'Recognized by beauty experts and loved by customers around the globe.',
+      title: 'Proven Results',
+      description: 'Trusted by 10,000+ women worldwide. Winner of The Rising SME — Beauty & Wellness Products, 2020.',
     },
     {
       icon: Shield,
-      title: 'Dermatologist Tested',
-      description: 'All products are clinically tested and approved by certified dermatologists.',
+      title: 'Risk-Free Guarantee',
+      description: 'If it doesn\'t help, just message me. I want you to feel confident, not confused.',
     },
   ];
 
@@ -36,22 +36,24 @@ const Philosophy = () => {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div data-scroll className="space-y-6 text-center lg:text-left order-2 lg:order-1">
-            <h2 className="heading-lg text-foreground mb-6 text-gradient">Our Philosophy</h2>
+            <h2 className="heading-lg text-foreground mb-6 text-gradient">💛 Why I Created This</h2>
             <p className="body-lg text-foreground/80 mb-6">
-              At Luxe Skincare, we believe that true beauty comes from within and radiates outward. 
-              Our mission is to enhance your natural glow with products that nourish, protect, and celebrate your unique skin.
+              I used to feel ashamed of my bare skin — hiding behind filters and whitening creams that only made things worse.
+              Skincare advice never spoke to us. So I made the thing I wish I had.
             </p>
             
             <div className="space-y-4">
-              <h3 className="heading-sm text-foreground">Crafted for Your Skin's Journey</h3>
+              <h3 className="heading-sm text-foreground">🔥 Why This Guide Works</h3>
               <p className="body-base text-foreground/70 leading-relaxed">
-                We understand that every skin is unique, with its own story and needs. That's why we've 
-                dedicated ourselves to creating products that work in harmony with your skin's natural processes, 
-                not against them.
+                ✔️ Built for melanin-rich skin — not a copy-paste routine<br/>
+                ✔️ Glow naturally by healing your skin barrier<br/>
+                ✔️ No more expensive trial & error<br/>
+                ✔️ Based on real results, not marketing hype<br/>
+                ✔️ Download instantly — from anywhere in the world
               </p>
               <p className="body-base text-foreground/70 leading-relaxed">
-                From our sustainable sourcing practices to our innovative formulations, every step of our 
-                process is guided by our commitment to quality, efficacy, and environmental responsibility.
+                From India to Africa to Southeast Asia — we deserve to glow, naturally.
+                A real, melanin-safe guide rooted in healing, not shame.
               </p>
             </div>
           </div>

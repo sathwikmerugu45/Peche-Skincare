@@ -4,30 +4,30 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Priya Sharma",
-      location: "Mumbai, India",
+      name: "Priya",
+      location: "🇮🇳 Mumbai",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       rating: 5,
-      text: "This guide taught me my skin didn't need more — it needed healing. My melanin-rich skin finally has the glow I've always wanted.",
-      transformation: "3 weeks to clear, radiant skin"
+      text: "This guide taught me my skin didn't need more — it needed healing.",
+      transformation: "After healing naturally — no more filters needed"
     },
     {
       id: 2,
-      name: "Adaora Okafor",
-      location: "Lagos, Nigeria",
+      name: "Adaora", 
+      location: "🇳🇬 Lagos",
       avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       rating: 5,
-      text: "I thought hyperpigmentation was normal. This changed everything. Finally, skincare that understands melanin-rich skin.",
-      transformation: "From irritated to calm, confident skin"
+      text: "I thought hyperpigmentation was normal. This changed everything.",
+      transformation: "From irritated skin to calm, clear confidence"
     },
     {
       id: 3,
-      name: "Thando Williams",
-      location: "Cape Town, South Africa",
+      name: "Thando",
+      location: "🇿🇦 Cape Town", 
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       rating: 5,
-      text: "It's not just skincare — it's soul work. Every melanin queen needs this guide. My confidence has transformed completely.",
-      transformation: "Glow results without harsh actives"
+      text: "It's not just skincare — it's soul work. Every melanin queen needs this.",
+      transformation: "Glow results in 3 weeks — without harsh actives"
     }
   ];
 
@@ -47,9 +47,9 @@ const Testimonials = () => {
             <Quote className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Real Transformations</span>
           </div>
-          <h2 className="heading-lg text-gradient mb-6">What Melanin Queens Are Saying</h2>
+          <h2 className="heading-lg text-gradient mb-6">💬 What Melanin Queens Are Saying</h2>
           <p className="body-lg text-foreground/80 max-w-2xl mx-auto">
-            Real women, real results. Discover how our melanin-safe approach is transforming skin journeys worldwide.
+            Real transformations from women who've healed their melanin-rich skin naturally.
           </p>
         </div>
 
