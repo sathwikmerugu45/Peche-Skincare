@@ -59,13 +59,13 @@ const Navigation = () => {
           {/* Enhanced Logo with 3D effects */}
           <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow float-3d hover-lift magnetic transition-all duration-500 group-hover:shadow-xl">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow float-3d hover-lift magnetic transition-all duration-500 group-hover:shadow-xl">
                 <Sparkles className="h-5 w-5 text-primary-foreground transition-transform duration-500 group-hover:rotate-180 group-hover:scale-110" />
               </div>
               {/* Animated glow ring */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-50 transition-opacity duration-500 animate-spin" style={{ animationDuration: '3s' }}></div>
             </div>
-            <span className="text-lg sm:text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
+            <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
               Luxe Skincare
             </span>
           </div>
@@ -80,7 +80,7 @@ const Navigation = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`relative text-foreground/80 hover:text-primary transition-all duration-500 font-medium group hover-tilt magnetic ${
+                className={`relative text-sm lg:text-base text-foreground/80 hover:text-primary transition-all duration-500 font-medium group hover-tilt magnetic ${
                   activeSection === item.href.slice(1) ? 'text-primary' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -102,7 +102,7 @@ const Navigation = () => {
 
           {/* Enhanced CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-6 shadow-glow hover:shadow-xl transition-all duration-500 hover-lift btn-3d magnetic relative overflow-hidden group">
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-4 lg:px-6 text-sm lg:text-base shadow-glow hover:shadow-xl transition-all duration-500 hover-lift btn-3d magnetic relative overflow-hidden group">
               <span className="relative z-10">Shop Now</span>
               
               {/* Animated background */}
@@ -116,9 +116,9 @@ const Navigation = () => {
           {/* Enhanced Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-all duration-300 hover-tilt magnetic relative"
+            className="md:hidden p-1.5 sm:p-2 text-foreground hover:text-primary transition-all duration-300 hover-tilt magnetic relative"
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6">
               <Menu className={`h-6 w-6 absolute transition-all duration-500 ${
                 isMenuOpen ? 'opacity-0 rotate-180 scale-50' : 'opacity-100 rotate-0 scale-100'
               }`} />
@@ -135,7 +135,7 @@ const Navigation = () => {
             ? 'opacity-100 scale-y-100 translate-y-0' 
             : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'
         }`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-2">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-6 space-y-1 sm:space-y-2">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
@@ -144,7 +144,7 @@ const Navigation = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`block text-foreground/80 hover:text-primary transition-all duration-500 font-medium py-3 px-4 rounded-lg hover:bg-primary/5 magnetic relative group ${
+                className={`block text-foreground/80 hover:text-primary transition-all duration-500 font-medium py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-primary/5 magnetic relative group ${
                   activeSection === item.href.slice(1) ? 'text-primary bg-primary/5' : ''
                 }`}
                 style={{ 
@@ -163,7 +163,7 @@ const Navigation = () => {
             ))}
             
             {/* Mobile CTA Button */}
-            <div className="pt-4">
+            <div className="pt-2 sm:pt-4">
               <Button 
                 className="w-full bg-primary hover:bg-primary-dark text-primary-foreground font-medium shadow-glow hover:shadow-xl transition-all duration-500 btn-3d relative overflow-hidden group"
                 style={{ 

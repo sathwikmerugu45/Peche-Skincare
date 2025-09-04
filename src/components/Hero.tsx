@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-20 pb-8 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-16 pb-4 px-4 sm:px-6 lg:px-8"
     >
       {/* Enhanced Background Elements with more dynamic animations */}
       <div className="absolute inset-0 opacity-30">
@@ -32,41 +32,40 @@ const Hero = () => {
       {/* Animated particles */}
       <div className="absolute inset-0 particles opacity-20"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10 py-4 sm:py-8">
+      <div className="max-w-7xl mx-auto relative z-10 py-2 sm:py-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Enhanced Content with staggered animations */}
-          <div data-scroll className="space-y-6 sm:space-y-8 text-center lg:text-left">
+          <div data-scroll className="space-y-4 sm:space-y-6 text-center lg:text-left">
             {/* Enhanced Trust Badge with glow effect */}
-            <div className="flex items-center justify-center lg:justify-start space-x-2 text-primary mb-4 sm:mb-6 glow-pulse">
+            <div className="flex items-center justify-center lg:justify-start space-x-2 text-primary mb-2 sm:mb-4 glow-pulse">
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className="h-4 w-4 fill-current transition-all duration-500 hover:scale-125 hover:rotate-12" 
+                    className="h-3 w-3 sm:h-4 sm:w-4 fill-current transition-all duration-500 hover:scale-125 hover:rotate-12" 
                     style={{ animationDelay: `${i * 0.1}s` }}
                   />
                 ))}
               </div>
-              <span className="text-sm font-medium text-foreground/70 animate-pulse transition-all duration-500 hover:text-primary">
+              <span className="text-xs sm:text-sm font-medium text-foreground/70 animate-pulse transition-all duration-500 hover:text-primary">
                 🏆 Trusted by 10,000+ Women Worldwide
               </span>
             </div>
 
             {/* Enhanced Main Headline with gradient text */}
-            <h1 className="heading-xl text-gradient transition-all duration-700 hover:scale-105">
-              ✨ You've tried all the expensive skincare —
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-gradient transition-all duration-700 hover:scale-105">
+              ✨ Tried expensive skincare —
               <br />
-              <span className="text-primary transition-all duration-700 hover:tracking-wider">but your glow still isn't glowing?</span>
+              <span className="text-primary transition-all duration-700 hover:tracking-wider">but still no glow?</span>
             </h1>
 
             {/* Enhanced Subtitle with typewriter effect */}
-            <p className="body-lg text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
-              This $9 digital guide shows you what actually works — from the inside out — for melanin-rich skin.
-              Perfect for women who are tired of wasting money on routines that weren't made for our skin.
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
+              This $9 guide shows what actually works for melanin-rich skin — from the inside out.
             </p>
 
             {/* Enhanced CTA Buttons with 3D effects */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start" data-scroll>
+            <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start" data-scroll>
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
@@ -90,7 +89,7 @@ const Hero = () => {
           <div data-scroll className="relative">
             <div 
               ref={imageRef}
-              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105 perspective-2000"
+              className="relative rounded-3xl overflow-hidden shadow-float depth-card transition-all duration-700 hover:scale-105 perspective-2000 max-w-md mx-auto lg:max-w-none"
               style={{ 
                 transform: 'perspective(1200px) rotateY(-5deg) rotateX(3deg)',
                 transition: 'transform 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67), box-shadow 0.8s ease'
@@ -99,7 +98,7 @@ const Hero = () => {
               <img 
                 src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1400&q=80" 
                 alt="Melanin-rich skin transformation guide"
-                className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover object-center transition-transform duration-1000 shimmer"
+                className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover object-center transition-transform duration-1000 shimmer"
                 style={{ transform: 'scale(1.02)', objectPosition: 'center top' }}
               />
               
@@ -134,8 +133,8 @@ const Hero = () => {
             </div> */}
 
             {/* Animated light rays */}
-            <div className="absolute top-0 left-1/2 w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent transform -translate-x-1/2 animate-pulse transition-all duration-500 hover:h-24"></div>
-            <div className="absolute bottom-0 right-1/4 w-1 h-16 bg-gradient-to-t from-accent/30 to-transparent animate-pulse transition-all duration-500 hover:h-20" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-0 left-1/2 w-1 h-12 sm:h-20 bg-gradient-to-b from-primary/30 to-transparent transform -translate-x-1/2 animate-pulse transition-all duration-500 hover:h-16 sm:hover:h-24"></div>
+            <div className="absolute bottom-0 right-1/4 w-1 h-10 sm:h-16 bg-gradient-to-t from-accent/30 to-transparent animate-pulse transition-all duration-500 hover:h-12 sm:hover:h-20" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>
@@ -176,6 +175,13 @@ const Hero = () => {
         .depth-card:hover {
           transform: perspective(1200px) rotateY(-8deg) rotateX(5deg) translateZ(20px) !important;
           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+          .depth-card:hover {
+            transform: perspective(1200px) rotateY(-3deg) rotateX(2deg) translateZ(10px) !important;
+          }
         }
       `}</style>
     </section>
