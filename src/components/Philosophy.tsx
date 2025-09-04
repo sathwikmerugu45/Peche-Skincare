@@ -36,7 +36,7 @@ const Philosophy = () => {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div data-scroll className="space-y-6 text-center lg:text-left order-2 lg:order-1">
-            <h2 className="heading-lg text-foreground mb-6 text-gradient">💛 Why I Created This</h2>
+            <h2 className="heading-lg text-foreground mb-6 text-gradient"> Why I Created This</h2>
             <p className="body-lg text-foreground/80 mb-6">
               I used to feel ashamed of my bare skin — hiding behind filters and whitening creams that only made things worse.
               Skincare advice never spoke to us. So I made the thing I wish I had.

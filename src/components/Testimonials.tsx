@@ -47,7 +47,7 @@ const Testimonials = () => {
             <Quote className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Real Transformations</span>
           </div>
-          <h2 className="heading-lg text-gradient mb-6">💬 What Melanin Queens Are Saying</h2>
+          <h2 className="heading-lg text-gradient mb-6"> What Melanin Queens Are Saying</h2>
           <p className="body-lg text-foreground/80 max-w-2xl mx-auto">
             Real transformations from women who've healed their melanin-rich skin naturally.
           </p>

@@ -62,7 +62,7 @@ const Products = () => {
             <Sparkles className="h-4 w-4 text-primary animate-spin" style={{ animationDuration: '3s' }} />
             <span className="text-sm font-medium text-primary">Premium Collection</span>
           </div>
-          <h2 className="heading-lg text-gradient mb-6">🧠 What Makes This Different?</h2>
+          <h2 className="heading-lg text-gradient mb-6">What Makes This Different?</h2>
           <p className="body-lg text-foreground/80 max-w-2xl mx-auto">
             This isn't a list of products. It's a blueprint to heal your skin from the inside out — 
             by understanding your triggers, patterns, and emotions that affect your glow.
