@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-16 pb-8"
+      className="relative min-h-screen flex items-center bg-gradient-warm overflow-hidden pt-20 pb-8 px-4 sm:px-6 lg:px-8"
     >
       {/* Enhanced Background Elements with more dynamic animations */}
       <div className="absolute inset-0 opacity-30">
@@ -32,12 +32,12 @@ const Hero = () => {
       {/* Animated particles */}
       <div className="absolute inset-0 particles opacity-20"></div>
 
-      <div className="container-wide relative z-10 py-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto relative z-10 py-4 sm:py-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Enhanced Content with staggered animations */}
-          <div data-scroll className="space-y-8">
+          <div data-scroll className="space-y-6 sm:space-y-8 text-center lg:text-left">
             {/* Enhanced Trust Badge with glow effect */}
-            <div className="flex items-center space-x-2 text-primary mb-6 glow-pulse">
+            <div className="flex items-center justify-center lg:justify-start space-x-2 text-primary mb-4 sm:mb-6 glow-pulse">
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star 
@@ -66,7 +66,7 @@ const Hero = () => {
             </p>
 
             {/* Enhanced CTA Buttons with 3D effects */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4" data-scroll>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start" data-scroll>
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
@@ -98,7 +98,7 @@ const Hero = () => {
               <img 
                 src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=1200&q=80" 
                 alt="Luxury skincare products with natural ingredients"
-                className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-1000 shimmer"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 shimmer"
                 style={{ transform: 'scale(1.05)' }}
               />
               
@@ -150,7 +150,7 @@ const Hero = () => {
       {/* Background texture overlay */}
       <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-primary via-transparent to-accent mix-blend-overlay transition-all duration-1000 hover:opacity-10"></div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes shimmerEffect {
           0% { background-position: -200% 0; }
           100% { background-position: 200% 0; }

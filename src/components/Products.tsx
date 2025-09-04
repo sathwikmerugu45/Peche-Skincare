@@ -68,7 +68,7 @@ const Products = () => {
         </div>
 
         {/* Enhanced Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {products.map((product, index) => (
             <div 
               key={product.id}
@@ -112,7 +112,7 @@ const Products = () => {
 
                 {/* Enhanced Action Buttons Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="flex space-x-3">
+                  <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
                     <Button 
                       size="sm"
                       className="glass-card text-foreground hover:bg-primary hover:text-primary-foreground transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-glow hover-tilt btn-3d"
@@ -148,7 +148,7 @@ const Products = () => {
               </div>
 
               {/* Enhanced Product Info */}
-              <div className="p-6 relative">
+              <div className="p-4 sm:p-6 relative">
                 {/* Animated rating with individual star animations */}
                 <div className="flex items-center space-x-2 mb-3">
                   <div className="flex items-center">
@@ -184,7 +184,7 @@ const Products = () => {
                 </div>
 
                 {/* Enhanced Price and Action */}
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
                   <div className="flex items-center space-x-2">
                     <span className="heading-sm text-primary font-semibold group-hover:text-gradient transition-all duration-300">{product.price}</span>
                     {product.originalPrice && (

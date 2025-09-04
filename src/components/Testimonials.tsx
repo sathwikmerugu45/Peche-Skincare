@@ -54,12 +54,12 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
               data-scroll
-              className="group glass-card rounded-3xl p-8 shadow-float hover:shadow-glow transition-all duration-700 hover-lift depth-card perspective-1000"
+              className="group glass-card rounded-3xl p-6 sm:p-8 shadow-float hover:shadow-glow transition-all duration-700 hover-lift depth-card perspective-1000"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Quote Icon */}
@@ -129,7 +129,7 @@ const Testimonials = () => {
 
         {/* Trust Indicators */}
         <div className="mt-12 text-center" data-scroll>
-          <div className="inline-flex items-center space-x-6 glass-card px-8 py-4 rounded-full">
+          <div className="inline-flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 glass-card px-4 sm:px-8 py-4 rounded-full text-center sm:text-left">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-foreground">Trusted by 10,000+ Women</span>

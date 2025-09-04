@@ -24,11 +24,11 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="container-wide py-12 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center space-x-2">
+          <div className="col-span-2 md:col-span-2 lg:col-span-2 space-y-4 sm:space-y-6 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-2">
               <Sparkles className="h-6 w-6 text-primary" />
               <span className="heading-sm font-medium">Luxe Skincare</span>
             </div>
@@ -38,7 +38,7 @@ const Footer = () => {
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} data-scroll>
+            <div key={category} data-scroll className="text-center md:text-left">
               <h4 className="font-semibold text-secondary-foreground mb-4">{category}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
@@ -75,8 +75,8 @@ const Footer = () => {
 
       {/* Newsletter Section */}
       <div className="border-t border-border relative z-10">
-        <div className="container-wide py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-center md:text-left">
             <div data-scroll>
               <h4 className="font-semibold text-secondary-foreground mb-1">Stay in the glow</h4>
               <p className="text-secondary-foreground/70">Subscribe for skincare tips and exclusive offers.</p>
@@ -97,8 +97,8 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-border relative z-10">
-        <div className="container-wide py-4">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 text-center md:text-left">
             <p className="text-secondary-foreground/60 text-sm">
               © 2024 Luxe Skincare. All rights reserved.
             </p>

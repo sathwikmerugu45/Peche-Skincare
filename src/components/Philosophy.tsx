@@ -34,8 +34,8 @@ const Philosophy = () => {
 
       <div className="container-wide relative z-10">
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div data-scroll className="space-y-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+          <div data-scroll className="space-y-6 text-center lg:text-left order-2 lg:order-1">
             <h2 className="heading-lg text-foreground mb-6 text-gradient">Our Philosophy</h2>
             <p className="body-lg text-foreground/80 mb-6">
               At Luxe Skincare, we believe that true beauty comes from within and radiates outward. 
@@ -56,7 +56,7 @@ const Philosophy = () => {
             </div>
           </div>
 
-          <div data-scroll className="relative perspective-2000">
+          <div data-scroll className="relative perspective-2000 order-1 lg:order-2">
             <div 
               className="rounded-3xl overflow-hidden shadow-float  transition-all duration-700"
               // style={{ transformStyle: 'preserve-3d' }}
@@ -64,7 +64,7 @@ const Philosophy = () => {
               <img 
                 src="https://thumbs.dreamstime.com/b/woman-face-beauty-skin-care-beautiful-girl-healthy-make-up-touching-makeup-hands-natural-skincare-treatment-woman-face-168156522.jpg" 
                 alt="Natural skincare ingredients"
-                className="w-full h-[400px] object-cover transition-transform duration-700 hover:scale-110 shimmer"
+                className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover transition-transform duration-700 hover:scale-110 shimmer"
               />
               
               {/* Gradient overlay */}
@@ -82,12 +82,12 @@ const Philosophy = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div 
               key={feature.title}
               data-scroll
-              className="text-center group perspective-1000 glass-card p-6 rounded-3xl hover-lift"
+              className="text-center group perspective-1000 glass-card p-4 sm:p-6 rounded-3xl hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="glass-card w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-500 hover-tilt">

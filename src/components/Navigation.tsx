@@ -54,8 +54,8 @@ const Navigation = () => {
         ? 'glass-card shadow-xl backdrop-blur-2xl border-b border-primary/10' 
         : 'bg-transparent'
     }`}>
-      <div className="container-wide">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Enhanced Logo with 3D effects */}
           <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
@@ -65,7 +65,7 @@ const Navigation = () => {
               {/* Animated glow ring */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-50 transition-opacity duration-500 animate-spin" style={{ animationDuration: '3s' }}></div>
             </div>
-            <span className="text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
+            <span className="text-lg sm:text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
               Luxe Skincare
             </span>
           </div>
@@ -135,7 +135,7 @@ const Navigation = () => {
             ? 'opacity-100 scale-y-100 translate-y-0' 
             : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'
         }`}>
-          <div className="container-wide py-6 space-y-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-2">
             {navItems.map((item, index) => (
               <a
                 key={item.name}
