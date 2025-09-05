@@ -1,9 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, Sparkles } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Add a gentle pulsing animation to the image container
@@ -69,7 +71,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
-                onClick={() => window.open('https://payhip.com/b/1F28Z', '_blank')}
+                onClick={() => navigate('/product')}
               >
                 BUY PDF
                 <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
