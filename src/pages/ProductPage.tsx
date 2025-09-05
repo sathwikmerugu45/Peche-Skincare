@@ -190,6 +190,209 @@ const ProductPage = () => {
         </div>
       </section>
 
+      {/* Transformation Results */}
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <Badge className="bg-primary/20 text-primary font-semibold mb-4">
+              <Award className="h-4 w-4 mr-2" />
+              Real Transformations
+            </Badge>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              See The Glow Transformation
+            </h2>
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
+              These women followed the guide and achieved the natural glow they always wanted. 
+              No filters, no editing — just real results from healing their skin naturally.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Transformation 1 */}
+            <Card className="glass-card overflow-hidden group hover:shadow-2xl transition-all duration-500">
+              <div className="relative">
+                <div className="grid grid-cols-2 h-64">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1594824609615-2d8b2de1f4d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="Before transformation"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 left-2">
+                      <Badge className="bg-red-500/80 text-white text-xs">Before</Badge>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="After transformation"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 right-2">
+                      <Badge className="bg-green-500/80 text-white text-xs">After</Badge>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="Priya"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Priya S.</h4>
+                    <p className="text-sm text-foreground/60">Mumbai, India</p>
+                  </div>
+                </div>
+                <Quote className="h-5 w-5 text-primary mb-3" />
+                <blockquote className="text-foreground/90 italic mb-4 leading-relaxed">
+                  "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing. Now I wake up confident in my bare skin. The hyperpigmentation that bothered me for years has faded naturally."
+                </blockquote>
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-primary fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-foreground/60">3 weeks later</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Transformation 2 */}
+            <Card className="glass-card overflow-hidden group hover:shadow-2xl transition-all duration-500">
+              <div className="relative">
+                <div className="grid grid-cols-2 h-64">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1601999454167-715ea4ff7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="Before transformation"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 left-2">
+                      <Badge className="bg-red-500/80 text-white text-xs">Before</Badge>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="After transformation"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 right-2">
+                      <Badge className="bg-green-500/80 text-white text-xs">After</Badge>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="Adaora"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Adaora O.</h4>
+                    <p className="text-sm text-foreground/60">Lagos, Nigeria</p>
+                  </div>
+                </div>
+                <Quote className="h-5 w-5 text-primary mb-3" />
+                <blockquote className="text-foreground/90 italic mb-4 leading-relaxed">
+                  "I thought my dark spots and uneven skin tone were just something I had to live with. This guide completely changed my perspective. The emotional healing part was just as important as the skincare routine. I finally love what I see in the mirror."
+                </blockquote>
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-primary fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-foreground/60">6 weeks later</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Transformation 3 */}
+            <Card className="glass-card overflow-hidden group hover:shadow-2xl transition-all duration-500">
+              <div className="relative">
+                <div className="grid grid-cols-2 h-64">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="Before transformation"
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 left-2">
+                      <Badge className="bg-red-500/80 text-white text-xs">Before</Badge>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600&q=80"
+                      alt="After transformation"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute top-2 right-2">
+                      <Badge className="bg-green-500/80 text-white text-xs">After</Badge>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="Thando"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-foreground">Thando W.</h4>
+                    <p className="text-sm text-foreground/60">Cape Town, South Africa</p>
+                  </div>
+                </div>
+                <Quote className="h-5 w-5 text-primary mb-3" />
+                <blockquote className="text-foreground/90 italic mb-4 leading-relaxed">
+                  "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress and gut health. Once I addressed the root causes, my skin transformed. Every melanin queen needs this guide."
+                </blockquote>
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-primary fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-foreground/60">4 weeks later</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Stats Section */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">10,000+</div>
+              <div className="text-sm text-foreground/70">Women Transformed</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">4.9★</div>
+              <div className="text-sm text-foreground/70">Average Rating</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">3-6</div>
+              <div className="text-sm text-foreground/70">Weeks to See Results</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">97%</div>
+              <div className="text-sm text-foreground/70">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Modules Content */}
       <section className="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl">
