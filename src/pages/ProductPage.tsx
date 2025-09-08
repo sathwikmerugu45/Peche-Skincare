@@ -47,7 +47,7 @@ const ProductPage = () => {
       <Navigation />
       
       {/* Hero Section - Optimized Layout */}
-      <section className="pt-20 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="pt-16 pb-4 md:pt-20 md:pb-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[calc(100vh-5rem)] lg:min-h-[calc(100vh-6rem)]">
             {/* Product Info - Now First on Mobile */}
@@ -160,7 +160,7 @@ const ProductPage = () => {
       </section>
 
       {/* Trust Indicators - Compact */}
-      <section className="py-4 md:py-6 bg-background border-y">
+      <section className="py-2 md:py-3 bg-background border-y">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12">
             {[
@@ -179,7 +179,7 @@ const ProductPage = () => {
       </section>
 
       {/* What Makes This Different - Compact */}
-      <section className="py-8 md:py-12 bg-gradient-to-b from-background to-primary/5">
+      <section className="py-4 md:py-6 bg-gradient-to-b from-background to-primary/5">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">What Makes This Different?</h2>
@@ -221,7 +221,7 @@ const ProductPage = () => {
       </section>
 
       {/* Transformation Results - Mobile Optimized */}
-      <section className="py-12 md:py-8 lg:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-6 md:py-4 lg:py-8 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <Badge className="inline-flex bg-primary/20 text-primary font-semibold mb-4 py-1.5 px-4">
@@ -332,7 +332,7 @@ const ProductPage = () => {
       </section>
 
       {/* Modules Content - Compact */}
-      <section className="py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-4 md:py-6 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">What's Inside — Complete System</h2>
@@ -423,7 +423,7 @@ const ProductPage = () => {
       </section>
 
       {/* Bonuses Section - Mobile Friendly */}
-      <section className="py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-6 md:py-8 lg:py-10 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="border-2 border-accent/30 rounded-2xl shadow-2xl bg-white overflow-hidden">
             <div className="p-6 md:p-8 lg:p-12">
@@ -482,7 +482,7 @@ const ProductPage = () => {
       </section>
 
       {/* Testimonials - Simplified */}
-      <section className="py-20 bg-gradient-to-br from-accent/5 to-primary/5">
+      <section className="py-8 bg-gradient-to-br from-accent/5 to-primary/5">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Real Results from Melanin Queens</h2>
@@ -526,7 +526,7 @@ const ProductPage = () => {
       </section>
 
       {/* FAQ - Compact */}
-      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Frequently Asked Questions</h2>
@@ -577,7 +577,7 @@ const ProductPage = () => {
       </section>
 
       {/* Alternative Payment - Compact */}
-      <section className="py-10 md:py-12 bg-background">
+      <section className="py-6 md:py-8 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <Card className="border-2 border-primary/20 shadow-xl overflow-hidden">
             <CardContent className="p-6 md:p-8">
@@ -621,7 +621,7 @@ const ProductPage = () => {
       </section>
 
       {/* Final CTA - Compact */}
-      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
