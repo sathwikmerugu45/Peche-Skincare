@@ -49,20 +49,20 @@ const ProductPage = () => {
       {/* Hero Section - Optimized Layout */}
       <section className="pt-16 pb-4 md:pt-20 md:pb-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[calc(100vh-5rem)] lg:min-h-[calc(100vh-6rem)]">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center min-h-[60vh] lg:min-h-[70vh]">
             {/* Product Info - Now First on Mobile */}
-            <div className="space-y-4 md:space-y-5">
+            <div className="space-y-3 md:space-y-4">
               <Badge className="inline-flex bg-accent/20 text-accent-foreground py-1.5 px-4 text-sm font-medium">
                 <Timer className="h-3.5 w-3.5 mr-1.5" />
                 Limited Time: 76% OFF
               </Badge>
               
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                 34-Page Melanin-Rich Skin Glow Guide
-                <span className="text-primary block mt-3 text-2xl md:text-3xl lg:text-4xl">(+ 5 Free Bonuses)</span>
+                <span className="text-primary block mt-2 text-xl md:text-2xl lg:text-3xl">(+ 5 Free Bonuses)</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                 You've tried expensive skincare, but your glow still isn't glowing? This digital guide shows what actually works from the inside out — specifically for melanin-rich skin.
               </p>
               
@@ -80,7 +80,7 @@ const ProductPage = () => {
               </div>
 
               {/* Pricing Card */}
-              <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl p-4 md:p-6 border border-primary/10">
+              <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl p-3 md:p-5 border border-primary/10">
                 <div className="flex items-center justify-between mb-4 md:mb-6">
                   <div className="flex items-center gap-2 md:gap-3">
                     <span className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground/50 line-through">$37</span>
@@ -94,7 +94,7 @@ const ProductPage = () => {
                 
                 <Button 
                   onClick={handleBuyNow}
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 md:py-6 text-base md:text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 md:py-4 text-sm md:text-base rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                   Get Instant Access - $9
@@ -119,11 +119,11 @@ const ProductPage = () => {
 
             {/* Product Images */}
             <div className="relative">
-              <div className="relative group mb-4 md:mb-6">
+              <div className="relative group mb-3 md:mb-4">
                 <img 
                   src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&h=500&q=80"
                   alt="Skincare transformation results"
-                  className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-[250px] md:h-[300px] lg:h-[350px] object-cover rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-primary text-white font-semibold py-1 md:py-1.5 px-3 md:px-4 text-xs md:text-sm">
