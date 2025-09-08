@@ -97,7 +97,7 @@ const ProductPage = () => {
                   className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 md:py-6 text-base md:text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 mr-2" />
-                  Get Instant Access - \$9
+                  Get Instant Access - $9
                 </Button>
                 
                 <div className="grid grid-cols-3 gap-2 md:gap-4 text-center mt-4 md:mt-6">
@@ -221,7 +221,7 @@ const ProductPage = () => {
       </section>
 
       {/* Transformation Results - Mobile Optimized */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-12 md:py-8 lg:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <Badge className="inline-flex bg-primary/20 text-primary font-semibold mb-4 py-1.5 px-4">
@@ -344,7 +344,7 @@ const ProductPage = () => {
               {
                 module: "Module 1",
                 title: "The Truth About Melanin-Rich Skin",
-                price: "\$49",
+                price: "$49",
                 features: [
                   "Why most routines don't work for us",
                   "Ingredients that harm melanin",
@@ -355,7 +355,7 @@ const ProductPage = () => {
               {
                 module: "Module 2",
                 title: "Hormonal Balance & Skin Health",
-                price: "\$55",
+                price: "$55",
                 features: [
                   "Gut-skin connection mastery",
                   "Stress & sleep optimization",
@@ -366,7 +366,7 @@ const ProductPage = () => {
               {
                 module: "Module 3",
                 title: "Emotional Healing for Confidence",
-                price: "\$47",
+                price: "$47",
                 features: [
                   "Release skin shame & trauma",
                   "Confidence-building exercises",
@@ -377,7 +377,7 @@ const ProductPage = () => {
               {
                 module: "Module 4",
                 title: "Minimal Skincare That Works",
-                price: "\$44",
+                price: "$44",
                 features: [
                   "Melanin-safe ingredient layering",
                   "3-step routine system",
@@ -388,7 +388,7 @@ const ProductPage = () => {
               {
                 module: "Module 5",
                 title: "Confident Bare-Faced Living",
-                price: "\$50",
+                price: "$50",
                 features: [
                   "Show up confidently without makeup",
                   "Daily glow affirmations",
@@ -591,7 +591,7 @@ const ProductPage = () => {
                   <h4 className="font-bold text-foreground mb-6 text-xl">How It Works:</h4>
                   <div className="space-y-4">
                     {[
-                      "Transfer \$7.92 USD via Wise",
+                      "Transfer $7.92 USD via Wise",
                       "Send receipt + email to us",
                       "Get instant access to guide"
                     ].map((step, index) => (
@@ -611,7 +611,7 @@ const ProductPage = () => {
                     <p className="flex justify-between"><span className="font-medium">Bank:</span> <span className="text-foreground/80">CIMB</span></p>
                     <p className="flex justify-between"><span className="font-medium">Account:</span> <span className="text-foreground/80">7636550670</span></p>
                     <p className="flex justify-between"><span className="font-medium">Name:</span> <span className="text-foreground/80 text-sm">Farah Syafiqa Binti Mohamad Fakhri</span></p>
-                    <p className="flex justify-between"><span className="font-medium">Amount:</span> <span className="text-foreground/80 font-bold">\$7.92 USD</span></p>
+                    <p className="flex justify-between"><span className="font-medium">Amount:</span> <span className="text-foreground/80 font-bold">$7.92 USD</span></p>
                   </div>
                 </div>
               </div>
@@ -637,7 +637,7 @@ const ProductPage = () => {
                 <ArrowRight className="h-6 w-6 text-primary" />
                 <span className="text-5xl font-bold text-primary">$9</span>
               </div>
-              <Badge className="bg-red-500 text-white mb-6 py-1.5 px-4">Today Only - Returns to \$37 Soon</Badge>
+              <Badge className="bg-red-500 text-white mb-6 py-1.5 px-4">Today Only - Returns to $37 Soon</Badge>
               
               <Button 
                 onClick={handleBuyNow}
