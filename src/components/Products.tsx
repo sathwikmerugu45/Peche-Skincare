@@ -9,42 +9,46 @@ const Products = () => {
   const navigate = useNavigate();
 
   const products = [
-    {
-      id: 1,
-      name: '🖤 Module 1: The Truth About Melanin-Rich Skin',
-      price: '$9',
-      originalPrice: '$49',
-      rating: 4.9,
-      reviews: 342,
-      badge: 'Best Seller',
-      description: 'Why most skincare routines don\'t work for us. Ingredients that secretly harm melanin. Decode skincare labels like a pro.',
-      image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Melanin-safe', 'Label decoding', 'Expert insights'],
-    },
-    {
-      id: 2,
-      name: '🧬 Module 2: Hormonal Balance & Skin Health',
-      price: '$9',
-      originalPrice: '$55',
-      rating: 4.8,
-      reviews: 189,
-      badge: 'Popular',
-      description: 'Gut-skin connection, stress, sleep. Rituals that reset you from within for lasting glow.',
-      image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Gut health', 'Stress management', 'Hormonal balance'],
-    },
-    {
-      id: 3,
-      name: '💗 Module 3: Emotional Healing for Skin Confidence',
-      price: '$9',
-      originalPrice: '$47',
-      rating: 4.9,
-      reviews: 267,
-      description: 'Release skin shame & mirror trauma. Journal + inner child prompts for true healing.',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80',
-      features: ['Emotional healing', 'Self-confidence', 'Inner work'],
-    },
-  ];
+  {
+    id: 1,
+    name: '🖤 Module 1: The Truth About Melanin-Rich Skin',
+    price: '$9',
+    originalPrice: '$49',
+    rating: 4.9,
+    reviews: 342,
+    badge: 'Best Seller',
+    description:
+      "Why most skincare routines don't work for us. Ingredients that secretly harm melanin. Decode skincare labels like a pro.",
+    image: 'https://cdn-icons-png.flaticon.com/512/2111/2111463.png', // Instagram logo
+    features: ['Melanin-safe', 'Label decoding', 'Expert insights'],
+  },
+  {
+    id: 2,
+    name: '🧬 Module 2: Hormonal Balance & Skin Health',
+    price: '$9',
+    originalPrice: '$55',
+    rating: 4.8,
+    reviews: 189,
+    badge: 'Popular',
+    description:
+      'Gut-skin connection, stress, sleep. Rituals that reset you from within for lasting glow.',
+    image: 'https://cdn-icons-png.flaticon.com/512/733/733547.png', // Facebook logo
+    features: ['Gut health', 'Stress management', 'Hormonal balance'],
+  },
+  {
+    id: 3,
+    name: '💗 Module 3: Emotional Healing for Skin Confidence',
+    price: '$9',
+    originalPrice: '$47',
+    rating: 4.9,
+    reviews: 267,
+    description:
+      'Release skin shame & mirror trauma. Journal + inner child prompts for true healing.',
+    image: 'https://cdn-icons-png.flaticon.com/512/3046/3046122.png', // TikTok logo
+    features: ['Emotional healing', 'Self-confidence', 'Inner work'],
+  },
+];
+
 
   return (
 <section id="products" className="pt-16 pb-2 md:pt-12 md:pb-4 bg-background relative overflow-hidden">
@@ -62,11 +66,17 @@ const Products = () => {
             <Sparkles className="h-4 w-4 text-primary animate-spin" style={{ animationDuration: '3s' }} />
             <span className="text-sm font-medium text-primary">Premium Collection</span>
           </div>
-          <h2 className="heading-lg text-gradient mb-6">What Makes This Different?</h2>
-          <p className="body-lg text-foreground/80 max-w-2xl mx-auto">
-            This isn't a list of products. It's a blueprint to heal your skin from the inside out — 
-            by understanding your triggers, patterns, and emotions that affect your glow.
-          </p>
+          <h2 className="heading-lg text-gradient mb-6">UGC / Influencer Endorsement  / Social Proofs</h2>
+    <p className="body-lg text-foreground/80 max-w-7xl mx-auto leading-[1.8] text-center">
+  Showcased by real users and trusted influencers across Instagram and beyond, our modules are backed by genuine stories and community results. Join thousands who’ve shared their transformations and tagged us — <br />
+  discover why social buzz can’t get enough of our science-backed glow.
+</p>
+
+
+
+
+
+
         </div>
 
         {/* Enhanced Products Grid */}

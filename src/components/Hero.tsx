@@ -2,10 +2,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, Sparkles } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 const Hero = () => {
-  const imageRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const imageRef = useRef<HTMLDivElement>(null);
+  // const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Add a gentle pulsing animation to the image container
@@ -55,36 +55,42 @@ const Hero = () => {
             </div>
 
             {/* Enhanced Main Headline with gradient text */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-gradient transition-all duration-700 hover:scale-105">
-              ✨ Tried expensive skincare —
-              <br />
-              <span className="text-primary transition-all duration-700 hover:tracking-wider">but still no glow?</span>
-            </h1>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-gradient transition-all duration-700 hover:scale-105">
+  Tried expensive skincare —
+  <br />
+  <span className="text-primary transition-all duration-700 hover:tracking-wider block mt-1 lg:mt-4">
+    but still no glow?
+  </span>
+</h1>
+
 
             {/* Enhanced Subtitle with typewriter effect */}
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
-              This $9 guide shows what actually works for melanin-rich skin — from the inside out.
-            </p>
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground/80 max-w-lg transition-all duration-500 hover:text-foreground/90" data-scroll>
+  This <span className="font-semibold">$9</span> guide shows what actually works for melanin-rich skin — from the inside out.
+</p>
+
 
             {/* Enhanced CTA Buttons with 3D effects */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start" data-scroll>
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
-                onClick={() => navigate('/product')}
-              >
-                BUY PDF
-                <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium glass-card hover-tilt magnetic transition-all duration-500"
-              >
-                Learn More
-                <Sparkles className="ml-2 h-4 w-4 transition-all duration-300 group-hover:rotate-180" />
-              </Button>
-            </div>
+  <Button 
+    size="lg" 
+    className="px-8 py-4 text-lg bg-primary hover:bg-primary-dark text-primary-foreground font-medium group btn-3d hover-lift magnetic shadow-glow transition-all duration-500"
+   onClick={() => navigate('/product')}
+  >
+    BUY PDF
+    <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
+  </Button>
+  
+  <Button 
+    size="lg" 
+    variant="outline" 
+    className="px-8 py-4 text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium glass-card hover-tilt magnetic transition-all duration-500"
+  >
+    Learn More
+    <Sparkles className="ml-2 h-5 w-5 transition-all duration-300 group-hover:rotate-180" />
+  </Button>
+</div>
+
           </div>
 
           {/* Enhanced Hero Image with elegant animations */}

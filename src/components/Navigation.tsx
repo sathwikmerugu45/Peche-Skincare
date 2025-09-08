@@ -49,11 +49,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${
-      isScrolled 
-        ? 'glass-card shadow-xl backdrop-blur-2xl border-b border-primary/10' 
-        : 'bg-transparent'
-    }`}>
+   <nav className={`fixed top-0 w-full z-50 transition-all duration-700 shadow-md ${
+  isScrolled 
+    ? 'glass-card backdrop-blur-2xl border-b border-primary/10' 
+    : 'bg-transparent'
+}`}>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Enhanced Logo with 3D effects */}
@@ -66,7 +67,7 @@ const Navigation = () => {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-50 transition-opacity duration-500 animate-spin" style={{ animationDuration: '3s' }}></div>
             </div>
             <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
-              Luxe Skincare
+              Peche Skincare
             </span>
           </div>
 

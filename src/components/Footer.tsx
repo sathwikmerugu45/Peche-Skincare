@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-2 lg:col-span-2 space-y-4 sm:space-y-6 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <Sparkles className="h-6 w-6 text-primary" />
-              <span className="heading-sm font-medium">Luxe Skincare</span>
+              <span className="heading-sm font-medium">Peche Skincare</span>
             </div>
             <p className="text-secondary-foreground/80 leading-relaxed">
               Discover the power of nature with our premium skincare collection. 
@@ -100,7 +100,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 text-center md:text-left">
             <p className="text-secondary-foreground/60 text-sm">
-              © 2024 Luxe Skincare. All rights reserved.
+              © 2025 Peche Skincare. All rights reserved.
             </p>
             <p className="text-secondary-foreground/60 text-sm">
               Made with ❤️ for radiant skin
