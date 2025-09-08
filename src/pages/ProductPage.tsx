@@ -47,7 +47,7 @@ const ProductPage = () => {
       <Navigation />
       
       {/* Hero Section - Optimized Layout */}
-      <section className="pt-16 pb-4 md:pt-20 md:pb-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="pt-24 pb-4 md:pt-32 md:pb-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center min-h-[60vh] lg:min-h-[70vh]">
             {/* Product Info - Now First on Mobile */}
