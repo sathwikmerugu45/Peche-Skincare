@@ -46,12 +46,12 @@ const ProductPage = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       
-      {/* Hero Section - Fixed Layout */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {/* Hero Section - Optimized Layout */}
+      <section className="pt-20 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center min-h-[calc(100vh-5rem)] lg:min-h-[calc(100vh-6rem)]">
             {/* Product Info - Now First on Mobile */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-5">
               <Badge className="inline-flex bg-accent/20 text-accent-foreground py-1.5 px-4 text-sm font-medium">
                 <Timer className="h-3.5 w-3.5 mr-1.5" />
                 Limited Time: 76% OFF
@@ -159,8 +159,8 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Trust Indicators - Fixed for Mobile */}
-      <section className="py-6 md:py-8 bg-background border-y">
+      {/* Trust Indicators - Compact */}
+      <section className="py-4 md:py-6 bg-background border-y">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12">
             {[
@@ -178,17 +178,17 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* What Makes This Different - Responsive Grid */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-primary/5">
+      {/* What Makes This Different - Compact */}
+      <section className="py-8 md:py-12 bg-gradient-to-b from-background to-primary/5">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">What Makes This Different?</h2>
             <p className="text-base md:text-lg lg:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
               This isn't a list of products. It's a blueprint to heal your skin from the inside out — by understanding your triggers, patterns, and emotions that affect your glow.
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               {
                 icon: Sparkles,
@@ -331,15 +331,15 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Modules Content - Mobile Responsive */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      {/* Modules Content - Compact */}
+      <section className="py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8 md:mb-12 lg:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">What's Inside — Complete System</h2>
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">What's Inside — Complete System</h2>
             <p className="text-base md:text-lg lg:text-xl text-foreground/80">5 comprehensive modules + bonus materials worth $264</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               {
                 module: "Module 1",
@@ -525,11 +525,11 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* FAQ - Improved Styling */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      {/* FAQ - Compact */}
+      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-4">
@@ -576,17 +576,17 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Alternative Payment - Streamlined */}
-      <section className="py-20 bg-background">
+      {/* Alternative Payment - Compact */}
+      <section className="py-10 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <Card className="border-2 border-primary/20 shadow-xl overflow-hidden">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Save 12% with Bank Transfer</h3>
+            <CardContent className="p-6 md:p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Save 12% with Bank Transfer</h3>
                 <p className="text-foreground/80 text-lg">Alternative payment option via Wise for international customers</p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-10">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-bold text-foreground mb-6 text-xl">How It Works:</h4>
                   <div className="space-y-4">
@@ -620,10 +620,10 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Final CTA - Enhanced */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+      {/* Final CTA - Compact */}
+      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="space-y-8">
+          <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
               You Deserve This Kind of Glow
             </h2>
@@ -631,7 +631,7 @@ const ProductPage = () => {
               Stop guessing. Start healing. Start glowing with our proven system designed specifically for melanin-rich skin.
             </p>
             
-            <div className="bg-white rounded-2xl p-8 max-w-md mx-auto shadow-2xl border border-primary/10">
+            <div className="bg-white rounded-2xl p-6 max-w-md mx-auto shadow-2xl border border-primary/10">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <span className="text-3xl font-bold text-foreground/50 line-through">$37</span>
                 <ArrowRight className="h-6 w-6 text-primary" />
