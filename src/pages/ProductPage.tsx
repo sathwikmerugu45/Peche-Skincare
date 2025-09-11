@@ -407,19 +407,20 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Modules Content - Compact */}
-      <section className="py-4 md:py-6 bg-gradient-to-br from-primary/5 to-accent/5">
+      {/* Modules Content - Uniform Design */}
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
               What's Inside — Complete System
             </h2>
-            <p className="text-base md:text-lg lg:text-xl text-foreground/80">
+            <p className="text-base md:text-lg lg:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
               5 comprehensive modules + bonus materials worth $264
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {/* 3 Cards on Top Row */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             {[
               {
                 module: "Module 1",
@@ -454,6 +455,45 @@ const ProductPage = () => {
                 ],
                 icon: "💗",
               },
+            ].map((module, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden h-full"
+              >
+                <CardContent className="p-6 md:p-8 h-full flex flex-col">
+                  <div className="flex items-start justify-between mb-4 md:mb-6">
+                    <span className="text-3xl md:text-4xl">{module.icon}</span>
+                    <Badge className="bg-primary text-white text-sm px-3 py-1.5">
+                      {module.price}
+                    </Badge>
+                  </div>
+                  <div className="mb-4 md:mb-6 flex-grow">
+                    <span className="text-sm text-primary font-bold uppercase tracking-wider">
+                      {module.module}
+                    </span>
+                    <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight mt-1 md:mt-2">
+                      {module.title}
+                    </h3>
+                  </div>
+                  <ul className="space-y-3 md:space-y-4">
+                    {module.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start text-sm md:text-base text-foreground/80"
+                      >
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* 2 Cards on Bottom Row - Wider */}
+          <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+            {[
               {
                 module: "Module 4",
                 title: "Minimal Skincare That Works",
@@ -479,30 +519,30 @@ const ProductPage = () => {
             ].map((module, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden"
+                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden h-full"
               >
-                <CardContent className="p-4 md:p-6">
-                  <div className="flex items-start justify-between mb-3 md:mb-4">
-                    <span className="text-2xl md:text-3xl">{module.icon}</span>
-                    <Badge className="bg-primary text-white text-xs px-2 md:px-3 py-1">
+                <CardContent className="p-6 md:p-8 h-full flex flex-col">
+                  <div className="flex items-start justify-between mb-4 md:mb-6">
+                    <span className="text-3xl md:text-4xl">{module.icon}</span>
+                    <Badge className="bg-primary text-white text-sm px-3 py-1.5">
                       {module.price}
                     </Badge>
                   </div>
-                  <div className="mb-3 md:mb-4">
-                    <span className="text-xs text-primary font-bold uppercase tracking-wider">
+                  <div className="mb-4 md:mb-6 flex-grow">
+                    <span className="text-sm text-primary font-bold uppercase tracking-wider">
                       {module.module}
                     </span>
-                    <h3 className="text-base md:text-lg font-bold text-foreground leading-tight mt-1 md:mt-2">
+                    <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight mt-1 md:mt-2">
                       {module.title}
                     </h3>
                   </div>
-                  <ul className="space-y-2 md:space-y-3">
+                  <ul className="space-y-3 md:space-y-4">
                     {module.features.map((feature, i) => (
                       <li
                         key={i}
-                        className="flex items-start text-xs md:text-sm text-foreground/80"
+                        className="flex items-start text-sm md:text-base text-foreground/80"
                       >
-                        <Check className="h-3 w-3 md:h-4 md:w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -514,107 +554,110 @@ const ProductPage = () => {
         </div>
       </section>
 
-      {/* Bonuses Section - Mobile Friendly */}
-      <section className="py-6 md:py-8 lg:py-10 bg-background">
+      {/* Completely Revamped Bonuses Section */}
+      <section className="py-6 md:py-8 bg-gradient-to-br from-accent/10 via-primary/5 to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="border-2 border-accent/30 rounded-2xl shadow-2xl bg-white overflow-hidden">
-            <div className="p-6 md:p-8 lg:p-12">
-              <div className="text-center mb-8 md:mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/20 mb-4 md:mb-6">
-                  <Gift className="h-8 w-8 md:h-10 md:w-10 text-accent" />
-                </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">
-                  5 Free Exclusive Bonus Gifts
-                </h3>
-                <p className="text-sm md:text-base lg:text-lg text-foreground/70 max-w-2xl mx-auto">
-                  Premium extras designed specifically for melanin-rich skin to
-                  accelerate your glow transformation
-                </p>
-              </div>
+          <div className="text-center mb-8 md:mb-12">
+            <Badge className="inline-flex bg-accent/20 text-accent-foreground font-semibold mb-4 py-1.5 px-4 text-sm">
+              <Gift className="h-4 w-4 mr-2" />
+              Exclusive Bonuses
+            </Badge>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
+              5 Free Premium Gifts
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Transform your melanin-rich skin faster with these expertly crafted bonus materials
+            </p>
+          </div>
 
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
-                <div className="space-y-3 md:space-y-4">
-                  {[
-                    {
-                      icon: "🧾",
-                      title: "Printable Glow Tracker",
-                      desc: "Monitor your daily progress with our specialized skincare journal",
-                    },
-                    {
-                      icon: "🎥",
-                      title: "Product Usage Mini-Course",
-                      desc: "Learn proper application techniques for maximum effectiveness",
-                    },
-                    {
-                      icon: "🛒",
-                      title: "Curated Melanin-Safe Product List",
-                      desc: "Expert-vetted products that work beautifully with rich melanin skin",
-                    },
-                  ].map((bonus, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start p-3 md:p-5 bg-primary/5 rounded-xl border border-primary/10"
-                    >
-                      <span className="text-xl md:text-2xl mr-3 md:mr-4">
-                        {bonus.icon}
-                      </span>
-                      <div>
-                        <h4 className="font-bold text-sm md:text-base text-foreground mb-1">
-                          {bonus.title}
-                        </h4>
-                        <p className="text-xs md:text-sm text-foreground/70">
-                          {bonus.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          <div className="grid md:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-12">
+            {[
+              {
+                icon: "📋",
+                title: "Printable Glow Tracker",
+                value: "$19",
+                desc: "Daily progress journal with skin metrics tracking",
+                bgColor: "bg-blue-50",
+                borderColor: "border-blue-200",
+                iconBg: "bg-blue-100",
+              },
+              {
+                icon: "🎥",
+                title: "Mini-Course Videos",
+                value: "$29",
+                desc: "Step-by-step application techniques guide",
+                bgColor: "bg-purple-50",
+                borderColor: "border-purple-200",
+                iconBg: "bg-purple-100",
+              },
+              {
+                icon: "🛒",
+                title: "Product Recommendations",
+                value: "$25",
+                desc: "Curated melanin-safe product database",
+                bgColor: "bg-green-50",
+                borderColor: "border-green-200",
+                iconBg: "bg-green-100",
+              },
+              {
+                icon: "🥗",
+                title: "Acne-Safe Meal Guide",
+                value: "$32",
+                desc: "Anti-inflammatory recipes for clear skin",
+                bgColor: "bg-orange-50",
+                borderColor: "border-orange-200",
+                iconBg: "bg-orange-100",
+              },
+              {
+                icon: "💚",
+                title: "Gut Health Checklist",
+                value: "$22",
+                desc: "Optimize your gut-skin connection naturally",
+                bgColor: "bg-pink-50",
+                borderColor: "border-pink-200",
+                iconBg: "bg-pink-100",
+              },
+            ].map((bonus, index) => (
+              <Card
+                key={index}
+                className={`group hover:shadow-xl transition-all duration-300 border-2 ${bonus.borderColor} ${bonus.bgColor} overflow-hidden h-full`}
+              >
+                <CardContent className="p-4 md:p-6 text-center h-full flex flex-col">
+                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full ${bonus.iconBg} flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-2xl md:text-3xl">{bonus.icon}</span>
+                  </div>
+                  <Badge className="bg-primary text-white text-xs px-2 py-1 mb-3 mx-auto">
+                    Value: {bonus.value}
+                  </Badge>
+                  <h4 className="text-sm md:text-base font-bold text-foreground mb-2 md:mb-3 leading-tight flex-grow">
+                    {bonus.title}
+                  </h4>
+                  <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+                    {bonus.desc}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-                <div className="space-y-3 md:space-y-4">
-                  {[
-                    {
-                      icon: "🥗",
-                      title: "Acne-Safe Meal Guide",
-                      desc: "Delicious, nourishing meals specifically formulated to prevent breakouts",
-                    },
-                    {
-                      icon: "❤️",
-                      title: "Gut Health Checklist",
-                      desc: "Identify and transform habits that damage your gut-skin connection",
-                    },
-                  ].map((bonus, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start p-3 md:p-5 bg-accent/10 rounded-xl border border-accent/20"
-                    >
-                      <span className="text-xl md:text-2xl mr-3 md:mr-4">
-                        {bonus.icon}
-                      </span>
-                      <div>
-                        <h4 className="font-bold text-sm md:text-base text-foreground mb-1">
-                          {bonus.title}
-                        </h4>
-                        <p className="text-xs md:text-sm text-foreground/70">
-                          {bonus.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+          {/* Value Summary */}
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/20 shadow-xl">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-4 mb-4 md:mb-6">
+                <div className="text-center">
+                  <div className="text-lg md:text-xl text-foreground/60 line-through">Total Value:</div>
+                  <div className="text-2xl md:text-3xl font-bold text-foreground/60 line-through">$127</div>
+                </div>
+                <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                <div className="text-center">
+                  <div className="text-lg md:text-xl text-primary font-semibold">Your Price:</div>
+                  <div className="text-3xl md:text-4xl font-bold text-primary">FREE</div>
                 </div>
               </div>
-
-              <div className="text-center p-4 md:p-6 bg-accent/5 rounded-xl border border-accent/10">
-                <p className="text-sm md:text-base font-medium text-foreground/80">
-                  <span className="text-accent font-bold text-base md:text-lg">
-                    Total Value: $127
-                  </span>{" "}
-                  —
-                  <span className="line-through text-foreground/60 ml-2">
-                    Yours FREE
-                  </span>{" "}
-                  with your guide purchase
-                </p>
-              </div>
+              <Badge className="bg-green-500 text-white font-bold py-2 px-4 text-sm md:text-base">
+                <Sparkles className="h-4 w-4 mr-2" />
+                All Bonuses Included Automatically
+              </Badge>
             </div>
           </div>
         </div>
