@@ -62,10 +62,10 @@ const Products = () => {
       <div className="container-wide relative z-10">
         {/* Enhanced Section Header */}
         <div className="text-center mb-12" data-scroll>
-          <div className="inline-flex items-center space-x-2 mb-4 glass-card px-4 py-2 rounded-full">
+          {/* <div className="inline-flex items-center space-x-2 mb-4 glass-card px-4 py-2 rounded-full">
             <Sparkles className="h-4 w-4 text-primary animate-spin" style={{ animationDuration: '3s' }} />
             <span className="text-sm font-medium text-primary">Premium Collection</span>
-          </div>
+          </div> */}
           <h2 className="heading-lg text-gradient mb-6">UGC / Influencer Endorsement  / Social Proofs</h2>
     <p className="body-lg text-foreground/80 max-w-7xl mx-auto leading-[1.8] text-center">
   Showcased by real users and trusted influencers across Instagram and beyond, our modules are backed by genuine stories and community results. Join thousands who’ve shared their transformations and tagged us — <br />
@@ -97,7 +97,7 @@ const Products = () => {
                   <img 
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-1000 shimmer"
+                    className="w-full h-65 object-cover group-hover:scale-110 transition-transform duration-1000 shimmer"
                   />
                   
                   {/* Animated overlay gradient */}
@@ -143,14 +143,14 @@ const Products = () => {
                     >
                       <Heart className="h-4 w-4" />
                     </Button>
-                    <Button 
+                    {/* <Button 
                       size="sm"
                       className="bg-primary text-primary-foreground hover:bg-primary-dark transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-glow hover-lift btn-3d"
                       style={{ transitionDelay: '0.3s' }}
                     >
                       <ShoppingCart className="h-4 w-4 mr-2" />
                       Quick Add
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
 
@@ -164,16 +164,16 @@ const Products = () => {
                 {/* Animated rating with individual star animations */}
                 <div className="flex items-center space-x-2 mb-3">
                   <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
+                    {/* {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i}
                         className="h-4 w-4 text-primary fill-current transition-all duration-300 hover:scale-125 hover:rotate-12" 
                         style={{ animationDelay: `${i * 0.1}s` }}
                       />
-                    ))}
-                    <span className="text-sm font-medium text-foreground ml-2">{product.rating}</span>
+                    ))} */}
+                    {/* <span className="text-sm font-medium text-foreground ml-2">{product.rating}</span> */}
                   </div>
-                  <span className="text-sm text-foreground/60">({product.reviews} reviews)</span>
+                  {/* <span className="text-sm text-foreground/60">({product.reviews} reviews)</span> */}
                 </div>
 
                 {/* Enhanced Product Name with gradient */}
@@ -196,24 +196,24 @@ const Products = () => {
                 </div>
 
                 {/* Enhanced Price and Action */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <div className="flex items-center space-x-2">
+                {/* <div className="flex flex-col sm:flex-row items-center justify-between gap-3"> */}
+                  {/* <div className="flex items-center space-x-2">
                     <span className="heading-sm text-primary font-semibold group-hover:text-gradient transition-all duration-300">{product.price}</span>
                     {product.originalPrice && (
                       <span className="text-foreground/50 line-through relative">
                         {product.originalPrice}
-                        {/* Animated strike-through */}
+                       
                         <div className="absolute inset-0 bg-red-500/20 transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </span>
                     )}
-                  </div>
-                  <Button 
+                  </div> */}
+                  {/* <Button 
                     size="sm" 
                     className="bg-primary hover:bg-primary-dark text-primary-foreground btn-3d hover-lift magnetic shadow-glow"
                   >
                     Add to Cart
-                  </Button>
-                </div>
+                  </Button> */}
+                {/* </div> */}
 
                 {/* Animated accent line */}
                 <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -224,7 +224,7 @@ const Products = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12" data-scroll>
-          <Button 
+          {/* <Button 
             size="lg" 
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground btn-3d hover-lift magnetic shadow-glow group relative overflow-hidden"
@@ -232,9 +232,9 @@ const Products = () => {
             <span className="relative z-10">View All Products</span>
             <Sparkles className="ml-2 h-4 w-4 relative z-10 transition-transform duration-300 group-hover:rotate-180" />
             
-            {/* Animated background fill */}
+       
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

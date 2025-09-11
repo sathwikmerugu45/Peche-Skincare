@@ -2,10 +2,10 @@ import { Sparkles, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   const footerLinks = {
-    Company: ['About Us', 'Our Story', 'Careers', 'Press'],
-    Products: ['Best Sellers', 'New Arrivals', 'Gift Sets', 'Ingredients'],
-    Support: ['Contact Us', 'FAQ', 'Shipping', 'Returns'],
-    Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
+    Company: ['About Us', 'Our Story'],
+    Products: ['Our Skincare Guide', 'Shop All Products'],
+    Support: ['Contact Us', 'FAQ'],
+    Legal: ['Privacy Policy', 'Terms of Service'],
   };
 
   const socialLinks = [

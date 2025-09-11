@@ -35,8 +35,8 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Your Skincare Guide', href: '#products' },
     { name: 'Contact', href: '#contact' }
   ];
 
