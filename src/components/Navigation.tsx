@@ -1,18 +1,27 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
+      // Calculate scroll progress
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(Math.min(progress, 100));
+      
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'products', 'contact'];
+      const sections = ['home', 'products', 'philosophy', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -35,8 +44,8 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Your Skincare Guide', href: '#products' },
+    { name: 'About Us', href: '#products' },
+    { name: 'Your Skincare Guide', href: '#philosophy' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -60,13 +69,11 @@ const Navigation = () => {
           {/* Enhanced Logo with 3D effects */}
           <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow float-3d hover-lift magnetic transition-all duration-500 group-hover:shadow-xl">
-                <Sparkles className="h-5 w-5 text-primary-foreground transition-transform duration-500 group-hover:rotate-180 group-hover:scale-110" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow transition-all duration-300 group-hover:shadow-xl">
+                <Sparkles className="h-5 w-5 text-primary-foreground transition-transform duration-300 group-hover:rotate-180" />
               </div>
-              {/* Animated glow ring */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-50 transition-opacity duration-500 animate-spin" style={{ animationDuration: '3s' }}></div>
             </div>
-            <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-gradient transition-all duration-500">
+            <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-primary transition-all duration-300">
               Peche Skincare
             </span>
           </div>
@@ -103,7 +110,10 @@ const Navigation = () => {
 
           {/* Enhanced CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-4 lg:px-6 text-sm lg:text-base shadow-glow hover:shadow-xl transition-all duration-500 hover-lift btn-3d magnetic relative overflow-hidden group">
+            <Button 
+              onClick={() => navigate('/product')}
+              className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-4 lg:px-6 text-sm lg:text-base shadow-glow hover:shadow-xl transition-all duration-500 hover-lift btn-3d magnetic relative overflow-hidden group"
+            >
               <span className="relative z-10">Shop Now</span>
               
               {/* Animated background */}
@@ -166,6 +176,7 @@ const Navigation = () => {
             {/* Mobile CTA Button */}
             <div className="pt-2 sm:pt-4">
               <Button 
+                onClick={() => navigate('/product')}
                 className="w-full bg-primary hover:bg-primary-dark text-primary-foreground font-medium shadow-glow hover:shadow-xl transition-all duration-500 btn-3d relative overflow-hidden group"
                 style={{ 
                   transform: isMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -183,10 +194,10 @@ const Navigation = () => {
       </div>
 
       {/* Progress indicator */}
-      <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary transform origin-left transition-transform duration-300"
-           style={{ 
-             width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%` 
-           }}></div>
+      <div 
+        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary transform origin-left transition-all duration-300"
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
     </nav>
   );
 };
