@@ -1,6 +1,8 @@
 import { Sparkles, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
-
+import { useEffect, useState } from 'react';
 const Footer = () => {
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+  
   const footerLinks = {
     Company: ['About Us', 'Our Story'],
     Products: ['Our Skincare Guide', 'Shop All Products'],
@@ -14,10 +16,30 @@ const Footer = () => {
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Mail, href: '#', label: 'Email' },
   ];
+useEffect(() => {
+  fetch('https://api.github.com/repos/sathwikmerugu45/glow-scroll-style/commits')
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.length > 0) {
+        const lastCommitDate = new Date(data[0].commit.author.date);
+        setLastUpdated(
+          lastCommitDate.toLocaleString(undefined, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          })
+        );
+      }
+    })
+    .catch(error => console.error('Error fetching last update:', error));
+}, []);
+
 
   return (
-<footer className="bg-secondary text-secondary-foreground relative overflow-hidden border-t border-border shadow-[0_-6px_16px_rgba(255,115,92,0.15)]">
-      {/* Background Elements */}
+ <footer className="bg-secondary text-secondary-foreground relative overflow-hidden border-t border-border shadow-[0_-6px_16px_rgba(255,115,92,0.15)]">      {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute bottom-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl float-gentle"></div>
         <div className="absolute top-10 left-10 w-16 h-16 bg-accent/10 rounded-full blur-lg float-bounce" style={{ animationDelay: '1.5s' }}></div>
@@ -96,12 +118,19 @@ const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-border relative z-10">
+    <div className="border-t border-border relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 text-center md:text-left">
-            <p className="text-secondary-foreground/60 text-sm">
-              © 2025 Peche Skincare. All rights reserved.
-            </p>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+              <p className="text-secondary-foreground/60 text-sm">
+                © 2025 Peche Skincare. All rights reserved.
+              </p>
+              {lastUpdated && (
+                <p className="text-secondary-foreground/60 text-sm">
+                  Last updated: {lastUpdated}
+                </p>
+              )}
+            </div>
             <p className="text-secondary-foreground/60 text-sm">
               Made with ❤️ for radiant skin
             </p>
