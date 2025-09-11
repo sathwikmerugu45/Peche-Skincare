@@ -189,7 +189,7 @@ const ProductPage = () => {
       </section>
 
       {/* Trust Indicators - Compact */}
-      <section className="py-2 md:py-3 bg-background border-y">
+      <section className="py-2 md:py-3 bg-gradient-to-b from-primary/10 to-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12">
             {[
@@ -212,7 +212,7 @@ const ProductPage = () => {
         </div>
       </section>
       {/* Transformation Results - Mobile Optimized */}
-      <section className="py-6 md:py-4 lg:py-8 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-6 md:py-4 lg:py-8 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <Badge className="inline-flex bg-primary/20 text-primary font-semibold mb-4 py-1.5 px-4">
@@ -352,7 +352,7 @@ const ProductPage = () => {
         </div>
       </section>
       {/* What Makes This Different - Compact */}
-      <section className="py-4 md:py-6 bg-gradient-to-b from-background to-primary/5">
+      <section className="py-4 md:py-6 bg-gradient-to-b from-accent/5 to-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">

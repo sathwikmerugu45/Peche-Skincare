@@ -10,11 +10,13 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Navigation />
       <Hero />
-      <div id="products">
+      <div id="products" className="bg-gradient-to-b from-primary/5 via-background to-background">
         <Products />
       </div>
-      <Testimonials />
-      <div id="philosophy">
+      <div className="bg-gradient-to-b from-background to-primary/5">
+        <Testimonials />
+      </div>
+      <div id="philosophy" className="bg-gradient-to-b from-primary/5 to-background">
         <Philosophy />
       </div>
       <div id="contact">
