@@ -427,9 +427,9 @@ const ProductPage = () => {
                 title: "The Truth About Melanin-Rich Skin",
                 price: "$49",
                 features: [
-                  "Why most routines don't work for us",
+                  "Why many routines harm melanin",
                   "Ingredients that harm melanin",
-                  "Decode skincare labels professionally",
+                  "Decode skincare labels with care",
                 ],
                 icon: "🖤",
               },
