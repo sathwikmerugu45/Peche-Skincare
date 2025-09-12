@@ -506,7 +506,12 @@ const ProductPage = () => {
 ].map((module, index) => (
        <div
   key={index}
-  className="group relative bg-card rounded-2xl border border-border hover:border-primary/20 transition-all duration-500 hover:shadow-2xl overflow-hidden"
+  className="group relative bg-white rounded-2xl border border-orange-100 hover:border-orange-200 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-900/10 overflow-hidden"
+  style={{
+    backgroundImage: module.backgroundImage,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
 >
           {/* Card Header with Gradient */}
           <div className="h-2 bg-gradient-to-r from-primary to-accent" />
@@ -594,7 +599,12 @@ const ProductPage = () => {
       ].map((module, index) => (
         <div
   key={index}
-  className="group relative bg-card rounded-2xl border border-border hover:border-primary/20 transition-all duration-500 hover:shadow-2xl overflow-hidden"
+  className="group relative bg-white rounded-2xl border border-orange-100 hover:border-orange-200 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-900/10 overflow-hidden"
+  style={{
+    backgroundImage: module.backgroundImage,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
 >
           {/* Card Header with Gradient */}
           <div className="h-2 bg-gradient-to-r from-primary to-accent" />
