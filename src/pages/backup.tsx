@@ -1109,181 +1109,7 @@ const ProductPage = () => {
   </div>
 </section>
 
-{/* Professional Bonuses Section */}
-<section id="bonuses" className="py-16 md:py-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-  <div className="container mx-auto px-4 max-w-7xl">
-    {/* Header */}
-    <div className="text-center mb-6">
-      <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4">
-        <Gift className="w-6 h-6 mr-2" />
-        Exclusive Bonus Materials
-      </Badge>
 
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-        5 Premium Resources
-      </h2>
-      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Accelerate your melanin-rich skin transformation with these professionally crafted bonus materials
-      </p>
-    </div>
-
-    {/* Bonuses Grid */}
-    <div className="grid lg:grid-cols-2 gap-8 mb-10">
-      {/* Bonus 1 */}
-      <div className="group">
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <FileText className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Daily Progress Tracker
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Comprehensive progress journal with skin metrics tracking system designed specifically for melanin-rich skin tones.
-              </p>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Weekly assessment templates
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Photo comparison guides
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bonus 2 */}
-      <div className="group">
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Video Tutorial Series
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Step-by-step application techniques and professional tips demonstrated on various melanin-rich skin tones.
-              </p>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                  10+ technique demonstrations
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                  Common mistake corrections
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bonus 3 */}
-      <div className="group">
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Database className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Curated Product Database
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Comprehensive collection of tested and approved skincare products specifically formulated for melanin-rich skin.
-              </p>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  50+ vetted products
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Price comparison tools
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bonus 4 */}
-      <div className="group">
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Utensils className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Acne-Safe Meal & Snack Guide
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Science-backed meal plans and recipes designed to reduce inflammation and promote clear, healthy skin from within.
-              </p>
-              <ul className="text-sm text-muted-foreground space-y-2">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                  21-day meal planning system
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                  Shopping lists included
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Bonus 5 - Featured */}
-    <div className="mb-6">
-      <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 border-2 border-primary/20 shadow-xl">
-        <div className="flex flex-col lg:flex-row items-center gap-8">
-          <div className="flex-shrink-0">
-            <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
-              <Activity className="w-10 h-10 text-white" />
-            </div>
-          </div>
-          <div className="flex-1 text-center lg:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Gut-Skin Connection Optimization Protocol
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Advanced checklist and protocols to optimize your gut health for clearer, more radiant melanin-rich skin through natural methods and targeted interventions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Clean CTA */}
-    {/* <div className="bg-card rounded-2xl p-10 border-2 border-border shadow-2xl text-center"> */}
-      {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold py-3 px-8 rounded-full text-lg">
-        <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse"></div>
-        All Resources Included Automatically
-      </div> */}
-    {/* </div> */}
-  </div>
-</section>
      {/* Transformations Section - After Bonuses */}
 <section className="py-16 md:py-2 bg-gradient-to-br from-background via-accent/5 to-primary/5">
   <div className="container mx-auto px-4 max-w-6xl">
@@ -1305,40 +1131,40 @@ const ProductPage = () => {
     <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
       {[
         {
-          name: "Priya S.",
-          location: "Mumbai, India",
+          name: "Amara K.",
+          location: "London, UK",
           testimonial:
-            "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
-          timeframe: "3 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg",
-        },
-        {
-          name: "Adaora O.",
-          location: "Lagos, Nigeria",
-          testimonial:
-            "I thought my dark spots were just something I had to live with. This guide completely changed my perspective.",
-          timeframe: "6 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5649_wwilbh.jpg",
-        },
-        {
-          name: "Thando W.",
-          location: "Cape Town, South Africa",
-          testimonial:
-            "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress.",
+            "The gut-skin connection module was a game changer. I never realized how much my diet was affecting my breakouts.",
           timeframe: "4 weeks later",
           image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218638/Untitled_design.zip_-_1_lze2nw.png",
         },
         {
-          name: "Keisha M.",
-          location: "Atlanta, USA",
+          name: "Zara A.",
+          location: "Dubai, UAE",
           testimonial:
-            "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
+            "Finally found a routine that works in this climate! My skin has never looked better, and I feel so confident now.",
+          timeframe: "6 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
+        },
+        {
+          name: "Maya P.",
+          location: "Toronto, Canada",
+          testimonial:
+            "The emotional healing aspect was unexpected but so needed. This guide healed more than just my skin.",
           timeframe: "5 weeks later",
           image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_6569_eaoxzn.jpg",
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
+        },
+        {
+          name: "Fatima S.",
+          location: "Casablanca, Morocco",
+          testimonial:
+            "As someone with sensitive melanin-rich skin, this guide was exactly what I needed. No more guessing games!",
+          timeframe: "7 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
         },
       ].map((item, index) => (
         <Card
