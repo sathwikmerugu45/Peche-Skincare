@@ -52,7 +52,7 @@ const ProductNavigation = () => {
       setScrollProgress(Math.min(progress, 100));
       
       // Update active section based on scroll position
-      const sections = ['home', 'transformations', 'bonuses', 'faq', 'contact'];
+      const sections = ['home', 'transformations','bonusecs', 'bonuses', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -76,6 +76,7 @@ const ProductNavigation = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Transformations', href: '#transformations' },
+    { name: 'Modules', href: '#bonusecs' },
     { name: 'Five Bonuses', href: '#bonuses' },
     { name: 'FAQ\'s', href: '#faq' },
     { name: 'Contact Us', href: '#contact' }
@@ -262,7 +263,7 @@ const Philosophy = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
+    <section className="py-12 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-pink-200/40 rounded-full blur-2xl animate-pulse"></div>
@@ -527,7 +528,7 @@ const ProductPage = () => {
       <ProductNavigation />
 
       {/* Hero Section - Optimized Layout */}
-      <section id="home" className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section id="home" className="pt-24 pb-8 md:pt-30 md:pb-10 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[60vh] lg:min-h-[70vh]">
             {/* Product Info - Now First on Mobile */}
@@ -694,7 +695,7 @@ const ProductPage = () => {
      {/* Transformation Results - Mobile Optimized */}
 <section id="transformations" className="py-16 md:py-10 bg-gradient-to-br from-background via-accent/5 to-primary/5">
   <div className="container mx-auto px-4 max-w-6xl">
-    <div className="text-center mb-16">
+    <div className="text-center mb-16 md:mb-10">
       <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4">
   <Award className="h-4 w-4 mr-2" />
   Real Transformations
@@ -887,7 +888,7 @@ const ProductPage = () => {
 
 {/* Professional Modules Content */}
 {/* Professional Modules Content */}
-<section className="py-16 md:py-8 bg-gradient-to-br from-accent/5 via-background to-primary/5">
+<section id="bonusecs" className="py-16 md:py-8 bg-gradient-to-br from-accent/5 via-background to-primary/5">
   <div className="container mx-auto px-4 max-w-7xl">
     <div className="text-center mb-8">
     <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4">
@@ -1018,7 +1019,7 @@ const ProductPage = () => {
         },
         {
           module: "Module 5", 
-          title: "Confident Bare-Faced Living",
+          title: "From Bare Skin to Boss Moves ",
           price: "$50",
           features: [
             "Show up confidently without makeup",
@@ -1084,16 +1085,15 @@ const ProductPage = () => {
 </section>
 
 
-    {/* Professional Bonuses Section */}
-
-<section id="bonuses" className="py-16 md:py-10 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+   {/* Professional Bonuses Section */}
+<section id="bonuses" className="py-16 md:py-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
   <div className="container mx-auto px-4 max-w-7xl">
     {/* Header */}
     <div className="text-center mb-6">
       <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4">
-  <Gift className="w-6 h-6 mr-2" />
-  Exclusive Bonus Materials
-</Badge>
+        <Gift className="w-6 h-6 mr-2" />
+        Exclusive Bonus Materials
+      </Badge>
 
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
         5 Premium Resources
@@ -1115,11 +1115,6 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  VALUE $19
-                </span>
-              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Daily Progress Tracker
               </h3>
@@ -1151,11 +1146,6 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  VALUE $29
-                </span>
-              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Video Tutorial Series
               </h3>
@@ -1187,11 +1177,6 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  VALUE $25
-                </span>
-              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Curated Product Database
               </h3>
@@ -1223,13 +1208,8 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  VALUE $32
-                </span>
-              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
-                Anti-Inflammatory Nutrition Guide
+                Acne-Safe Meal & Snack Guide
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Science-backed meal plans and recipes designed to reduce inflammation and promote clear, healthy skin from within.
@@ -1251,8 +1231,8 @@ const ProductPage = () => {
     </div>
 
     {/* Bonus 5 - Featured */}
-    <div className="mb-12">
-      <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 border-2 border-primary/20">
+    <div className="mb-6">
+      <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 border-2 border-primary/20 shadow-xl">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-shrink-0">
             <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
@@ -1260,14 +1240,6 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="flex-1 text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-              <span className="bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
-                VALUE $22
-              </span>
-              <span className="bg-card text-primary text-sm font-bold px-4 py-2 rounded-full border border-primary/20">
-                PREMIUM BONUS
-              </span>
-            </div>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Gut-Skin Connection Optimization Protocol
             </h3>
@@ -1279,40 +1251,19 @@ const ProductPage = () => {
       </div>
     </div>
 
-    {/* Value Summary */}
-    <div className="bg-card rounded-2xl p-10 border-2 border-border shadow-2xl">
-      <div className="text-center">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-          <div className="text-center">
-            <div className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-2">
-              Total Individual Value
-            </div>
-            <div className="text-4xl font-bold text-muted-foreground line-through">
-              $127
-            </div>
-          </div>
-          <div className="hidden md:block w-12 h-0.5 bg-gradient-to-r from-border to-primary/20"></div>
-          <div className="w-full md:hidden h-0.5 bg-gradient-to-r from-border to-primary/20"></div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-primary uppercase tracking-wide mb-2">
-              Your Investment Today
-            </div>
-            <div className="text-5xl font-bold text-primary">
-              FREE
-            </div>
-          </div>
-        </div>
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold py-3 px-8 rounded-full text-lg">
-          <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse"></div>
-          All Resources Included Automatically
-        </div>
-      </div>
-    </div>
+    {/* Clean CTA */}
+    {/* <div className="bg-card rounded-2xl p-10 border-2 border-border shadow-2xl text-center"> */}
+      {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold py-3 px-8 rounded-full text-lg">
+        <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse"></div>
+        All Resources Included Automatically
+      </div> */}
+    {/* </div> */}
   </div>
 </section>
 
+
      {/* Transformations Section - After Bonuses */}
-<section className="py-16 md:py-10 bg-gradient-to-br from-background via-accent/5 to-primary/5">
+<section className="py-16 md:py-2 bg-gradient-to-br from-background via-accent/5 to-primary/5">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="text-center mb-16">
      <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4">
