@@ -16,11 +16,12 @@ const Footer = () => {
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Mail, href: '#', label: 'Email' },
   ];
+
 useEffect(() => {
   fetch('https://api.github.com/repos/sathwikmerugu45/glow-scroll-style/commits')
     .then(response => response.json())
     .then(data => {
-      if (data && data.length > 0) {
+      if (data && data.length > 0 && !data.message) {
         const lastCommitDate = new Date(data[0].commit.author.date);
         setLastUpdated(
           lastCommitDate.toLocaleString(undefined, {
@@ -32,113 +33,225 @@ useEffect(() => {
             second: '2-digit',
           })
         );
+      } else {
+        // Fallback to current date if API fails or rate limited
+        const currentDate = new Date();
+        setLastUpdated(
+          currentDate.toLocaleString(undefined, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          })
+        );
       }
     })
-    .catch(error => console.error('Error fetching last update:', error));
+    .catch(error => {
+      console.error('Error fetching last update:', error);
+      // Fallback to current date on error
+      const currentDate = new Date();
+      setLastUpdated(
+        currentDate.toLocaleString(undefined, {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        })
+      );
+    });
 }, []);
 
 
+  // const Footer = () => {
   return (
- <footer className="bg-secondary text-secondary-foreground relative overflow-hidden border-t border-border shadow-[0_-6px_16px_rgba(255,115,92,0.15)]">      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute bottom-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl float-gentle"></div>
-        <div className="absolute top-10 left-10 w-16 h-16 bg-accent/10 rounded-full blur-lg float-bounce" style={{ animationDelay: '1.5s' }}></div>
-      </div>
+   <footer className="bg-secondary text-secondary-foreground relative border-t border-border shadow-[0_-6px_16px_rgba(255,115,92,0.15)] bottom-0 left-0 w-full overflow-hidden">
 
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-2 lg:col-span-2 space-y-4 sm:space-y-6 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start space-x-2">
-              <Sparkles className="h-6 w-6 text-primary" />
-              <span className="heading-sm font-medium">Peche Skincare</span>
-            </div>
-            <p className="text-secondary-foreground/80 leading-relaxed">
-              Discover the power of nature with our premium skincare collection. 
-              Crafted with love for your skin's unique journey.
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+        {/* Main grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+          {/* Brand column */}
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6 text-center sm:text-left">
+            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Peche Skincare
+            </h3>
+            <p className="text-sm sm:text-base text-secondary-foreground/80 max-w-sm mx-auto sm:mx-0">
+              Discover the power of nature with our premium skincare
+              collection. Crafted with love for your skin&apos;s unique
+              journey.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex justify-center md:justify-start space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 glass-card rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 hover-lift"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="flex justify-center sm:justify-start space-x-4">
+              <a
+                href="#"
+                className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="#"
+                className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="#"
+                className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift"
+              >
+                <Twitter size={20} />
+              </a>
             </div>
           </div>
 
-          {/* Links Columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} data-scroll className="text-center md:text-left">
-              <h4 className="font-semibold text-secondary-foreground mb-4">{category}</h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a 
-                      href="#" 
-                      className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
+          {/* Company */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-secondary-foreground mb-4">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                {/* <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Press
+                </a> */}
+              </li>
+            </ul>
+          </div>
 
-      {/* Newsletter Section */}
-      <div className="border-t border-border relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 text-center md:text-left">
-            <div data-scroll>
-              <h4 className="font-semibold text-secondary-foreground mb-1">Stay in the glow</h4>
-              <p className="text-secondary-foreground/70">Subscribe for skincare tips and exclusive offers.</p>
-            </div>
-            <div data-scroll className="flex w-full max-w-sm">
+          {/* Products */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-secondary-foreground mb-4">
+              Products
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Cleansers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Moisturizers
+                </a>
+              </li>
+              <li>
+                {/* <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Serums
+                </a> */}
+              </li>
+              <li>
+                {/* <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Treatments
+                </a> */}
+              </li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-secondary-foreground mb-4">
+              Support
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  FAQs
+                </a>
+              </li>
+              <li>
+                {/* <a
+                  href="#"
+                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 hover-lift inline-block"
+                >
+                  Shipping & Returns
+                </a> */}
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-secondary-foreground mb-4">
+              Newsletter
+            </h4>
+            <p className="text-sm text-secondary-foreground/70 mb-4">
+              Subscribe to get special offers, free giveaways, and
+              once-in-a-lifetime deals.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto sm:mx-0">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 glass-card border border-border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-3 py-2 rounded-md border border-border bg-background/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
-              <button className="px-6 py-2 bg-primary hover:bg-primary-dark text-primary-foreground rounded-r-lg transition-colors duration-300 hover-lift">
+              <button
+                type="submit"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-300 hover-lift"
+              >
                 Subscribe
               </button>
-            </div>
+            </form>
           </div>
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="mt-12 pt-8 border-t border-border text-center text-sm text-secondary-foreground/60">
+          <p>
+            © 2025 Peche Skincare. All rights reserved.
+            <span> • Last updated: {lastUpdated || 'September 20, 2025 at 08:58:47 PM'} • </span>
+            Made with ❤️ for radiant skin
+          </p>
         </div>
       </div>
 
-      {/* Bottom Footer */}
-    <div className="border-t border-border relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 text-center md:text-left">
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
-              <p className="text-secondary-foreground/60 text-sm">
-                © 2025 Peche Skincare. All rights reserved.
-              </p>
-              {lastUpdated && (
-                <p className="text-secondary-foreground/60 text-sm">
-                  Last updated: {lastUpdated}
-                </p>
-              )}
-            </div>
-            <p className="text-secondary-foreground/60 text-sm">
-              Made with ❤️ for radiant skin
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/5 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
     </footer>
   );
 };
-
 export default Footer;

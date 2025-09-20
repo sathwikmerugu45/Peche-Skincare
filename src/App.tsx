@@ -2,31 +2,40 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import ProductDetail from "./pages/ProductDetail";
 import ProductPage from "./pages/ProductPage";
 import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer"; // 👈 import your footer
 
 const queryClient = new QueryClient();
+
+const Layout = () => {
+  return (
+    <>
+      <main className="min-h-screen">
+        <Outlet /> {/* Render the actual page here */}
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Redirect / → /product */}
-          <Route path="/" element={<Navigate to="/product" replace />} />
-
-          {/* Home page */}
-          <Route path="/product" element={<ProductPage />} />
-
-          {/* Product details */}
-          <Route path="/product/:id" element={<ProductDetail />} />
-
-          {/* Catch-all 404 */}
-          <Route path="*" element={<NotFound />} />
+          {/* Wrap all routes with Layout so footer shows everywhere */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Navigate to="/product" replace />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
@@ -34,6 +43,7 @@ const App = () => (
 );
 
 export default App;
+
 
 
 

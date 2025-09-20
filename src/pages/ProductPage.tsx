@@ -1493,7 +1493,7 @@ const ProductPage = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
