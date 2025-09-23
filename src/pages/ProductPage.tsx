@@ -627,56 +627,56 @@ const ProductPage = () => {
               </div>
 
               {/* Pricing Card - Ultra Compact */}
-              {/* Pricing Card - Professional Compact */}
-              <div className="bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl p-4 border border-primary/20">
-                {/* Header: Old Price + Discount + New Price */}
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg font-semibold text-muted-foreground line-through">
-                      $37
-                    </span>
-                    <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-2 text-xs">
-                      76% OFF
-                    </Badge>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl md:text-3xl font-extrabold text-primary leading-tight">
-                      $9
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Today Only
-                    </div>
-                  </div>
-                </div>
+           {/* Pricing Card - Responsive Compact */}
+<div className="bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl p-3 md:p-4 border border-primary/20 w-full max-w-[340px] md:max-w-none mx-auto">  {/* Header: Old Price + Discount + New Price */}
+  <div className="flex items-center justify-between mb-1 md:mb-2">
+    <div className="flex items-center gap-1 md:gap-2">
+      <span className="text-base md:text-lg font-semibold text-muted-foreground line-through">
+        $37
+      </span>
+      <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-1.5 text-[10px] md:text-xs">
+        76% OFF
+      </Badge>
+    </div>
+    <div className="text-right">
+      <div className="text-xl md:text-3xl font-extrabold text-primary leading-tight">
+        $9
+      </div>
+      <div className="text-[10px] md:text-xs text-muted-foreground">
+        Today Only
+      </div>
+    </div>
+  </div>
 
-                {/* Buy Button */}
-                <Button
-                  onClick={handleBuyNow}
-                  className="w-full mt-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold py-2.5 text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center"
-                >
-                  <ShoppingCart className="h-4 w-4 mr-2" />
-                  Download PDF (5MB)
-                </Button>
+  {/* Buy Button */}
+  <Button
+    onClick={handleBuyNow}
+    className="w-full mt-2 md:mt-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold py-2 md:py-2.5 text-xs md:text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center"
+  >
+    <ShoppingCart className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+    Download PDF (5MB)
+  </Button>
 
-                {/* Features */}
-                <div className="grid grid-cols-3 gap-2 text-center mt-3">
-                  <div className="space-y-0.5">
-                    <Shield className="h-4 w-4 text-primary mx-auto" />
-                    <p className="text-xs text-muted-foreground">Money Back</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <Download className="h-4 w-4 text-primary mx-auto" />
-                    <p className="text-xs text-muted-foreground">
-                      Instant Access
-                    </p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <Globe className="h-4 w-4 text-primary mx-auto" />
-                    <p className="text-xs text-muted-foreground">Worldwide</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  {/* Features */}
+  <div className="grid grid-cols-3 gap-1 md:gap-2 text-center mt-2 md:mt-3">
+    <div className="space-y-0">
+      <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
+      <p className="text-[10px] md:text-xs text-muted-foreground">Money Back</p>
+    </div>
+    <div className="space-y-0">
+      <Download className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
+      <p className="text-[10px] md:text-xs text-muted-foreground">
+        Instant Access
+      </p>
+    </div>
+    <div className="space-y-0">
+      <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
+      <p className="text-[10px] md:text-xs text-muted-foreground">Worldwide</p>
+    </div>
+  </div>
+</div>
+</div>
+
 
             {/* Product Images - Starting at Heading Level and Ending at Card Level */}
             <div className="relative flex flex-col">
@@ -1690,7 +1690,7 @@ const ProductPage = () => {
                   "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
                 timeframe: "3 weeks later",
                 image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg",
+                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
               },
               {
                 name: "Adaora O.",
@@ -1699,7 +1699,7 @@ const ProductPage = () => {
                   "I thought my dark spots were just something I had to live with. This guide completely changed my perspective.",
                 timeframe: "6 weeks later",
                 image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5649_wwilbh.jpg",
+                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
               },
               {
                 name: "Thando W.",
@@ -1708,7 +1708,7 @@ const ProductPage = () => {
                   "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress.",
                 timeframe: "4 weeks later",
                 image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
+                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
               },
               {
                 name: "Keisha M.",
@@ -1717,7 +1717,7 @@ const ProductPage = () => {
                   "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
                 timeframe: "5 weeks later",
                 image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_6569_eaoxzn.jpg",
+                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218638/Untitled_design.zip_-_1_lze2nw.png",
               },
             ].map((item, index) => (
               <Card
