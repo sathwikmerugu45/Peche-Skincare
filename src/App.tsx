@@ -1,3 +1,4 @@
+// App.jsx - Updated with global BackToTop component
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,7 +7,8 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom
 import ProductDetail from "./pages/ProductDetail";
 import ProductPage from "./pages/ProductPage";
 import NotFound from "./pages/NotFound";
-import Footer from "./components/Footer"; // 👈 import your footer
+import Footer from "./components/Footer";
+import BackToTop from "./components/BacktoToTop"; // 👈 Import the new component
 
 const queryClient = new QueryClient();
 
@@ -17,6 +19,7 @@ const Layout = () => {
         <Outlet /> {/* Render the actual page here */}
       </main>
       <Footer />
+      <BackToTop /> {/* 👈 Global Back to Top button */}
     </>
   );
 };
@@ -24,12 +27,11 @@ const Layout = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Wrap all routes with Layout so footer shows everywhere */}
+          {/* Wrap all routes with Layout so footer and BackToTop shows everywhere */}
           <Route element={<Layout />}>
             <Route path="/" element={<Navigate to="/product" replace />} />
             <Route path="/product" element={<ProductPage />} />

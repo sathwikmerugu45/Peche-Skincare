@@ -90,7 +90,7 @@ const ProductNavigation = () => {
     { name: "Home", href: "#home" },
     { name: "Transformations", href: "#transformations" },
     { name: "Modules", href: "#bonusecs" },
-    { name: "Five Bonuses", href: "#bonuses" },
+    { name: "Four Bonuses", href: "#bonuses" },
     { name: "FAQ's", href: "#faq" },
     { name: "Contact Us", href: "#contact" },
   ];
@@ -134,7 +134,7 @@ const ProductNavigation = () => {
               </div>
             </div>
             <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-primary transition-all duration-300">
-              Peche Skincare
+            Pêche Skincare
             </span>
           </div>
 
@@ -304,8 +304,22 @@ const Philosophy = () => {
     },
   ];
 
+  const sparkVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (i: number) => ({
+      scale: [0, 1.5, 1],
+      opacity: [0, 1, 0],
+      transition: {
+        delay: i * 0.15,
+        duration: 0.8,
+        repeat: Infinity,
+        repeatDelay: 2,
+      },
+    }),
+  };
+
   return (
-    <section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
+  <section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-pink-200/40 rounded-full blur-2xl animate-pulse"></div>
@@ -320,14 +334,7 @@ const Philosophy = () => {
         {/* Main Content Section */}
         <div className="grid lg:grid-cols-2 gap-10 items-start mb-16">
           {/* Text Content */}
-          <div className="space-y-5 order-2 lg:order-1">
-            <div className="flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-pink-100 px-4 py-2 rounded-full animate-fadeIn w-max">
-              <Sparkles className="h-4 w-4 text-orange-500" />
-              <span className="text-sm font-medium text-orange-700">
-                Our Philosophy
-              </span>
-            </div>
-
+          <div className="space-y-5 order-1 lg:order-1">
             <div className="space-y-5 animate-slideInLeft">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
                 Why I Created
@@ -350,7 +357,7 @@ const Philosophy = () => {
 
             {/* Why this guide works card */}
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-orange-100/50 shadow-lg transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 animate-fadeIn delay-300">
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center">
                 <span className="w-6 h-6 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center mr-2 text-white text-sm">
                   ✓
                 </span>
@@ -378,7 +385,7 @@ const Philosophy = () => {
                 ))}
               </div>
 
-              <div className="mt-5 pt-5 border-t border-orange-100/50">
+              <div className="mt-5 -pt-2 border-t border-orange-100/50">
                 <p className="text-gray-600 italic text-center text-base leading-relaxed transition-all duration-700 hover:scale-105">
                   From India to Africa to Southeast Asia — we deserve to glow,
                   naturally.
@@ -390,28 +397,100 @@ const Philosophy = () => {
             </div>
           </div>
 
-          {/* Image Section - Aligned to start at "Why I Created" */}
-          <div className="relative order-1 lg:order-2 lg:mt-16">
-            <div className="relative group w-full h-full">
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-400 to-pink-400 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-white/50 h-full min-h-[600px]">
-                <img
-                  src="https://thumbs.dreamstime.com/b/woman-face-beauty-skin-care-beautiful-girl-healthy-make-up-touching-makeup-hands-natural-skincare-treatment-woman-face-168156522.jpg"
-                  alt="Natural skincare for melanin-rich skin"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-pink-500/10"></div>
-              </div>
+          {/* Transformation Card Section (Replacing Image) */}
+          <div className="relative order-2 lg:order-2">
+            <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
 
-              {/* Eco-Friendly Badge */}
-              <div className="absolute -top-3 -right-3 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-green-200/50 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-green-700">
-                    Eco-Friendly
-                  </span>
+              {/* Floating sparkles */}
+              <div
+                className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+                style={{ animationDelay: "0.2s" }}
+              ></div>
+              <div
+                className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+                style={{ animationDelay: "0.4s" }}
+              ></div>
+              <div
+                className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+                style={{ animationDelay: "0.6s" }}
+              ></div>
+
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
+
+              <div className="relative z-10">
+                {/* Large Image - Touching the card border */}
+                <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
+                  <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
+                    <img
+                      src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
+                      alt="Before and After transformation"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    />
+                    {/* Before label - Left top */}
+                    <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                      Before
+                    </div>
+                    {/* After label - Right top */}
+                    <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                      After
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="px-6 pb-6 pt-6">
+                  <div className="flex items-start gap-4">
+                    {/* Left Side - Profile */}
+                    {/* <div className="flex-shrink-0 flex flex-col items-center"> */}
+                      {/* <div className="w-16 h-16 bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg animate-float"> */}
+                        {/* <img
+                          src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
+                          alt="Priya S."
+                          className="w-12 h-12 rounded-full object-cover border-2 border-white/50"
+                        /> */}
+                      {/* </div> */}
+                      {/* <div className="mt-3 text-center"> */}
+                        {/* <h4 className="font-bold text-sm text-gray-800 leading-tight group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-700">
+                          Priya S.
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          Mumbai, India
+                        </p> */}
+                      {/* </div> */}
+                    {/* </div> */}
+
+                    {/* Right Side - Testimonial and Details */}
+                    <div className="flex-1 min-w-0">
+                      <div className="mb-4">
+                        <Quote className="h-5 w-5 text-orange-500 mb-2 flex-shrink-0" />
+                        <blockquote className="text-gray-700 italic leading-relaxed text-sm group-hover:text-gray-800 transition-all duration-700">
+                          "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing."
+                        </blockquote>
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-4 w-4 text-orange-400 fill-current group-hover:text-pink-400 transition-all duration-700"
+                            />
+                          ))}
+                        </div>
+                        <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
+                          3 weeks later
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Border glow */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-orange-400/30 group-hover:shadow-[0_0_20px_rgba(251,146,60,0.3)] transition-all duration-700"></div>
             </div>
           </div>
         </div>
@@ -511,6 +590,7 @@ const Philosophy = () => {
         .grid > div:nth-child(4) { animation-delay: 600ms; }
       `}</style>
     </section>
+
   );
 };
 
@@ -842,9 +922,9 @@ const ProductPage = () => {
               },
               {
                 name: "Thando W.",
-                location: "Cape Town, South Africa",
+                location: "Cape Town, SA",
                 testimonial:
-                  "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress.",
+                  "This isn’t just skincare — it’s soul work. The guide showed me my acne was tied to stress.",
                 timeframe: "4 weeks later",
                 image:
                   "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
@@ -1195,9 +1275,67 @@ const ProductPage = () => {
               What's Inside — Complete System
             </h2>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-bold animate-pulse">
-              5 comprehensive modules + bonus materials worth $264
-            </p>
+           {/* // Professional animated text flipper with elegant boxes - Replace your static <p> tag with this: */}
+
+<div className="text-center max-w-4xl mx-auto">
+  <div className="relative h-24 overflow-hidden">
+    <div className="absolute inset-0 flex flex-col animate-text-flip">
+      {/* Text 1: 5 Comprehensive Modules */}
+      <div className="h-24 flex items-center justify-center shrink-0 px-4">
+        <div className="bg-gradient-to-r from-orange-50 to-rose-50 border border-orange-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
+          <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-600 to-rose-600 text-transparent bg-clip-text">
+            ✨ 5 Comprehensive Modules
+          </span>
+        </div>
+      </div>
+      
+      {/* Text 2: Exclusive Bonus Materials */}
+      <div className="h-24 flex items-center justify-center shrink-0 px-4">
+        <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
+          <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 text-transparent bg-clip-text">
+            🎁 + Exclusive Bonus Materials
+          </span>
+        </div>
+      </div>
+      
+      {/* Text 3: Premium Value Package */}
+      <div className="h-24 flex items-center justify-center shrink-0 px-4">
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-center">
+            <div className="text-lg md:text-xl font-bold text-gray-700 mb-1">
+              💎 Premium Value Package
+            </div>
+            <div className="text-base md:text-lg text-gray-600">
+              Worth <span className="line-through text-gray-400 font-medium">$264</span> 
+              <span className="ml-2 text-green-600 font-bold">Now Just $9!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style jsx>{`
+    @keyframes textFlip {
+      0%, 30% {
+        transform: translateY(0);
+      }
+      33.33%, 63.33% {
+        transform: translateY(-6rem);
+      }
+      66.66%, 96.66% {
+        transform: translateY(-12rem);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-text-flip {
+      animation: textFlip 7s ease-in-out infinite;
+    }
+  `}</style>
+</div>
           </div>
 
           {/* Top 3 Modules */}
@@ -1415,7 +1553,7 @@ const ProductPage = () => {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              5 Premium Resources
+              4 Premium Resources
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Accelerate your melanin-rich skin transformation with these
@@ -1458,39 +1596,7 @@ const ProductPage = () => {
             </div>
 
             {/* Bonus 2 */}
-            <div className="group">
-              <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-3">
-                      Video Tutorial Series
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      Step-by-step application techniques and professional tips
-                      demonstrated on various melanin-rich skin tones.
-                    </p>
-                    <ul className="text-sm text-muted-foreground space-y-2">
-                      <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        10+ technique demonstrations
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        Common mistake corrections
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bonus 3 */}
-            <div className="group">
+                       <div className="group">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
@@ -1521,8 +1627,8 @@ const ProductPage = () => {
               </div>
             </div>
 
-            {/* Bonus 4 */}
-            <div className="group">
+            {/* Bonus 3 */}
+           <div className="group">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
@@ -1552,10 +1658,42 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
+          {/* </div> */}
+
+            {/* Bonus 4 */}
+            <div className="group">
+              <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Activity className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      Gut-Skin Connection Optimization Protocol
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+Advanced checklist and protocols to optimize gut health for radiant melanin-rich skin through natural methods.
+                    </p>
+                    <ul className="text-sm text-muted-foreground space-y-2">
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                        Step-by-step optimization system
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                        Easy-to-follow daily checklist included
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Bonus 5 - Featured */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 border-2 border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-500">
               <div className="flex flex-col lg:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
@@ -1575,7 +1713,7 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Learning Outcomes Section */}
           <div className="mb-2 md:mb-0">
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 md:p-10 border-2 border-primary/20 shadow-xl">
@@ -1703,7 +1841,7 @@ const ProductPage = () => {
               },
               {
                 name: "Thando W.",
-                location: "Cape Town, South Africa",
+                location: "Cape Town, SA",
                 testimonial:
                   "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress.",
                 timeframe: "4 weeks later",
@@ -1793,22 +1931,7 @@ const ProductPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 md:py-2 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-primary/30 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-20 w-60 h-60 bg-accent/30 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-32 h-32 bg-primary-light/20 rounded-full blur-2xl animate-pulse"
-            style={{ animationDelay: "4s" }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4 max-w-6xl relative z-10"></div>
-      </section>
+      
       {/* Philosophy Section */}
       <Philosophy />
       {/* Final CTA - Compact */}
