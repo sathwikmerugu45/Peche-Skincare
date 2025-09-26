@@ -74,7 +74,7 @@ const Navigation = () => {
               </div>
             </div>
             <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-primary transition-all duration-300">
-              Pêche Skincare
+              Pêche
             </span>
           </div>
 

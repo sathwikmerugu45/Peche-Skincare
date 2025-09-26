@@ -732,43 +732,43 @@
 //         </div>
 //       </div>
 
-//       {/* Bonus 2 */}
-//       <div className="group">
-//         <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
-//           <div className="flex items-start gap-6">
-//             <div className="flex-shrink-0">
-//               <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-//                 <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-//                   <div className="w-4 h-4 bg-rose-500 rounded"></div>
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="flex-1">
-//               <div className="flex items-center gap-3 mb-4">
-//                 <span className="bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-//                   VALUE $29
-//                 </span>
-//               </div>
-//               <h3 className="text-xl font-bold text-gray-900 mb-3">
-//                 Video Tutorial Series
-//               </h3>
-//               <p className="text-gray-600 leading-relaxed mb-4">
-//                 Step-by-step application techniques and professional tips demonstrated on various melanin-rich skin tones.
-//               </p>
-//               <ul className="text-sm text-gray-500 space-y-2">
-//                 <li className="flex items-center gap-2">
-//                   <div className="w-1.5 h-1.5 bg-rose-400 rounded-full"></div>
-//                   10+ technique demonstrations
-//                 </li>
-//                 <li className="flex items-center gap-2">
-//                   <div className="w-1.5 h-1.5 bg-rose-400 rounded-full"></div>
-//                   Common mistake corrections
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
+    //   {/* Bonus 2 */}
+    //   <div className="group">
+    //     <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+    //       <div className="flex items-start gap-6">
+    //         <div className="flex-shrink-0">
+    //           <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+    //             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+    //               <div className="w-4 h-4 bg-rose-500 rounded"></div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //         <div className="flex-1">
+    //           <div className="flex items-center gap-3 mb-4">
+    //             <span className="bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+    //               VALUE $29
+    //             </span>
+    //           </div>
+    //           <h3 className="text-xl font-bold text-gray-900 mb-3">
+    //             Video Tutorial Series
+    //           </h3>
+    //           <p className="text-gray-600 leading-relaxed mb-4">
+    //             Step-by-step application techniques and professional tips demonstrated on various melanin-rich skin tones.
+    //           </p>
+    //           <ul className="text-sm text-gray-500 space-y-2">
+    //             <li className="flex items-center gap-2">
+    //               <div className="w-1.5 h-1.5 bg-rose-400 rounded-full"></div>
+    //               10+ technique demonstrations
+    //             </li>
+    //             <li className="flex items-center gap-2">
+    //               <div className="w-1.5 h-1.5 bg-rose-400 rounded-full"></div>
+    //               Common mistake corrections
+    //             </li>
+    //           </ul>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
 //       {/* Bonus 3 */}
 //       <div className="group">
@@ -848,35 +848,35 @@
 //     </div>
 
 //     {/* Bonus 5 - Featured */}
-//     <div className="mb-12">
-//       <div className="bg-gradient-to-r from-orange-50 to-rose-50 rounded-2xl p-8 md:p-10 border-2 border-orange-200">
-//         <div className="flex flex-col lg:flex-row items-center gap-8">
-//           <div className="flex-shrink-0">
-//             <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-rose-500 rounded-2xl flex items-center justify-center">
-//               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-//                 <div className="w-5 h-5 bg-gradient-to-br from-orange-500 to-rose-500 rounded"></div>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="flex-1 text-center lg:text-left">
-//             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-//               <span className="bg-gradient-to-r from-orange-500 to-rose-500 text-white text-sm font-bold px-4 py-2 rounded-full">
-//                 VALUE $22
-//               </span>
-//               <span className="bg-white text-orange-600 text-sm font-bold px-4 py-2 rounded-full border border-orange-200">
-//                 PREMIUM BONUS
-//               </span>
-//             </div>
-//             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-//               Gut-Skin Connection Optimization Protocol
-//             </h3>
-//             <p className="text-lg text-gray-600 leading-relaxed">
-//               Advanced checklist and protocols to optimize your gut health for clearer, more radiant melanin-rich skin through natural methods and targeted interventions.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
+    // <div className="mb-12">
+    //   <div className="bg-gradient-to-r from-orange-50 to-rose-50 rounded-2xl p-8 md:p-10 border-2 border-orange-200">
+    //     <div className="flex flex-col lg:flex-row items-center gap-8">
+    //       <div className="flex-shrink-0">
+    //         <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-rose-500 rounded-2xl flex items-center justify-center">
+    //           <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+    //             <div className="w-5 h-5 bg-gradient-to-br from-orange-500 to-rose-500 rounded"></div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div className="flex-1 text-center lg:text-left">
+    //         <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+    //           <span className="bg-gradient-to-r from-orange-500 to-rose-500 text-white text-sm font-bold px-4 py-2 rounded-full">
+    //             VALUE $22
+    //           </span>
+    //           <span className="bg-white text-orange-600 text-sm font-bold px-4 py-2 rounded-full border border-orange-200">
+    //             PREMIUM BONUS
+    //           </span>
+    //         </div>
+    //         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+    //           Gut-Skin Connection Optimization Protocol
+    //         </h3>
+    //         <p className="text-lg text-gray-600 leading-relaxed">
+    //           Advanced checklist and protocols to optimize your gut health for clearer, more radiant melanin-rich skin through natural methods and targeted interventions.
+    //         </p>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
 
 //     {/* Value Summary */}
 //     <div className="bg-white rounded-2xl p-8 md:p-10 border-2 border-gray-100 shadow-2xl">

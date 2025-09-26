@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import ReactCountryFlag from "react-country-flag";
 import RazorpayButton from "@/components/RazorpayButton";
 import {
   ShoppingCart,
@@ -33,6 +34,7 @@ import {
   Activity,
   RefreshCw,
   CheckCircle,
+  Book,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -90,7 +92,7 @@ const ProductNavigation = () => {
     { name: "Home", href: "#home" },
     { name: "Transformations", href: "#transformations" },
     { name: "Modules", href: "#bonusecs" },
-    { name: "Four Bonuses", href: "#bonuses" },
+    { name: "Five Bonuses", href: "#bonuses" },
     { name: "FAQ's", href: "#faq" },
     { name: "Contact Us", href: "#contact" },
   ];
@@ -126,16 +128,27 @@ const ProductNavigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
-          {/* Enhanced Logo with 3D effects */}
+          {/* Enhanced Logo with Image */}
           <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-glow transition-all duration-300 group-hover:shadow-xl">
-                <Sparkles className="h-5 w-5 text-primary-foreground transition-transform duration-300 group-hover:rotate-180" />
-              </div>
+              {/* Logo Image Container */}
+             <div className="w-24 h-12 sm:w-28 sm:h-10 md:w-38 md:h-12 rounded-xl overflow-hidden shadow-glow transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+  <img 
+    src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758915308/Gemini_Generated_Image_abgdngabgdngabgd_u0rzuu.png" 
+    alt="Pêche Logo"
+    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+  />
+</div>
+
+              
+              {/* Optional overlay icon for branding */}
+              {/* <div className="absolute inset-0 bg-primary/20 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"> */}
+                {/* <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white" /> */}
+              {/* </div> */}
             </div>
-            <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-primary transition-all duration-300">
-            Pêche Skincare
-            </span>
+            {/* <span className="text-base sm:text-lg md:text-xl font-light text-foreground group-hover:text-primary transition-all duration-300">
+            Pêche 
+            </span> */}
           </div>
 
           {/* Enhanced Desktop Navigation */}
@@ -275,7 +288,6 @@ const ProductNavigation = () => {
     </nav>
   );
 };
-
 const Philosophy = () => {
   const features = [
     {
@@ -319,277 +331,225 @@ const Philosophy = () => {
   };
 
   return (
-  <section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-pink-200/40 rounded-full blur-2xl animate-pulse"></div>
-        <div
-          className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-pink-200/30 to-orange-200/30 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-orange-100/20 to-pink-100/20 rounded-full blur-3xl"></div>
-      </div>
+ <section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
+  {/* Subtle Background Pattern */}
+  <div className="absolute inset-0 opacity-30">
+    <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-pink-200/40 rounded-full blur-2xl animate-pulse"></div>
+    <div
+      className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-br from-pink-200/30 to-orange-200/30 rounded-full blur-3xl animate-pulse"
+      style={{ animationDelay: "2s" }}
+    ></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-orange-100/20 to-pink-100/20 rounded-full blur-3xl"></div>
+  </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Content Section */}
-        <div className="grid lg:grid-cols-2 gap-10 items-start mb-16">
-          {/* Text Content */}
-          <div className="space-y-5 order-1 lg:order-1">
-            <div className="space-y-5 animate-slideInLeft">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                Why I Created
-                <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent block mt-1">
-                  This
-                </span>
-              </h2>
-
-              <div className="pl-3 border-l-2 border-orange-300/50">
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed transition-all duration-700 hover:translate-x-2">
-                  I used to feel ashamed of my bare skin — hiding behind filters
-                  and whitening creams that only made things worse.
-                </p>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed mt-3 transition-all duration-700 hover:translate-x-2 delay-100">
-                  Skincare advice never spoke to us. So I made the thing I wish
-                  I had.
-                </p>
-              </div>
-            </div>
-
-            {/* Why this guide works card */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-orange-100/50 shadow-lg transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 animate-fadeIn delay-300">
-              <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center">
-                <span className="w-6 h-6 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center mr-2 text-white text-sm">
-                  ✓
-                </span>
-                Why This Guide Works
-              </h3>
-
-              <div className="space-y-3 text-gray-700">
-                {[
-                  "Built for melanin-rich skin — not a copy-paste routine",
-                  "Glow naturally by healing your skin barrier",
-                  "No more expensive trial & error",
-                  "Based on real results, not marketing hype",
-                  "Download instantly — from anywhere in the world",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start space-x-3 transition-all duration-500 hover:translate-x-2"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <span className="flex-shrink-0 w-4 h-4 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                    </span>
-                    <span className="text-base">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 -pt-2 border-t border-orange-100/50">
-                <p className="text-gray-600 italic text-center text-base leading-relaxed transition-all duration-700 hover:scale-105">
-                  From India to Africa to Southeast Asia — we deserve to glow,
-                  naturally.
-                  <span className="block font-semibold text-orange-600 mt-2">
-                    A real, melanin-safe guide rooted in healing, not shame.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Transformation Card Section (Replacing Image) */}
-          <div className="relative order-2 lg:order-2">
-            <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer">
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
-
-              {/* Floating sparkles */}
-              <div
-                className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.2s" }}
-              ></div>
-              <div
-                className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.4s" }}
-              ></div>
-              <div
-                className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.6s" }}
-              ></div>
-
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
-
-              <div className="relative z-10">
-                {/* Large Image - Touching the card border */}
-                <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
-                  <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
-                    <img
-                      src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
-                      alt="Before and After transformation"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                    />
-                    {/* Before label - Left top */}
-                    <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-                      Before
-                    </div>
-                    {/* After label - Right top */}
-                    <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-                      After
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="px-6 pb-6 pt-6">
-                  <div className="flex items-start gap-4">
-                    {/* Left Side - Profile */}
-                    {/* <div className="flex-shrink-0 flex flex-col items-center"> */}
-                      {/* <div className="w-16 h-16 bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg animate-float"> */}
-                        {/* <img
-                          src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
-                          alt="Priya S."
-                          className="w-12 h-12 rounded-full object-cover border-2 border-white/50"
-                        /> */}
-                      {/* </div> */}
-                      {/* <div className="mt-3 text-center"> */}
-                        {/* <h4 className="font-bold text-sm text-gray-800 leading-tight group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-700">
-                          Priya S.
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          Mumbai, India
-                        </p> */}
-                      {/* </div> */}
-                    {/* </div> */}
-
-                    {/* Right Side - Testimonial and Details */}
-                    <div className="flex-1 min-w-0">
-                      <div className="mb-4">
-                        <Quote className="h-5 w-5 text-orange-500 mb-2 flex-shrink-0" />
-                        <blockquote className="text-gray-700 italic leading-relaxed text-sm group-hover:text-gray-800 transition-all duration-700">
-                          "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing."
-                        </blockquote>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="h-4 w-4 text-orange-400 fill-current group-hover:text-pink-400 transition-all duration-700"
-                            />
-                          ))}
-                        </div>
-                        <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
-                          3 weeks later
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Border glow */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-orange-400/30 group-hover:shadow-[0_0_20px_rgba(251,146,60,0.3)] transition-all duration-700"></div>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    {/* Main Content Section */}
+    <div className="grid lg:grid-cols-2 gap-10 items-start mb-0 md:mb-0">
+      {/* Text Content */}
+      <div className="space-y-5 order-1 lg:order-1">
+        <div className="space-y-5 animate-slideInLeft">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            Why I Created
+           <span className="font-black text-primary block mt-1">This</span>
+          </h2>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
+        {/* Testimonial Card - Mobile Only */}
+        <div className="lg:hidden mt-6">
+          <div className="relative group bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
             <div
-              key={feature.title}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 opacity-0 animate-slideInUp overflow-hidden cursor-pointer"
-              style={{
-                animationDelay: `${index * 200}ms`,
-                animationFillMode: "forwards",
-              }}
-            >
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
+              className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+              style={{ animationDelay: "0.2s" }}
+            ></div>
+            <div
+              className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+              style={{ animationDelay: "0.4s" }}
+            ></div>
+            <div
+              className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+              style={{ animationDelay: "0.6s" }}
+            ></div>
 
-              {/* Floating sparkles */}
-              <div
-                className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.2s" }}
-              ></div>
-              <div
-                className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.4s" }}
-              ></div>
-              <div
-                className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                style={{ animationDelay: "0.6s" }}
-              ></div>
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
 
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
-
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className="bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg group-hover:shadow-xl animate-float">
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-20 group-hover:scale-110 transition-all duration-700"></div>
-                    <feature.icon className="h-10 w-10 text-orange-500 group-hover:text-pink-500 transition-all duration-700 relative z-10 group-hover:scale-110" />
+            <div className="relative z-10">
+              <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
+                <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
+                  <img
+                    src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
+                    alt="Before and After transformation"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                    Before
+                  </div>
+                  <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                    After
                   </div>
                 </div>
-
-                {/* Title */}
-                <h4 className="text-xl font-bold text-gray-800 mb-4 text-center transition-all duration-700 group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transform group-hover:scale-105">
-                  {feature.title}
-                </h4>
-
-                {/* Description */}
-                <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-all duration-700 transform group-hover:scale-105 group-hover:translate-y-1">
-                  {feature.description}
-                </p>
               </div>
 
-              {/* Border glow */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-orange-400/30 group-hover:shadow-[0_0_20px_rgba(251,146,60,0.3)] transition-all duration-700"></div>
+              <div className="px-6 pb-6 pt-6">
+                <blockquote className="text-gray-700 italic leading-relaxed text-sm">
+                  "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed understanding of melanin skin."
+                </blockquote>
+
+                <div className="flex items-center justify-between mt-4">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className="h-4 w-4 text-orange-400 fill-current"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.757 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
+                    3 weeks later
+                  </span>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Remaining Text Content */}
+        <div className="pl-3 border-l-2 border-orange-300/50 mt-5 space-y-3">
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed transition-all duration-700 hover:translate-x-2">
+            I used to feel ashamed of my bare skin — hiding behind filters
+            and whitening creams that only made things worse.
+          </p>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed mt-3 transition-all duration-700 hover:translate-x-2 delay-100">
+            Skincare advice never spoke to us. So I made the thing I wish
+            I had.
+          </p>
+        </div>
+
+        {/* Why this guide works card */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-orange-100/50 shadow-lg transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 animate-fadeIn delay-300 mt-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center">
+            <span className="w-6 h-6 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center mr-2 text-white text-sm">
+              ✓
+            </span>
+            Why This Guide Works
+          </h3>
+
+          <div className="space-y-3 text-gray-700">
+            {[
+              "Built for melanin-rich skin — not a copy-paste routine",
+              "Glow naturally by healing your skin barrier",
+              "No more expensive trial & error",
+              "Based on real results, not marketing hype",
+              "Download instantly — from anywhere in the world",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-start space-x-3 transition-all duration-500 hover:translate-x-2"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <span className="flex-shrink-0 w-4 h-4 bg-green-100 rounded-full flex items-center justify-center mt-1">
+                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                </span>
+                <span className="text-base">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 -pt-2 border-t border-orange-100/50">
+            <p className="text-gray-600 italic text-center text-base leading-relaxed transition-all duration-700 hover:scale-105">
+              From India to Africa to Southeast Asia — we deserve to glow,
+              naturally.
+              <span className="block font-semibold text-primary mt-2">
+                A real, melanin-safe guide rooted in healing, not shame.
+              </span>
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Extra Animations */}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          25% { transform: translateY(-5px) rotate(1deg); }
-          50% { transform: translateY(-10px) rotate(0deg); }
-          75% { transform: translateY(-5px) rotate(-1deg); }
-        }
+      {/* Testimonial Card - Desktop Only */}
+    {/* Testimonial Card - Desktop Only */}
+<div className="relative hidden lg:block order-2">
+  <div className="relative group bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer">
+    <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
+    <div
+      className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+      style={{ animationDelay: "0.2s" }}
+    ></div>
+    <div
+      className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+      style={{ animationDelay: "0.4s" }}
+    ></div>
+    <div
+      className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+      style={{ animationDelay: "0.6s" }}
+    ></div>
 
-        @keyframes slideInUp {
-          0% { opacity: 0; transform: translateY(50px) scale(0.9); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
+    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
 
-        @keyframes slideInLeft {
-          0% { opacity: 0; transform: translateX(-30px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
+    <div className="relative z-10">
+      <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
+        <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
+          <img
+            src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
+            alt="Before and After transformation"
+            className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
+          />
+          <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+            Before
+          </div>
+          <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+            After
+          </div>
+        </div>
+      </div>
 
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
+      <div className="px-6 pb-6 pt-6">
+        <blockquote className="text-gray-700 italic leading-relaxed text-sm">
+          "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed understanding of melanin skin."
+        </blockquote>
 
-        .animate-float { animation: float 4s ease-in-out infinite; }
-        .animate-slideInUp { animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .animate-slideInLeft { animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+        <div className="flex items-center justify-between mt-4">
+          <div className="flex">
+            {[...Array(5)].map((_, i) => (
+              <svg
+                key={i}
+                className="h-4 w-4 text-orange-400 fill-current"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.757 4.635 1.123 6.545z" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
+            3 weeks later
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
 
-        .group:hover .animate-float { animation: float 2s ease-in-out infinite; }
+  <style>{`
+    @keyframes float {0%,100%{transform:translateY(0) rotate(0deg);}25%{transform:translateY(-5px) rotate(1deg);}50%{transform:translateY(-10px) rotate(0deg);}75%{transform:translateY(-5px) rotate(-1deg);}}
+    @keyframes slideInUp {0%{opacity:0; transform:translateY(50px) scale(0.9);}100%{opacity:1; transform:translateY(0) scale(1);}}
+    @keyframes slideInLeft {0%{opacity:0; transform:translateX(-30px);}100%{opacity:1; transform:translateX(0);}}
+    @keyframes fadeIn {0%{opacity:0;}100%{opacity:1;}}
+    .animate-float{animation:float 4s ease-in-out infinite;}
+    .animate-slideInUp{animation:slideInUp 0.8s cubic-bezier(0.4,0,0.2,1);}
+    .animate-slideInLeft{animation:slideInLeft 0.8s cubic-bezier(0.4,0,0.2,1);}
+    .animate-fadeIn{animation:fadeIn 1s ease-out forwards;}
+  `}</style>
+</section>
 
-        .grid > div:nth-child(1) { animation-delay: 0ms; }
-        .grid > div:nth-child(2) { animation-delay: 200ms; }
-        .grid > div:nth-child(3) { animation-delay: 400ms; }
-        .grid > div:nth-child(4) { animation-delay: 600ms; }
-      `}</style>
-    </section>
+
 
   );
 };
@@ -664,16 +624,16 @@ const ProductPage = () => {
       {/* Hero Section - Optimized Layout */}
       <section
         id="home"
-        className="pt-24 pb-8 md:pt-30 md:pb-10 bg-gradient-to-br from-primary/10 via-background to-accent/10"
+        className="pt-20 pb-8 md:pt-36 md:pb-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start min-h-[60vh] lg:min-h-[70vh]">
             {/* Product Info - Now First on Mobile */}
             <div className="space-y-4">
-              <Badge className="inline-flex bg-accent/20 text-accent-foreground py-2 px-4 text-sm font-medium">
+              {/* <Badge className="inline-flex bg-accent/20 text-accent-foreground py-2 px-4 text-sm font-medium">
                 <Timer className="h-4 w-4 mr-2" />
                 Limited Time: 76% OFF
-              </Badge>
+              </Badge> */}
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 34-Page Melanin-Rich Skin Glow Guide
@@ -706,25 +666,30 @@ const ProductPage = () => {
                 </div>
               </div>
 
-              {/* Pricing Card - Ultra Compact */}
-           {/* Pricing Card - Responsive Compact */}
-<div className="bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl p-3 md:p-4 border border-primary/20 w-full max-w-[340px] md:max-w-none mx-auto">  {/* Header: Old Price + Discount + New Price */}
-  <div className="flex items-center justify-between mb-1 md:mb-2">
-    <div className="flex items-center gap-1 md:gap-2">
-      <span className="text-base md:text-lg font-semibold text-muted-foreground line-through">
+   {/* Pricing Card - Ultra Compact */}
+<div className="bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl p-3 md:p-4 border border-primary/20 w-full max-w-[340px] md:max-w-none mx-auto">
+  {/* Header */}
+  <div className="relative mb-1 md:mb-2">
+    {/* Somewhat left-aligned Price with Today Only beside it */}
+    <div className="flex items-center justify-center">
+      <div className="flex items-center gap-2 mr-16">
+        <div className="text-xl md:text-3xl font-extrabold text-primary leading-tight">
+          $9
+        </div>
+        <div className="text-[12px] md:text-xs text-black font-bold">
+          Today Only
+        </div>
+      </div>
+    </div>
+
+    {/* Old Price + Discount (top-right) */}
+    <div className="absolute top-0 right-0 text-right">
+      <span className="text-xs md:text-sm font-semibold text-muted-foreground line-through">
         $37
       </span>
-      <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-1.5 text-[10px] md:text-xs">
+      <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-1 text-[9px] md:text-[10px] ml-1">
         76% OFF
       </Badge>
-    </div>
-    <div className="text-right">
-      <div className="text-xl md:text-3xl font-extrabold text-primary leading-tight">
-        $9
-      </div>
-      <div className="text-[10px] md:text-xs text-muted-foreground">
-        Today Only
-      </div>
     </div>
   </div>
 
@@ -737,38 +702,53 @@ const ProductPage = () => {
     Download PDF (5MB)
   </Button>
 
-  {/* Features */}
-  <div className="grid grid-cols-3 gap-1 md:gap-2 text-center mt-2 md:mt-3">
-    <div className="space-y-0">
-      <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
-      <p className="text-[10px] md:text-xs text-muted-foreground">Money Back</p>
-    </div>
-    <div className="space-y-0">
-      <Download className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
-      <p className="text-[10px] md:text-xs text-muted-foreground">
-        Instant Access
-      </p>
-    </div>
-    <div className="space-y-0">
-      <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary mx-auto" />
-      <p className="text-[10px] md:text-xs text-muted-foreground">Worldwide</p>
-    </div>
+  {/* Features - Closer spacing between items */}
+  <div className="flex justify-center items-start mt-2 w-full gap-2">
+    {[
+      {
+        text: "100% Satisfaction",
+        icon: Heart,
+        animation: "animate-float [animation-delay:200ms]",
+        align: "left"
+      },
+      {
+        text: "Instant Access",
+        icon: Download,
+        animation: "animate-float [animation-delay:400ms]",
+        align: "center"
+      },
+      {
+        text: "24/7 Support",
+        icon: MessageCircle,
+        animation: "animate-float [animation-delay:600ms]",
+        align: "right"
+      },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="flex flex-col items-center justify-center flex-1"
+      >
+        <item.icon className="h-3 w-3 md:h-5 md:w-5 text-primary animate-pulse-glow mb-0.5" />
+        <span className="text-[10px] md:text-xs font-medium text-muted-foreground leading-tight text-center">
+          {item.text}
+        </span>
+      </div>
+    ))}
   </div>
 </div>
 </div>
 
-
-            {/* Product Images - Starting at Heading Level and Ending at Card Level */}
+            {/* Product Images - Match left card height exactly */}
             <div className="relative flex flex-col">
               {/* Skip badge to align with heading */}
-              <div className="h-10 mb-2"></div>
+              <div className="h-0 mb-2"></div>
 
               <div className="flex-1 flex flex-col">
-                <div className="relative group flex-1 mb-3 md:mb-4">
+                <div className="relative group mb-0">
                   <img
-                    src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/DTP_3252_g6199c.jpg"
+                    src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218700/DTP_3061_wf2a7v.jpg"
                     alt="Skincare transformation results"
-                    className="w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="w-full h-[420px] md:h-[480px] lg:h-[500px] object-cover rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-primary text-white font-semibold py-1 md:py-1.5 px-3 md:px-4 text-xs md:text-sm">
@@ -790,21 +770,6 @@ const ProductPage = () => {
                     />
                   </Button>
                 </div>
-
-                <div className="grid grid-cols-3 gap-2 md:gap-4">
-                  {[
-                    "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218700/DTP_3061_wf2a7v.jpg",
-                    "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218700/DTP_3061_wf2a7v.jpg",
-                    "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218700/DTP_3061_wf2a7v.jpg",
-                  ].map((src, index) => (
-                    <img
-                      key={index}
-                      src={src}
-                      alt={`Product image ${index + 1}`}
-                      className="w-full h-16 md:h-20 lg:h-24 object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
-                    />
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -812,22 +777,22 @@ const ProductPage = () => {
       </section>
 
       {/* Trust Indicators - Compact with Animations */}
-      <section className="py-6 bg-gradient-to-b from-accent/10 to-accent/5 border-y border-accent/10">
+      {/* <section className="py-0 md:py-6 bg-gradient-to-b from-accent/10 to-accent/5 border-y border-accent/10">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
             {[
-              {
-                text: "Secure Payment",
-                icon: Shield,
-                animation: "animate-float",
-              },
+              // {
+              //   text: "Secure Payment",
+              //   icon: Shield,
+              //   animation: "animate-float",
+              // },
               {
                 text: "100% Satisfaction",
                 icon: Heart,
                 animation: "animate-float [animation-delay:200ms]",
               },
               {
-                text: "Digital Delivery",
+                text: "Instant Access",
                 icon: Download,
                 animation: "animate-float [animation-delay:400ms]",
               },
@@ -847,11 +812,11 @@ const ProductPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Transformation Results - Mobile Optimized */}
       <section
         id="transformations"
-        className="py-6 md:py-8 bg-gradient-to-br from-background via-accent/5 to-primary/5"
+        className="py-0 md:py-0 bg-gradient-to-br from-background via-accent/5 to-primary/5"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-10">
@@ -892,161 +857,141 @@ const ProductPage = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               See The Glow Transformation
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              These women followed the guide and achieved the natural glow they
-              always wanted. No filters, no editing — just real results from
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed italic">
+              These women followed the guide & achieved the natural glow. No filters, no editing, just real results from
               healing their skin naturally.
             </p>
           </div>
 
           {/* Premium Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 md:mb-16">
-            {[
-              {
-                name: "Priya S.",
-                location: "Mumbai, India",
-                testimonial:
-                  "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
-                timeframe: "3 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg",
-              },
-              {
-                name: "Adaora O.",
-                location: "Lagos, Nigeria",
-                testimonial:
-                  "I thought my dark spots were just something I had to live with. This guide completely changed my perspective.",
-                timeframe: "6 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5649_wwilbh.jpg",
-              },
-              {
-                name: "Thando W.",
-                location: "Cape Town, SA",
-                testimonial:
-                  "This isn’t just skincare — it’s soul work. The guide showed me my acne was tied to stress.",
-                timeframe: "4 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
-              },
-              {
-                name: "Keisha M.",
-                location: "Atlanta, USA",
-                testimonial:
-                  "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
-                timeframe: "5 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_6569_eaoxzn.jpg",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 opacity-0 animate-slideInUp overflow-hidden cursor-pointer"
-                style={{
-                  animationDelay: `${index * 200}ms`,
-                  animationFillMode: "forwards",
-                }}
-              >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
+    <div className="grid md:grid-cols-2 gap-8 mb-12 md:mb-16">
+  {[
+    {
+      name: "Melrose",
+      location: "Malaysia",
+      countryCode: "MY", // ISO country code
+      testimonial:
+        "I used to think my dark spots were permanent, but this guide completely transformed how I view and treat them.",
+      timeframe: "6 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5649_wwilbh.jpg",
+    },
+    {
+      name: "Chinwe",
+      location: "Nigeria",
+      countryCode: "NG",
+      testimonial:
+        "This isn't just skincare — it's soul work. The guide showed me my acne was tied to stress.",
+      timeframe: "4 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218638/Untitled_design.zip_-_1_lze2nw.png",
+    },
+    {
+      name: "Aisha.",
+      location: "India",
+      countryCode: "IN",
+      testimonial:
+        "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
+      timeframe: "5 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_6569_eaoxzn.jpg",
+    },
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="group relative bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 opacity-0 animate-slideInUp overflow-hidden cursor-pointer"
+      style={{
+        animationDelay: `${index * 200}ms`,
+        animationFillMode: "forwards",
+      }}
+    >
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
 
-                {/* Floating sparkles */}
-                <div
-                  className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                  style={{ animationDelay: "0.2s" }}
-                ></div>
-                <div
-                  className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                  style={{ animationDelay: "0.4s" }}
-                ></div>
-                <div
-                  className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-                  style={{ animationDelay: "0.6s" }}
-                ></div>
-
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
-
-                <div className="relative z-10">
-                  {/* Large Image - NOW TOUCHING THE CARD BORDER */}
-                  <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
-                    {" "}
-                    {/* Removed mx-6 mt-6 mb-6 */}
-                    <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
-                      <img
-                        src={item.image}
-                        alt="Before and After transformation"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                      />
-                      {/* Before label - Left top */}
-                      <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-                        Before
-                      </div>
-                      {/* After label - Right top */}
-                      <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-                        After
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="px-6 pb-6 pt-6">
-                    {" "}
-                    {/* Added pt-6 for spacing after image */}
-                    <div className="flex items-start gap-4">
-                      {/* Left Side - Profile */}
-                      <div className="flex-shrink-0 flex flex-col items-center">
-                        <div className="w-16 h-16 bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg animate-float">
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="w-12 h-12 rounded-full object-cover border-2 border-white/50"
-                          />
-                        </div>
-                        <div className="mt-3 text-center">
-                          <h4 className="font-bold text-sm text-gray-800 leading-tight group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-700">
-                            {item.name}
-                          </h4>
-                          <p className="text-xs text-gray-600">
-                            {item.location}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Right Side - Testimonial and Details */}
-                      <div className="flex-1 min-w-0">
-                        <div className="mb-4">
-                          <Quote className="h-5 w-5 text-orange-500 mb-2 flex-shrink-0" />
-                          <blockquote className="text-gray-700 italic leading-relaxed text-sm group-hover:text-gray-800 transition-all duration-700">
-                            "{item.testimonial}"
-                          </blockquote>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <div className="flex">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className="h-4 w-4 text-orange-400 fill-current group-hover:text-pink-400 transition-all duration-700"
-                              />
-                            ))}
-                          </div>
-                          <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
-                            {item.timeframe}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Border glow */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-orange-400/30 group-hover:shadow-[0_0_20px_rgba(251,146,60,0.3)] transition-all duration-700"></div>
-              </div>
-            ))}
+      {/* Card Content */}
+      <div className="relative z-10">
+        {/* Large Image - Updated for better visibility */}
+        <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
+          <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
+            <img
+              src={item.image}
+              alt="Before and After transformation"
+              className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
+            />
+            <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+              Before
+            </div>
+            <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+              After
+            </div>
           </div>
+        </div>
 
-          {/* Stats Grid with Counter Animation */}
+        {/* Card Info */}
+        <div className="px-6 pb-6 pt-6">
+          <div className="flex items-center gap-4">
+            {/* Profile */}
+            <div className="flex-shrink-0 flex flex-col items-center justify-center w-24">
+              <div className="text-center space-y-1"> 
+                {/* Name */}
+                <h4 className="font-bold text-sm text-gray-800 leading-tight 
+                  group-hover:bg-gradient-to-r group-hover:from-orange-600 
+                  group-hover:via-pink-600 group-hover:to-purple-600 
+                  group-hover:bg-clip-text group-hover:text-transparent 
+                  transition-all duration-700">
+                  {item.name}
+                </h4>
+
+                {/* Country name */}
+                <p className="text-xs text-gray-600">
+                  {item.location}
+                </p>
+
+                {/* Flag */}
+                <div className="flex items-center justify-center mt-1">
+                  <ReactCountryFlag
+                    countryCode={item.countryCode}
+                    svg
+                    style={{
+                      width: "1.8em",
+                      height: "1.8em",
+                    }}
+                    title={item.location}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial */}
+            <div className="flex-1 min-w-0">
+              <div className="mb-4">
+                <Quote className="h-5 w-5 text-orange-500 mb-2 flex-shrink-0" />
+                <blockquote className="text-gray-700 italic leading-relaxed text-sm group-hover:text-gray-800 transition-all duration-700">
+                  "{item.testimonial}"
+                </blockquote>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 text-orange-400 fill-current group-hover:text-pink-400 transition-all duration-700"
+                    />
+                  ))}
+                </div>
+                <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
+                  {item.timeframe}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+   {/* Stats Grid with Counter Animation */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 p-8 bg-card/50 backdrop-blur rounded-2xl border border-border">
             {[
               { value: 10000, label: "Women Transformed", suffix: "+" },
@@ -1097,11 +1042,11 @@ const ProductPage = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              What Makes This Different?
+              Who Is It for? & What Makes It Unique? 
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              This isn't a list of products. It's a <strong>blueprint</strong>{" "}
-              to heal your skin from the <em>inside out</em> — by understanding
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed italic">
+              It's a <strong>blueprint</strong>{" "}
+              to heal your skin from the <em>inside out</em> - by understanding
               your triggers, patterns, and emotions that affect your glow.
             </p>
           </div>
@@ -1271,16 +1216,33 @@ const ProductPage = () => {
               ))}
             </motion.div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              What's Inside — Complete System
-            </h2>
+       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-4">
+  What's Inside - <span className="font-black text-primary">$264</span> Value Pack
+</h2>
+
+
+
 
            {/* // Professional animated text flipper with elegant boxes - Replace your static <p> tag with this: */}
 
 <div className="text-center max-w-4xl mx-auto">
   <div className="relative h-24 overflow-hidden">
     <div className="absolute inset-0 flex flex-col animate-text-flip">
+       <div className="h-24 flex items-center justify-center shrink-0 px-4">
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-center">
+            <div className="text-lg md:text-xl font-bold text-gray-700 mb-1">
+              💎 Premium Value Package
+            </div>
+            <div className="text-base md:text-lg text-gray-600">
+              Worth <span className="line-through text-gray-400 font-bold">$264</span> 
+              <span className="ml-2 text-green-600 font-bold">Now Just $9!</span>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Text 1: 5 Comprehensive Modules */}
+      
       <div className="h-24 flex items-center justify-center shrink-0 px-4">
         <div className="bg-gradient-to-r from-orange-50 to-rose-50 border border-orange-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
           <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-600 to-rose-600 text-transparent bg-clip-text">
@@ -1348,7 +1310,7 @@ const ProductPage = () => {
                 features: [
                   "Why many routines harm melanin",
                   "Ingredients that harm melanin",
-                  "Decode skincare labels with care",
+                  "Decode skincare labels like a pro",
                 ],
                 icon: "🖤",
                 backgroundImage:
@@ -1528,7 +1490,7 @@ const ProductPage = () => {
       </section>
       {/* <Testimonials /> */}
       {/* Professional Bonuses Section */}
-      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+    <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
           <div className="text-center mb-6 md:mb-6">
@@ -1553,7 +1515,7 @@ const ProductPage = () => {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              4 Premium Resources
+              5 Premium Resources
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Accelerate your melanin-rich skin transformation with these
@@ -1583,11 +1545,11 @@ const ProductPage = () => {
                     <ul className="text-sm text-muted-foreground space-y-2">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        Weekly assessment templates
+                      Daily assessment templates
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        Photo comparison guides
+                        Daily checklist
                       </li>
                     </ul>
                   </div>
@@ -1595,6 +1557,35 @@ const ProductPage = () => {
               </div>
             </div>
 
+            <div className="group">
+              <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <BookOpen className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      Peche Mini-Course
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                     Discover professional tips and proven strategies on how to use it effectively, ensuring you achieve the best possible results
+                    </p>
+                    <ul className="text-sm text-muted-foreground space-y-2">
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                          3-step optimization system
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                         Add-on for maximum glow
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Bonus 2 */}
                        <div className="group">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
@@ -1606,7 +1597,7 @@ const ProductPage = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-foreground mb-3">
-                      Curated Product Database
+                      Curated Product list
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       Comprehensive collection of tested and approved skincare
@@ -1615,11 +1606,11 @@ const ProductPage = () => {
                     <ul className="text-sm text-muted-foreground space-y-2">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        50+ vetted products
+                        From drugstore to luxe
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        Price comparison tools
+                        Product list based on skincare steps
                       </li>
                     </ul>
                   </div>
@@ -1647,20 +1638,21 @@ const ProductPage = () => {
                     <ul className="text-sm text-muted-foreground space-y-2">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        21-day meal planning system
+                       Free hassle acne-friendly meal ideas
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        Shopping lists included
+                        Delicious snack lists
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-          {/* </div> */}
+          </div>
 
-            {/* Bonus 4 */}
+            {/* Bonus 4 - Centered and wider on desktop */}
+          <div className="lg:max-w-6xl lg:mx-auto mb-12 md:mb-10">
             <div className="group">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
                 <div className="flex items-start gap-6">
@@ -1674,16 +1666,16 @@ const ProductPage = () => {
                       Gut-Skin Connection Optimization Protocol
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-Advanced checklist and protocols to optimize gut health for radiant melanin-rich skin through natural methods.
+                      Advanced checklist and protocols to optimize gut health for radiant melanin-rich skin through natural methods.
                     </p>
                     <ul className="text-sm text-muted-foreground space-y-2">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        Step-by-step optimization system
+                        Gut health checklist
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                        Easy-to-follow daily checklist included
+                        Gut health quick check result
                       </li>
                     </ul>
                   </div>
@@ -1692,28 +1684,7 @@ Advanced checklist and protocols to optimize gut health for radiant melanin-rich
             </div>
           </div>
 
-          {/* Bonus 5 - Featured */}
-          {/* <div className="mb-8">
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-10 border-2 border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-500">
-              <div className="flex flex-col lg:flex-row items-center gap-8">
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                    <Activity className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1 text-center lg:text-left">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    Gut-Skin Connection Optimization Protocol
-                  </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Advanced checklist and protocols to optimize your gut health
-                    for clearer, more radiant melanin-rich skin through natural
-                    methods and targeted interventions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+        
           {/* Learning Outcomes Section */}
           <div className="mb-2 md:mb-0">
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 md:p-10 border-2 border-primary/20 shadow-xl">
@@ -1774,163 +1745,165 @@ Advanced checklist and protocols to optimize gut health for radiant melanin-rich
         </div>
       </section>
       {/* Transformations Section - After Bonuses */}
-      <section className="py-6 md:py-8 bg-gradient-to-br from-background via-accent/5 to-primary/5">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8 md:mb-8">
-            <motion.div
-              initial={{ scale: 0, rotate: -15, opacity: 0 }}
-              whileInView={{
-                scale: [0, 1.3, 1],
-                rotate: [0, 8, -5, 0],
-                opacity: 1,
-              }}
-              transition={{ duration: 1, ease: "easeOut", bounce: 0.4 }}
-              viewport={{ once: true, amount: 0.5 }}
-              className="relative inline-block"
-            >
-              <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4 shadow-md">
-                <Award className="h-4 w-4 mr-2" />
-                More Success Stories
+    <section className="py-6 md:py-8 bg-gradient-to-br from-background via-accent/5 to-primary/5">
+  <div className="container mx-auto px-4 max-w-6xl">
+    <div className="text-center mb-8 md:mb-8">
+      <motion.div
+        initial={{ scale: 0, rotate: -15, opacity: 0 }}
+        whileInView={{
+          scale: [0, 1.3, 1],
+          rotate: [0, 8, -5, 0],
+          opacity: 1,
+        }}
+        transition={{ duration: 1, ease: "easeOut", bounce: 0.4 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="relative inline-block"
+      >
+        <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4 shadow-md">
+          <Award className="h-4 w-4 mr-2" />
+          More Success Stories
+        </Badge>
+
+        {[...Array(5)].map((_, i) => (
+          <motion.span
+            key={i}
+            custom={i}
+            variants={sparkVariants}
+            initial="hidden"
+            animate="visible"
+            className="absolute w-2 h-2 rounded-full bg-primary"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </motion.div>
+
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        Join Thousands of Happy Customers
+      </h2>
+      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Real women, real results. See how our guide has transformed lives
+        across the globe.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-0 md:mb-0">
+      {[
+        {
+          name: "Priya S.",
+          location: "Mumbai, India",
+          countryCode: "IN",
+          testimonial:
+            "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
+          timeframe: "3 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
+        },
+        {
+          name: "Keisha M.",
+          location: "Atlanta, USA",
+          countryCode: "US",
+          testimonial:
+            "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
+          timeframe: "5 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
+        },
+        {
+          name: "Thando W.",
+          location: "Cape Town, SA",
+          countryCode: "ZA",
+          testimonial:
+            "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to my gut health.",
+          timeframe: "4 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
+        },
+        {
+          name: "Adaora O.",
+          location: "Lagos, Nigeria",
+          countryCode: "NG",
+          testimonial:
+            "I thought my acne dark spots were just something I had to live with. This guide completely changed my perspective.",
+          timeframe: "6 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
+        },
+      ].map((item, index) => (
+        <Card
+          key={index}
+          className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 bg-card shadow-lg hover:-translate-y-2 hover:bg-card/95"
+        >
+          {/* Single Image with Before/After Labels */}
+          <div className="relative h-64 md:h-80">
+            <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-background/50 to-accent/5">
+              <img
+                src={item.image}
+                alt="Before and After transformation"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <Badge className="absolute top-3 left-3 bg-destructive/90 text-white text-xs font-medium px-2 py-1">
+                Before
               </Badge>
-
-              {[...Array(5)].map((_, i) => (
-                <motion.span
-                  key={i}
-                  custom={i}
-                  variants={sparkVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="absolute w-2 h-2 rounded-full bg-primary"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                  }}
-                />
-              ))}
-            </motion.div>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Join Thousands of Happy Customers
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Real women, real results. See how our guide has transformed lives
-              across the globe.
-            </p>
+              <Badge className="absolute top-3 right-3 bg-primary/90 text-white text-xs font-medium px-2 py-1">
+                After
+              </Badge>
+            </div>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-0 md:mb-0">
-            {[
-              {
-                name: "Priya S.",
-                location: "Mumbai, India",
-                testimonial:
-                  "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
-                timeframe: "3 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
-              },
-              {
-                name: "Adaora O.",
-                location: "Lagos, Nigeria",
-                testimonial:
-                  "I thought my dark spots were just something I had to live with. This guide completely changed my perspective.",
-                timeframe: "6 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
-              },
-              {
-                name: "Thando W.",
-                location: "Cape Town, SA",
-                testimonial:
-                  "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to stress.",
-                timeframe: "4 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
-              },
-              {
-                name: "Keisha M.",
-                location: "Atlanta, USA",
-                testimonial:
-                  "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
-                timeframe: "5 weeks later",
-                image:
-                  "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218638/Untitled_design.zip_-_1_lze2nw.png",
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 bg-card shadow-lg hover:-translate-y-2 hover:bg-card/95"
-              >
-                {/* Single Image with Before/After Labels */}
-                <div className="relative h-64 md:h-80">
-                  <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-background/50 to-accent/5">
-                    <img
-                      src={item.image}
-                      alt="Before and After transformation"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                    />
-                    {/* Before label - Left top */}
-                    <Badge className="absolute top-3 left-3 bg-destructive/90 text-white text-xs font-medium px-2 py-1">
-                      Before
-                    </Badge>
-                    {/* After label - Right top */}
-                    <Badge className="absolute top-3 right-3 bg-primary/90 text-white text-xs font-medium px-2 py-1">
-                      After
-                    </Badge>
-                  </div>
+          {/* Card Content - Horizontal Layout */}
+          <CardContent className="p-4">
+            <div className="flex items-center gap-4">
+              {/* Left Side - Profile (Centered) */}
+              <div className="flex-shrink-0 flex flex-col items-center text-center space-y-1 w-24">
+                <h4 className="font-bold text-sm text-foreground leading-tight">
+                  {item.name}
+                </h4>
+                <p className="text-xs text-muted-foreground">{item.location}</p>
+                <ReactCountryFlag
+                  countryCode={item.countryCode}
+                  svg
+                  style={{
+                    width: "1.6em",
+                    height: "1.6em",
+                  }}
+                  title={item.location}
+                />
+              </div>
+
+              {/* Right Side - Testimonial and Details */}
+              <div className="flex-1 min-w-0">
+                <div className="mb-3">
+                  <Quote className="h-4 w-4 text-primary mb-2 flex-shrink-0" />
+                  <blockquote className="text-foreground/90 italic leading-relaxed text-sm">
+                    "{item.testimonial}"
+                  </blockquote>
                 </div>
 
-                {/* Card Content - Horizontal Layout */}
-                <CardContent className="p-4">
-                  <div className="flex items-start gap-4">
-                    {/* Left Side - Profile */}
-                    <div className="flex-shrink-0 flex flex-col items-center">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                <div className="flex items-center justify-between">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-3 w-3 text-primary fill-current"
                       />
-                      <div className="mt-2 text-center">
-                        <h4 className="font-bold text-sm text-foreground leading-tight">
-                          {item.name}
-                        </h4>
-                        <p className="text-xs text-muted-foreground">
-                          {item.location}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Right Side - Testimonial and Details */}
-                    <div className="flex-1 min-w-0">
-                      <div className="mb-3">
-                        <Quote className="h-4 w-4 text-primary mb-2 flex-shrink-0" />
-                        <blockquote className="text-foreground/90 italic leading-relaxed text-sm">
-                          "{item.testimonial}"
-                        </blockquote>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="h-3 w-3 text-primary fill-current"
-                            />
-                          ))}
-                        </div>
-                        <span className="text-xs text-muted-foreground font-medium">
-                          {item.timeframe}
-                        </span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <span className="text-xs text-muted-foreground font-medium">
+                    {item.timeframe}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
       
       {/* Philosophy Section */}
       <Philosophy />
@@ -1951,9 +1924,11 @@ Advanced checklist and protocols to optimize gut health for radiant melanin-rich
               <ArrowRight className="h-4 w-4 text-primary" />
               <span className="text-3xl font-extrabold text-primary">$9</span>
             </div>
-            <p className="text-xs text-muted-foreground">
-              Today Only — Returns to $37 Soon
-            </p>
+           <p className="text-xs font-bold text-black">
+  Today Only — Returns to $37 Soon
+</p>
+
+
 
             {/* Risk-Free Box */}
             <div className="bg-primary/5 rounded-md p-3 border border-primary/20">
