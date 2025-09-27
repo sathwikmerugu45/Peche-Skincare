@@ -38,6 +38,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Pause,
+  ArrowDown,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Footer from "@/components/Footer";
@@ -667,6 +668,7 @@ const ProductPage = () => {
       return prev - 1;
     });
   };
+ 
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
@@ -698,6 +700,7 @@ const ProductPage = () => {
   };
   // Razorpay handler
   const handleBuyNow = () => {
+    console.log('Buy now clicked!');
     const options: any = {
       key: import.meta.env.VITE_RAZORPAY_KEY, // Razorpay key from .env
       amount: 900, // ₹9 in paise
@@ -787,73 +790,92 @@ const ProductPage = () => {
 
    {/* Pricing Card - Ultra Compact */}
 <div className="bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl p-3 md:p-4 border border-primary/20 w-full max-w-[340px] md:max-w-none mx-auto">
-  {/* Header */}
-  <div className="relative mb-1 md:mb-2">
-    {/* Somewhat left-aligned Price with Today Only beside it */}
-    <div className="flex items-center justify-center">
-      <div className="flex items-center gap-2 mr-16">
-        <div className="text-xl md:text-3xl font-extrabold text-primary leading-tight">
-          $9
+      {/* Header */}
+      <div className="relative mb-1 md:mb-2">
+        {/* Somewhat left-aligned Price with Today Only beside it */}
+        <div className="flex items-center justify-center">
+          <div className="flex items-center gap-2 mr-16">
+            <div className="text-xl md:text-3xl font-extrabold text-primary leading-tight animate-pulse">
+              $9
+            </div>
+            <div className="text-[12px] md:text-xs text-black font-bold ">
+              Today Only
+            </div>
+          </div>
         </div>
-        <div className="text-[12px] md:text-xs text-black font-bold">
-          Today Only
+
+        {/* Old Price + Discount (top-right) */}
+        <div className="absolute top-0 right-0 text-right">
+          <span className="text-xl md:text-xl font-semibold text-muted-foreground line-through">
+            $37
+          </span>
+          <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-1 text-[9px] md:text-[14px] ml-1 animate-pulse">
+            76% OFF
+          </Badge>
         </div>
       </div>
-    </div>
 
-    {/* Old Price + Discount (top-right) */}
-    <div className="absolute top-0 right-0 text-right">
-      <span className="text-xs md:text-sm font-semibold text-muted-foreground line-through">
-        $37
-      </span>
-      <Badge className="bg-destructive text-destructive-foreground font-bold py-0.5 px-1 text-[9px] md:text-[10px] ml-1">
-        76% OFF
-      </Badge>
-    </div>
-  </div>
 
-  {/* Buy Button */}
-  <Button
-    onClick={handleBuyNow}
-    className="w-full mt-2 md:mt-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold py-2 md:py-2.5 text-xs md:text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center"
-  >
-    <ShoppingCart className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
-    Download PDF (5MB)
-  </Button>
+{/* Buy Button */}
+<Button
+  onClick={handleBuyNow}
+  className="w-full mt-2 md:mt-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold py-2 md:py-2.5 text-xs md:text-sm rounded-lg shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+>
+  <ShoppingCart className="h-3 w-3 md:h-4 md:w-4" />
+  Download PDF (5MB)
+  <ArrowDown className="h-3 w-3 md:h-4 md:w-4 smooth-bounce" />
+</Button>
 
-  {/* Features - Closer spacing between items */}
-  <div className="flex justify-center items-start mt-2 w-full gap-2">
-    {[
-      {
-        text: "100% Satisfaction",
-        icon: Heart,
-        animation: "animate-float [animation-delay:200ms]",
-        align: "left"
-      },
-      {
-        text: "Instant Access",
-        icon: Download,
-        animation: "animate-float [animation-delay:400ms]",
-        align: "center"
-      },
-      {
-        text: "24/7 Support",
-        icon: MessageCircle,
-        animation: "animate-float [animation-delay:600ms]",
-        align: "right"
-      },
-    ].map((item, index) => (
-      <div
-        key={index}
-        className="flex flex-col items-center justify-center flex-1"
-      >
-        <item.icon className="h-3 w-3 md:h-5 md:w-5 text-primary animate-pulse-glow mb-0.5" />
-        <span className="text-[10px] md:text-xs font-medium text-muted-foreground leading-tight text-center">
-          {item.text}
-        </span>
+
+
+      {/* Features - Closer spacing between items */}
+      <div className="flex justify-center items-start mt-2 w-full gap-2">
+        {[
+          {
+            text: "100% Satisfaction",
+            icon: Heart,
+            animation: "animate-float [animation-delay:200ms]",
+            align: "left"
+          },
+          {
+            text: "Instant Access",
+            icon: Download,
+            animation: "animate-float [animation-delay:400ms]",
+            align: "center"
+          },
+          {
+            text: "24/7 Support",
+            icon: MessageCircle,
+            animation: "animate-float [animation-delay:600ms]",
+            align: "right"
+          },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center flex-1"
+          >
+            <item.icon className="h-3 w-3 md:h-5 md:w-5 text-primary animate-pulse mb-0.5" />
+            <span className="text-[10px] md:text-xs font-medium text-muted-foreground leading-tight text-center">
+              {item.text}
+            </span>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
+
+      <style jsx>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0.7; }
+        }
+            @keyframes smoothBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  .smooth-bounce {
+    animation: smoothBounce 1.2s ease-in-out infinite;
+  }
+      `}</style>
 </div>
 </div>
 
