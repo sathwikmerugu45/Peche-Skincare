@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import ReactCountryFlag from "react-country-flag";
 import RazorpayButton from "@/components/RazorpayButton";
@@ -35,8 +35,11 @@ import {
   RefreshCw,
   CheckCircle,
   Book,
+  ChevronLeft,
+  ChevronRight,
+  Pause,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Footer from "@/components/Footer";
 import { Counter } from "@/components/Counter";
 // import Testimonials from "@/components/Testimonials";
@@ -91,7 +94,7 @@ const ProductNavigation = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Transformations", href: "#transformations" },
-    { name: "Modules", href: "#bonusecs" },
+    { name: "Modules", href: "#modules" },
     { name: "Five Bonuses", href: "#bonuses" },
     { name: "FAQ's", href: "#faq" },
     { name: "Contact Us", href: "#contact" },
@@ -331,7 +334,7 @@ const Philosophy = () => {
   };
 
   return (
- <section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
+<section className="py-6 md:py-8 bg-gradient-to-br from-orange-50 via-pink-50 to-peach-50 relative overflow-hidden">
   {/* Subtle Background Pattern */}
   <div className="absolute inset-0 opacity-30">
     <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-pink-200/40 rounded-full blur-2xl animate-pulse"></div>
@@ -344,9 +347,9 @@ const Philosophy = () => {
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     {/* Main Content Section */}
-    <div className="grid lg:grid-cols-2 gap-10 items-start mb-0 md:mb-0">
-      {/* Text Content */}
-      <div className="space-y-5 order-1 lg:order-1">
+    <div className="grid lg:grid-cols-2 gap-10 items-stretch mb-0 md:mb-0">
+      {/* Text Content - Desktop: Match image height */}
+      <div className="space-y-5 order-1 lg:order-1 lg:flex lg:flex-col lg:justify-between">
         <div className="space-y-5 animate-slideInLeft">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             Why I Created
@@ -379,7 +382,7 @@ const Philosophy = () => {
                   <img
                     src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
                     alt="Before and After transformation"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
                     Before
@@ -418,7 +421,7 @@ const Philosophy = () => {
         </div>
 
         {/* Remaining Text Content */}
-        <div className="pl-3 border-l-2 border-orange-300/50 mt-5 space-y-3">
+        <div className="pl-3 border-l-2 border-orange-300/50 mt-5 space-y-3 lg:flex-grow">
           <p className="text-base md:text-lg text-gray-600 leading-relaxed transition-all duration-700 hover:translate-x-2">
             I used to feel ashamed of my bare skin — hiding behind filters
             and whitening creams that only made things worse.
@@ -459,7 +462,7 @@ const Philosophy = () => {
             ))}
           </div>
 
-          <div className="mt-5 -pt-2 border-t border-orange-100/50">
+          <div className="mt-5 pt-4 border-t border-orange-100/50">
             <p className="text-gray-600 italic text-center text-base leading-relaxed transition-all duration-700 hover:scale-105">
               From India to Africa to Southeast Asia — we deserve to glow,
               naturally.
@@ -472,68 +475,67 @@ const Philosophy = () => {
       </div>
 
       {/* Testimonial Card - Desktop Only */}
-    {/* Testimonial Card - Desktop Only */}
-<div className="relative hidden lg:block order-2">
-  <div className="relative group bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer">
-    <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
-    <div
-      className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-      style={{ animationDelay: "0.2s" }}
-    ></div>
-    <div
-      className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-      style={{ animationDelay: "0.4s" }}
-    ></div>
-    <div
-      className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
-      style={{ animationDelay: "0.6s" }}
-    ></div>
+      <div className="relative hidden lg:block order-2 lg:h-full">
+        <div className="relative group bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 overflow-hidden cursor-pointer h-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-pink-400/0 to-purple-400/0 group-hover:from-orange-400/20 group-hover:via-pink-400/10 group-hover:to-purple-400/20 transition-all duration-700 rounded-3xl"></div>
+          <div
+            className="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+            style={{ animationDelay: "0.2s" }}
+          ></div>
+          <div
+            className="absolute top-6 right-8 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+            style={{ animationDelay: "0.4s" }}
+          ></div>
+          <div
+            className="absolute top-8 right-5 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-500"
+            style={{ animationDelay: "0.6s" }}
+          ></div>
 
-    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
+          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out skew-x-12"></div>
 
-    <div className="relative z-10">
-      <div className="relative h-80 md:h-96 rounded-t-3xl overflow-hidden">
-        <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
-          <img
-            src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
-            alt="Before and After transformation"
-            className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
-          />
-          <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-            Before
-          </div>
-          <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-            After
+          <div className="relative z-10 h-full flex flex-col">
+            <div className="relative flex-grow rounded-t-3xl overflow-hidden">
+              <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-orange-100/50 to-pink-100/50">
+                <img
+                  src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758218622/imgonline-com-ua-twotoone-EQZcPi0Qf3aQNW_wv0xai.jpg"
+                  alt="Before and After transformation"
+                  className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
+                />
+                <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                  Before
+                </div>
+                <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                  After
+                </div>
+              </div>
+            </div>
+
+            <div className="px-6 pb-6 pt-6 flex-shrink-0">
+              <blockquote className="text-gray-700 italic leading-relaxed text-sm">
+                "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed understanding of melanin skin."
+              </blockquote>
+
+              <div className="flex items-center justify-between mt-4">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="h-4 w-4 text-orange-400 fill-current"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.757 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
+                  3 weeks later
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="px-6 pb-6 pt-6">
-        <blockquote className="text-gray-700 italic leading-relaxed text-sm">
-          "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed understanding of melanin skin."
-        </blockquote>
-
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="h-4 w-4 text-orange-400 fill-current"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.757 4.635 1.123 6.545z" />
-              </svg>
-            ))}
-          </div>
-          <span className="text-xs text-gray-600 font-medium bg-gradient-to-r from-orange-100 to-pink-100 px-3 py-1 rounded-full">
-            3 weeks later
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 
@@ -557,7 +559,122 @@ const Philosophy = () => {
 const ProductPage = () => {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [activeFAQ, setActiveFAQ] = useState(null);
+ const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [cardsPerView, setCardsPerView] = useState(2);
+  const intervalRef = useRef(null);
+  const controls = useAnimation();
+  const x = useMotionValue(0);
 
+  const testimonials = [
+    {
+      name: "Priya S.",
+      location: "Mumbai, India",
+      countryCode: "IN",
+      testimonial:
+        "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
+      timeframe: "3 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
+    },
+    {
+      name: "Keisha M.",
+      location: "Atlanta, USA",
+      countryCode: "US",
+      testimonial:
+        "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
+      timeframe: "5 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
+    },
+    {
+      name: "Adaora O.",
+      location: "Lagos, Nigeria",
+      countryCode: "NG",
+      testimonial:
+        "I thought my acne dark spots were just something I had to live with. This guide completely changed my perspective.",
+      timeframe: "6 weeks later",
+      image:
+        "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
+    },
+  ];
+
+  // Create duplicated array for infinite scroll
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
+  // Update cards per view based on screen size
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      setCardsPerView(window.innerWidth >= 768 ? 2 : 1);
+    };
+    
+    updateCardsPerView();
+    window.addEventListener('resize', updateCardsPerView);
+    return () => window.removeEventListener('resize', updateCardsPerView);
+  }, []);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isPlaying) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => {
+          const nextIndex = prev + 1;
+          // Reset to beginning when we reach the end of original items
+          if (nextIndex >= testimonials.length) {
+            return 0;
+          }
+          return nextIndex;
+        });
+      }, 4000);
+    } else {
+      clearInterval(intervalRef.current);
+    }
+
+    return () => clearInterval(intervalRef.current);
+  }, [isPlaying, testimonials.length]);
+
+  // Smooth animation with infinite loop effect
+  useEffect(() => {
+    const cardWidth = 100 / cardsPerView;
+    const targetX = -currentIndex * cardWidth;
+    
+    controls.start({
+      x: `${targetX}%`,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 0.8,
+      }
+    });
+  }, [currentIndex, cardsPerView, controls]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => {
+      const nextIndex = prev + 1;
+      if (nextIndex >= testimonials.length) {
+        return 0;
+      }
+      return nextIndex;
+    });
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => {
+      if (prev <= 0) {
+        return testimonials.length - 1;
+      }
+      return prev - 1;
+    });
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
   const sparkVariants = {
     hidden: { scale: 0, opacity: 0 },
     visible: (i: number) => ({
@@ -595,6 +712,7 @@ const ProductPage = () => {
       },
       theme: { color: "#2563EB" }, // Tailwind primary color
     };
+    
 
     const rzp = new (window as any).Razorpay(options);
 
@@ -604,6 +722,7 @@ const ProductPage = () => {
 
     rzp.open();
   };
+  
 
   // Make sure Razorpay script is loaded
   useEffect(() => {
@@ -622,14 +741,14 @@ const ProductPage = () => {
       <ProductNavigation />
 
       {/* Hero Section - Optimized Layout */}
-      <section
+<section
         id="home"
         className="pt-20 pb-8 md:pt-36 md:pb-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start min-h-[60vh] lg:min-h-[70vh]">
             {/* Product Info - Now First on Mobile */}
-            <div className="space-y-4">
+            <div className="space-y-4 lg:space-y-8">
               {/* <Badge className="inline-flex bg-accent/20 text-accent-foreground py-2 px-4 text-sm font-medium">
                 <Timer className="h-4 w-4 mr-2" />
                 Limited Time: 76% OFF
@@ -896,6 +1015,16 @@ const ProductPage = () => {
       image:
         "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_6569_eaoxzn.jpg",
     },
+     {
+          name: "Thando W.",
+          location: "Cape Town, SA",
+          countryCode: "ZA",
+          testimonial:
+            "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to my gut health.",
+          timeframe: "4 weeks later",
+          image:
+            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
+        },
   ].map((item, index) => (
     <div
       key={index}
@@ -1179,7 +1308,7 @@ const ProductPage = () => {
       {/* Professional Modules Content */}
       {/* Professional Modules Content */}
       <section
-        id="bonusecs"
+        id="modules"
         className="py-6 md:py-8 bg-gradient-to-br from-accent/5 via-background to-primary/5"
       >
         <div className="container mx-auto px-4 max-w-7xl">
@@ -1261,7 +1390,7 @@ const ProductPage = () => {
       </div>
       
       {/* Text 3: Premium Value Package */}
-      <div className="h-24 flex items-center justify-center shrink-0 px-4">
+      {/* <div className="h-24 flex items-center justify-center shrink-0 px-4">
         <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-all duration-300">
           <div className="text-center">
             <div className="text-lg md:text-xl font-bold text-gray-700 mb-1">
@@ -1273,7 +1402,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   </div>
 
@@ -1490,7 +1619,7 @@ const ProductPage = () => {
       </section>
       {/* <Testimonials /> */}
       {/* Professional Bonuses Section */}
-    <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+    <section id="bonuses" className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Header */}
           <div className="text-center mb-6 md:mb-6">
@@ -1745,164 +1874,248 @@ const ProductPage = () => {
         </div>
       </section>
       {/* Transformations Section - After Bonuses */}
-    <section className="py-6 md:py-8 bg-gradient-to-br from-background via-accent/5 to-primary/5">
-  <div className="container mx-auto px-4 max-w-6xl">
-    <div className="text-center mb-8 md:mb-8">
-      <motion.div
-        initial={{ scale: 0, rotate: -15, opacity: 0 }}
-        whileInView={{
-          scale: [0, 1.3, 1],
-          rotate: [0, 8, -5, 0],
-          opacity: 1,
-        }}
-        transition={{ duration: 1, ease: "easeOut", bounce: 0.4 }}
-        viewport={{ once: true, amount: 0.5 }}
-        className="relative inline-block"
-      >
-        <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4 shadow-md">
-          <Award className="h-4 w-4 mr-2" />
-          More Success Stories
-        </Badge>
-
-        {[...Array(5)].map((_, i) => (
-          <motion.span
-            key={i}
-            custom={i}
-            variants={sparkVariants}
-            initial="hidden"
-            animate="visible"
-            className="absolute w-2 h-2 rounded-full bg-primary"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+<section className="py-6 md:py-8 bg-gradient-to-br from-background via-accent/5 to-primary/5">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-8 md:mb-8">
+          <motion.div
+            initial={{ scale: 0, rotate: -15, opacity: 0 }}
+            whileInView={{
+              scale: [0, 1.3, 1],
+              rotate: [0, 8, -5, 0],
+              opacity: 1,
             }}
-          />
-        ))}
-      </motion.div>
+            transition={{ duration: 1, ease: "easeOut", bounce: 0.4 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="relative inline-block"
+          >
+            <Badge className="inline-flex bg-primary/20 text-primary font-semibold text-base md:text-lg lg:text-xl mb-6 py-2 px-4 shadow-md">
+              <Award className="h-4 w-4 mr-2" />
+              More Success Stories
+            </Badge>
 
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-        Join Thousands of Happy Customers
-      </h2>
-      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Real women, real results. See how our guide has transformed lives
-        across the globe.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-0 md:mb-0">
-      {[
-        {
-          name: "Priya S.",
-          location: "Mumbai, India",
-          countryCode: "IN",
-          testimonial:
-            "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
-          timeframe: "3 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218678/IMG_3688_ntxicl.jpg",
-        },
-        {
-          name: "Keisha M.",
-          location: "Atlanta, USA",
-          countryCode: "US",
-          testimonial:
-            "Finally, a guide that understands my skin! The emotional healing part was just as important as the skincare routine.",
-          timeframe: "5 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218619/IMG_5652_bdhenw.jpg",
-        },
-        {
-          name: "Thando W.",
-          location: "Cape Town, SA",
-          countryCode: "ZA",
-          testimonial:
-            "This isn't just about skincare — it's soul work. The guide helped me understand that my acne was connected to my gut health.",
-          timeframe: "4 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218698/Untitled_design.zip_-_3_potxtv.png",
-        },
-        {
-          name: "Adaora O.",
-          location: "Lagos, Nigeria",
-          countryCode: "NG",
-          testimonial:
-            "I thought my acne dark spots were just something I had to live with. This guide completely changed my perspective.",
-          timeframe: "6 weeks later",
-          image:
-            "https://res.cloudinary.com/dwit7nxav/image/upload/v1758218650/Untitled_design.zip_-_4_k47sik.png",
-        },
-      ].map((item, index) => (
-        <Card
-          key={index}
-          className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 bg-card shadow-lg hover:-translate-y-2 hover:bg-card/95"
-        >
-          {/* Single Image with Before/After Labels */}
-          <div className="relative h-64 md:h-80">
-            <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-background/50 to-accent/5">
-              <img
-                src={item.image}
-                alt="Before and After transformation"
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+            {[...Array(5)].map((_, i) => (
+              <motion.span
+                key={i}
+                custom={i}
+                variants={sparkVariants}
+                initial="hidden"
+                animate="visible"
+                className="absolute w-2 h-2 rounded-full bg-primary"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                }}
               />
-              <Badge className="absolute top-3 left-3 bg-destructive/90 text-white text-xs font-medium px-2 py-1">
-                Before
-              </Badge>
-              <Badge className="absolute top-3 right-3 bg-primary/90 text-white text-xs font-medium px-2 py-1">
-                After
-              </Badge>
-            </div>
+            ))}
+          </motion.div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Join Thousands of Happy Customers
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Real women, real results. See how our guide has transformed lives
+            across the globe.
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative mb-0 md:mb-0">
+          {/* Navigation Controls */}
+          <div className="absolute top-4 right-4 z-20 flex gap-2">
+            <button
+              onClick={togglePlayPause}
+              className="bg-background/95 backdrop-blur-sm hover:bg-background shadow-lg rounded-full p-2 transition-all duration-200 hover:scale-110 border border-primary/20"
+            >
+              {isPlaying ? (
+                <Pause className="h-4 w-4 text-primary" />
+              ) : (
+                <Play className="h-4 w-4 text-primary" />
+              )}
+            </button>
           </div>
 
-          {/* Card Content - Horizontal Layout */}
-          <CardContent className="p-4">
-            <div className="flex items-center gap-4">
-              {/* Left Side - Profile (Centered) */}
-              <div className="flex-shrink-0 flex flex-col items-center text-center space-y-1 w-24">
-                <h4 className="font-bold text-sm text-foreground leading-tight">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-muted-foreground">{item.location}</p>
-                <ReactCountryFlag
-                  countryCode={item.countryCode}
-                  svg
-                  style={{
-                    width: "1.6em",
-                    height: "1.6em",
-                  }}
-                  title={item.location}
-                />
-              </div>
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-background/95 backdrop-blur-sm hover:bg-background shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 border border-primary/20 hover:border-primary/40 hover:shadow-primary/10"
+            onMouseEnter={() => setIsPlaying(false)}
+            onMouseLeave={() => setIsPlaying(true)}
+          >
+            <ChevronLeft className="h-5 w-5 text-primary" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-background/95 backdrop-blur-sm hover:bg-background shadow-xl rounded-full p-3 transition-all duration-300 hover:scale-110 border border-primary/20 hover:border-primary/40 hover:shadow-primary/10"
+            onMouseEnter={() => setIsPlaying(false)}
+            onMouseLeave={() => setIsPlaying(true)}
+          >
+            <ChevronRight className="h-5 w-5 text-primary" />
+          </button>
 
-              {/* Right Side - Testimonial and Details */}
-              <div className="flex-1 min-w-0">
-                <div className="mb-3">
-                  <Quote className="h-4 w-4 text-primary mb-2 flex-shrink-0" />
-                  <blockquote className="text-foreground/90 italic leading-relaxed text-sm">
-                    "{item.testimonial}"
-                  </blockquote>
-                </div>
+          {/* Carousel Track */}
+          <div 
+            className="overflow-hidden rounded-xl"
+            onMouseEnter={() => setIsPlaying(false)}
+            onMouseLeave={() => setIsPlaying(true)}
+          >
+            <motion.div
+              className="flex"
+              animate={controls}
+              style={{ x }}
+            >
+              {duplicatedTestimonials.map((item, index) => (
+                <motion.div
+                  key={`${item.name}-${index}`}
+                  className="flex-none w-full md:w-1/2 px-3"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-2 border-primary/20 hover:border-primary/40 bg-card shadow-lg hover:-translate-y-2 hover:bg-card/95 h-full">
+                    {/* Single Image with Before/After Labels */}
+                    <div className="relative h-64 md:h-80">
+                      <div className="relative overflow-hidden h-full w-full bg-gradient-to-br from-background/50 to-accent/5">
+                        <motion.img
+                          src={item.image}
+                          alt="Before and After transformation"
+                          className="w-full h-full object-cover transition-all duration-700"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.7, ease: "easeOut" }}
+                        />
+                        <Badge className="absolute top-3 left-3 bg-destructive/90 text-white text-xs font-medium px-2 py-1 backdrop-blur-sm">
+                          Before
+                        </Badge>
+                        <Badge className="absolute top-3 right-3 bg-primary/90 text-white text-xs font-medium px-2 py-1 backdrop-blur-sm">
+                          After
+                        </Badge>
+                        
+                        {/* Gradient overlay for better text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      </div>
+                    </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-3 w-3 text-primary fill-current"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {item.timeframe}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+                    {/* Card Content - Horizontal Layout */}
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-4">
+                        {/* Left Side - Profile (Centered) */}
+                        <div className="flex-shrink-0 flex flex-col items-center justify-center w-24">
+  <div className="text-center space-y-1">
+    {/* Name */}
+    <h4
+      className="font-bold text-sm text-gray-800 leading-tight 
+      group-hover:bg-gradient-to-r group-hover:from-orange-600 
+      group-hover:via-pink-600 group-hover:to-purple-600 
+      group-hover:bg-clip-text group-hover:text-transparent 
+      transition-all duration-700"
+    >
+      {item.name}
+    </h4>
+
+    {/* Country name */}
+    <p className="text-xs text-gray-600">{item.location}</p>
+
+    {/* Flag */}
+    <div className="flex items-center justify-center mt-1">
+      <ReactCountryFlag
+        countryCode={item.countryCode}
+        svg
+        style={{
+          width: "1.8em",
+          height: "1.8em",
+        }}
+        title={item.location}
+      />
     </div>
   </div>
-</section>
+</div>
+
+
+                        {/* Right Side - Testimonial and Details */}
+                        <div className="flex-1 min-w-0">
+                          <div className="mb-3">
+                            <Quote className="h-4 w-4 text-primary mb-2 flex-shrink-0" />
+                            <blockquote className="text-foreground/90 italic leading-relaxed text-sm">
+                              "{item.testimonial}"
+                            </blockquote>
+                          </div>
+
+                          <div className="flex items-center justify-between">
+                            <div className="flex">
+                              {[...Array(5)].map((_, i) => (
+                                <motion.div
+                                  key={i}
+                                  initial={{ opacity: 0, scale: 0 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  transition={{ delay: i * 0.1 + 0.5 }}
+                                >
+                                  <Star className="h-3 w-3 text-primary fill-current" />
+                                </motion.div>
+                              ))}
+                            </div>
+                            <span className="text-xs text-muted-foreground font-medium">
+                              {item.timeframe}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+       {/* Enhanced Progress Bar */}
+<div className="flex justify-center mt-8 mb-6 space-x-4"> 
+  {testimonials.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => goToSlide(index)}
+      className="group relative"
+    >
+      <div
+        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+          index === currentIndex
+            ? 'bg-primary shadow-lg shadow-primary/30'
+            : 'bg-muted-foreground/30 hover:bg-muted-foreground/60'
+        }`}
+      />
+      {index === currentIndex && isPlaying && (
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-primary"
+          initial={{ scale: 1, opacity: 1 }}
+          animate={{ scale: 1.8, opacity: 0 }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeOut"
+          }}
+        />
+      )}
+    </button>
+  ))}
+</div>
+
+{/* Auto-play Progress Indicator */}
+{isPlaying && (
+  <div className="relative w-full h-1 bg-muted-foreground/20 rounded-full overflow-hidden mt-4"> 
+    <motion.div
+      className="h-full bg-primary rounded-full"
+      initial={{ x: "-100%" }}
+      animate={{ x: "0%" }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+    />
+  </div>
+)}
+
+        </div>
+      </div>
+    </section>
 
       
       {/* Philosophy Section */}
