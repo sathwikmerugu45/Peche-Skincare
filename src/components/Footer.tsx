@@ -78,9 +78,14 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="text-center lg:text-left space-y-6">
               <div className="space-y-4">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-                  Pêche
-                </h3>
+               <div className="w-24 h-12 sm:w-28 sm:h-10 md:w-38 md:h-12 rounded-xl overflow-hidden shadow-glow transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+  <img 
+    src="https://res.cloudinary.com/dwit7nxav/image/upload/v1758915308/Gemini_Generated_Image_abgdngabgdngabgd_u0rzuu.png" 
+    alt="Pêche Logo"
+    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+  />
+</div>
+
                 <p className="text-lg text-secondary-foreground/80 leading-relaxed max-w-md mx-auto lg:mx-0">
                   Empowering melanin-rich skin with science-backed skincare solutions for your natural glow.
                 </p>

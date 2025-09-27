@@ -935,7 +935,7 @@ const ProductPage = () => {
       {/* Transformation Results - Mobile Optimized */}
       <section
         id="transformations"
-        className="py-0 md:py-0 bg-gradient-to-br from-background via-accent/5 to-primary/5"
+        className="py-0 md:py-10 bg-gradient-to-br from-background via-accent/5 to-primary/5"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-10">
@@ -2125,9 +2125,11 @@ const ProductPage = () => {
         <div className="container mx-auto px-3 max-w-sm">
           <div className="bg-card rounded-lg p-4 shadow-md border border-border text-center space-y-3">
             {/* Title */}
-            <h3 className="text-lg font-bold text-foreground leading-snug">
-              Just $9 Today — No Upsells. No Fluff. Just Results.
-            </h3>
+            {/* Title */}
+<h3 className="text-lg font-bold text-foreground leading-snug whitespace-nowrap">
+  Just $9 Today — No Upsells. No Fluff.
+</h3>
+
 
             {/* Price Section */}
             <div className="flex items-center justify-center gap-2">
