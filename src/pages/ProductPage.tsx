@@ -569,9 +569,9 @@ const ProductPage = () => {
 
   const testimonials = [
     {
-      name: "Priya S.",
-      location: "Mumbai, India",
-      countryCode: "IN",
+      name: "Maysa.",
+      location: "Bamako, Mali",
+      countryCode: "ML",
       testimonial:
         "I used to hide behind makeup every single day. This guide taught me that my skin didn't need more products — it needed healing.",
       timeframe: "3 weeks later",

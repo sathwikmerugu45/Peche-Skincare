@@ -8,7 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductPage from "./pages/ProductPage";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-import BackToTop from "./components/BacktoToTop"; // 👈 Import the new component
+import BackToTop from "./components/BacktoToTop"; 
 
 const queryClient = new QueryClient();
 
@@ -16,10 +16,10 @@ const Layout = () => {
   return (
     <>
       <main className="min-h-screen">
-        <Outlet /> {/* Render the actual page here */}
+        <Outlet />
       </main>
       <Footer />
-      <BackToTop /> {/* 👈 Global Back to Top button */}
+      <BackToTop /> 
     </>
   );
 };
@@ -31,11 +31,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Wrap all routes with Layout so footer and BackToTop shows everywhere */}
           <Route element={<Layout />}>
-            <Route path="/" element={<Navigate to="/product" replace />} />
+            <Route path="/" element={<ProductPage />} />
             <Route path="/product" element={<ProductPage />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
+            {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
