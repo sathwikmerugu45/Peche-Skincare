@@ -354,7 +354,7 @@ const Philosophy = () => {
         <div className="space-y-5 animate-slideInLeft">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             Why I Created
-           <span className="font-black text-primary block mt-1">This</span>
+           <span className="font-black text-black block mt-1">This</span>
           </h2>
         </div>
 
@@ -385,10 +385,10 @@ const Philosophy = () => {
                     alt="Before and After transformation"
                     className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                  <div className="absolute top-3 left-3 bg-red-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
                     Before
                   </div>
-                  <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                  <div className="absolute top-3 right-3 bg-green-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
                     After
                   </div>
                 </div>
@@ -502,10 +502,10 @@ const Philosophy = () => {
                   alt="Before and After transformation"
                   className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
                 />
-                <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                <div className="absolute top-3 left-3 bg-red-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
                   Before
                 </div>
-                <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+                <div className="absolute top-3 right-3 bg-green-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
                   After
                 </div>
               </div>
@@ -1069,10 +1069,10 @@ const ProductPage = () => {
               alt="Before and After transformation"
               className="w-full h-full object-contain object-center group-hover:scale-105 transition-all duration-500 bg-white/20"
             />
-            <div className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+            <div className="absolute top-3 left-3 bg-red-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
               Before
             </div>
-            <div className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+            <div className="absolute top-3 right-3 bg-green-500/90 text-black text-xs font-medium px-3 py-1 rounded-full">
               After
             </div>
           </div>
