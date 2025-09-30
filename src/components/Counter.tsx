@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback } from "react";
 
 interface CounterProps {
   value: number;
@@ -11,21 +11,21 @@ interface CounterProps {
   delay?: number;
   threshold?: number;
   className?: string;
-  easingFunction?: 'linear' | 'easeOut' | 'easeInOut' | 'bounce';
+  easingFunction?: "linear" | "easeOut" | "easeInOut" | "bounce";
   onComplete?: () => void;
 }
 
-export function Counter({ 
-  value, 
-  suffix = "", 
+export function Counter({
+  value,
+  suffix = "",
   prefix = "",
-  decimal = 0, 
-  duration = 2000, 
+  decimal = 0,
+  duration = 2000,
   delay = 0,
-  threshold = 0.5,
+  threshold = 0, // safer for iOS Safari
   className = "",
-  easingFunction = 'easeOut',
-  onComplete
+  easingFunction = "easeOut",
+  onComplete,
 }: CounterProps) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -37,7 +37,10 @@ export function Counter({
   const easing = {
     linear: (t: number) => t,
     easeOut: (t: number) => 1 - Math.pow(1 - t, 3),
-    easeInOut: (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+    easeInOut: (t: number) =>
+      t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2,
     bounce: (t: number) => {
       const n1 = 7.5625;
       const d1 = 2.75;
@@ -50,12 +53,12 @@ export function Counter({
       } else {
         return n1 * (t -= 2.625 / d1) * t + 0.984375;
       }
-    }
+    },
   };
 
   const animateCounter = useCallback(() => {
     if (hasAnimated) return;
-    
+
     setHasAnimated(true);
     const startTime = performance.now();
     const startValue = 0;
@@ -64,10 +67,10 @@ export function Counter({
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
       const easedProgress = easing[easingFunction](progress);
-      const currentValue = startValue + (endValue - startValue) * easedProgress;
-      
+      const currentValue =
+        startValue + (endValue - startValue) * easedProgress;
+
       setCount(currentValue);
 
       if (progress < 1) {
@@ -78,12 +81,20 @@ export function Counter({
       }
     };
 
-    setTimeout(() => {
-      animationRef.current = requestAnimationFrame(animate);
-    }, delay);
+    if (delay > 0) {
+      setTimeout(() => requestAnimationFrame(animate), delay);
+    } else {
+      requestAnimationFrame(animate);
+    }
   }, [value, duration, delay, easingFunction, hasAnimated, onComplete]);
 
   useEffect(() => {
+    // Fallback if IntersectionObserver is not supported
+    if (!("IntersectionObserver" in window)) {
+      animateCounter();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
@@ -91,15 +102,13 @@ export function Counter({
           animateCounter();
         }
       },
-      { 
-        threshold,
-        rootMargin: '50px' // Start animation slightly before element is fully visible
+      {
+        threshold, // set to 0 for max compatibility
+        rootMargin: "0px 0px -10% 0px", // trigger slightly before full visibility
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    if (ref.current) observer.observe(ref.current);
 
     return () => {
       observer.disconnect();
@@ -107,7 +116,7 @@ export function Counter({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [threshold, isVisible, animateCounter]);
+  }, [animateCounter, isVisible, threshold]);
 
   // Reset function for re-triggering animation
   const reset = useCallback(() => {
@@ -119,7 +128,7 @@ export function Counter({
     }
   }, []);
 
-  // Format the display value
+  // Format displayed value
   const formatValue = (val: number) => {
     if (decimal === 0) {
       return Math.floor(val).toLocaleString();
@@ -128,43 +137,45 @@ export function Counter({
   };
 
   return (
-    <span 
-      ref={ref} 
+    <span
+      ref={ref}
       className={`inline-block transition-all duration-300 ${
-        isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'
+        isVisible
+          ? "opacity-100 transform-none"
+          : "opacity-0 translate-y-4"
       } ${className}`}
       data-testid="counter"
     >
-      <span 
+      <span
         className={`inline-block ${
-          hasAnimated && isVisible 
-            ? 'animate-pulse-once' 
-            : ''
+          hasAnimated && isVisible ? "animate-pulse-once" : ""
         }`}
         aria-live="polite"
         aria-label={`${prefix}${formatValue(count)}${suffix}`}
       >
-        {prefix}{formatValue(count)}{suffix}
+        {prefix}
+        {formatValue(count)}
+        {suffix}
       </span>
     </span>
   );
 }
 
-// Optional: Export the reset functionality as a hook
-export function useCounterReset(counterRef: React.RefObject<{ reset: () => void }>) {
-  return useCallback(() => {
-    counterRef.current?.reset();
-  }, [counterRef]);
-}
+// Optional hook to externally reset counter
+// export function useCounterReset(
+//   counterRef: React.RefObject<{ reset: () => void }>
+// ) {
+//   return useCallback(() => {
+//     counterRef.current?.reset();
+//   }, [counterRef]);
+// }
 
-// CSS classes you'll need to add to your global styles or Tailwind config:
-/*
+/* Add this CSS to globals.css or Tailwind config:
 @keyframes pulse-once {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
 .animate-pulse-once {
   animation: pulse-once 0.6s ease-in-out;
 }
